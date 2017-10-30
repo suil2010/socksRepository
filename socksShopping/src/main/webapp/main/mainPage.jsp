@@ -26,7 +26,7 @@
 						</div>
 						<div class="fl_le">
 							<div class="item_price">
-								₩100000 <!-- 상품 가격 -->
+								₩ 100000 <!-- 상품 가격 -->
 							</div>
 						</div>
 						<div class="item_bar"></div>

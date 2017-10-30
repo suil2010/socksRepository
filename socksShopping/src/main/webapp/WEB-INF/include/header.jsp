@@ -2,7 +2,7 @@
 <div class="wrap">
 	<header>
 		<div class="logo">
-			<a href="#"> 
+			<a href="${initParam.rootPath }/main/mainPage.jsp"> 
 				<img alt="main_logo" src="../img/logo.png"> <!-- 로고 이미지 주소 -->
 			</a>
 		</div>
@@ -13,7 +13,7 @@
 			<a href="#">장바구니</a>
 			<% } else { %> <!-- 로그인이 안됬으면 -->
 			<a href="#">로그인</a> &nbsp; | &nbsp; <!-- 로그인 페이지로 이동 -->
-			<a href="../member/registerMemberView.jsp">회원 가입</a>
+			<a href="#">회원 가입</a>
 			<% } %>
 		</div>
 	</header>
