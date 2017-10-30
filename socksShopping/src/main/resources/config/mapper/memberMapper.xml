@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="config.mapper.memberMapper">
-	<sql id="select-member">
+	<sql id="select-sql">
 		SELECT member_id,
 		password,
 		name,
@@ -12,27 +12,38 @@
 
 	<!-- resultMap -->
 	<resultMap type="member" id="member-resultmap">
-		<id column="member_id" property="memberId"/> 
-		<result column="password" property="password"/>
-		<result column="name" property="name"/>
-		<result column="email" property="email"/>
-		<result column="point" property="point"/>
+		<id column="member_id" property="memberId" />
+		<result column="password" property="password" />
+		<result column="name" property="name" />
+		<result column="email" property="email" />
+		<result column="point" property="point" />
 	</resultMap>
-	
+
 	<insert id="insertMember" parameterType="member"><!-- 회원가입 -->
-		insert into member values (#{member_id},#{password},#{member_name},#{email},#{point})
+		insert into member values
+		(#{member_id},#{password},#{name},#{email},#{point})
 	</insert>
-	
+
 	<update id="updateMemeberById" parameterType="String"><!-- 회원정보 수정 -->
 		update member
 		set member_id = #{memberId},
-			password = #{password},
-			member_name = #{memberName},
-			email = #{email},
-			point = #{point}
+		password = #{password},
+		name = #{name},
+		email = #{email},
+		point = #{point}
 		where member_id = #{memberId}
 	</update>
+
+	<select id="selectAllMember" resultMap="member-resultmap"><!-- 전체회원조회 -->
+		<include refid="select-sql" />
+	</select>
 	
+	<select id="selectMemberById" resultMap="member-resultmap"<!-- id로 회원정보조회(마이페이지) -->
+		parameterType="string">
+		<include refid="select-sql" />
+		WHERE member_id = #{value}
+	</select>
+
 	<delete id="deleteMemberById" parameterType="String"><!-- 회원 탈퇴 -->
 		delete from member where member_id = #{memberId}
 	</delete>

@@ -1,5 +1,7 @@
 package com.socks.member.dao;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 
 import com.socks.member.vo.Member;
@@ -36,10 +38,14 @@ public interface MemberDao {
 	   int deleteMemberById(SqlSession session, String memberId);	
 	   
 	   /**
-	    * 매개변수로 받은 ID와 일치하는 회원정보를 회원 테이블에서 조회하는 메소드.
-	    * @param session
-	    * @param memberId
-	    * @return
-	    * 
-	    */
+		 * 매개변수로 받은 ID와 일치하는 회원정보를 회원 테이블에서 조회하는 메소드.
+		 * @param session
+		 * @param memberId
+		 * @return
+		 * 
+		 */
+		Member selectMemberById(SqlSession session, String memberId);
+		
+		List<Member> selectAllMember(SqlSession session);
+	   
 }
