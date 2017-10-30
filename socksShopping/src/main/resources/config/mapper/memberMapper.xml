@@ -1,3 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="config.mapper.memberMapper"></mapper>
+<mapper namespace="config.mapper.memberMapper">
+	<sql id="select-member">
+		SELECT member_id,
+		password,
+		member_name,
+		email,
+		point
+		FROM member
+	</sql>
+
+	<!-- resultMap -->
+	<resultMap type="member" id="member-resultmap">
+		<id column="member_id" property="memberId"/> 
+		<result column="password" property="password"/>
+		<result cloumn="member_name" property="memberName"/>
+		<result column="email" property="email"/>
+		<result column="point" property="point"/>
+	</resultMap>
+	
+	<insert id="insertMember" parameterType="member"><!-- 회원가입 -->
+		insert into member values (#{member_id},#{password},#{member_name},#{email},#{point})
+	</insert>
+	
+	<update id="updateMemeberById" parameterType="String"><!-- 회원정보 수정 -->
+		update member
+		set member_id = #{memberId},
+			password = #{password},
+			member_name = #{memberName},
+			email = #{email},
+			point = #{point}
+		where member_id = #{memberId}
+	</update>
+	
+	<delete id="deleteMemberById" parameterType="String"><!-- 회원 탈퇴 -->
+		delete from member where member_id = #{memberId}
+	</delete>
+</mapper>
