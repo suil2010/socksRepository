@@ -7,7 +7,7 @@
 <link href="../css/css.css" rel="stylesheet">
 </head>
 <body>
-<%@ include file="/include/header.jsp" %>
+<%@ include file="/WEB-INF/include/header.jsp" %>
 <div class="main_form">
 	<table>	
 		<%for(int i = 0; i < 5; i++){ %> <!-- 테스트용 -->
@@ -38,6 +38,6 @@
 		<%} %>
 	</table>
 </div>
-<%@ include file="/include/footer.jsp" %>
+<%@ include file="/WEB-INF/include/footer.jsp" %>
 </body>
 </html>

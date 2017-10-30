@@ -7,13 +7,13 @@
 			</a>
 		</div>
 		<div class="top_box">
-			<% if(true) { %> <!-- 로그인이 되면 -->
+			<% if(false) { %> <!-- 로그인이 되면 -->
 			<a href="#">로그아웃</a> &nbsp; | &nbsp; <!-- 로그아웃 페이지로 이동 -->
 			<a href="#">마이 페이지</a> &nbsp; | &nbsp;
 			<a href="#">장바구니</a>
 			<% } else { %> <!-- 로그인이 안됬으면 -->
 			<a href="#">로그인</a> &nbsp; | &nbsp; <!-- 로그인 페이지로 이동 -->
-			<a href="#">회원 가입</a>
+			<a href="../member/registerMemberView.jsp">회원 가입</a>
 			<% } %>
 		</div>
 	</header>
