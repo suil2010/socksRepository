@@ -9,7 +9,7 @@
 <body>
 <%@ include file="/include/header.jsp" %>
 <div class="main_form">
-	<table>
+	<table>	
 		<%for(int i = 0; i < 5; i++){ %> <!-- 테스트용 -->
 		<tr> 
 			<% for(int j=0; j < 5; j++) { %>
