@@ -86,7 +86,7 @@
 	<select id="selectAllMember" resultMap="member-resultmap"><!-- 전체회원조회 -->
 		<include refid="select-sql"/>
 	</select>
-	<select id="selectMemberById" resultMap="member-resultmap"><!-- id로 회원 조회 -->
+	<select id="selectMemberById" resultMap="member-resultmap" parameterType="string"><!-- id로 회원 조회 -->
 		<include refid="select-sql"/>
 		where member_id = #{memberId}
 	</select>
