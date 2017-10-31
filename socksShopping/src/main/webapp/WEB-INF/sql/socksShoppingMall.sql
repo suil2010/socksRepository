@@ -1,15 +1,15 @@
-drop table member
+drop table member cascade constraint
 
 CREATE TABLE member (
    member_ID  VARCHAR2(10) primary key, -- 회원_ID
    NAME     VARCHAR2(30) NOT NULL, -- 이름
-   PASSWORD VARCHAR2(30) NOT NULL, -- 비밀번
+   PASSWORD VARCHAR2(30) NOT NULL, -- 비밀번호
    ADDRESS  VARCHAR2(60) NOT NULL, -- 주소
-   EMAIL    VARCHAR2(30) NOT NULL, -- 이메
-   POINT    NUMBER(5)    NULL      -- 포인
+   EMAIL    VARCHAR2(30) NOT NULL, -- 이메일
+   POINT    NUMBER(5)    NULL      -- 포인트
 );
 
-drop table item
+drop table item cascade constraint
 
 CREATE TABLE ITEM (
    ITEM_ID       VARCHAR2(30) primary key, -- 상품번호
@@ -20,7 +20,7 @@ CREATE TABLE ITEM (
    DETAIL_CUT    VARCHAR2(50) NOT NULL  -- 상세사진주소
 );
 
-drop table order_list
+drop table order_list cascade constraint
 
 CREATE TABLE order_list(
    order_id VARCHAR2(30) primary key, -- 주문상품
