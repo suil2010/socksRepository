@@ -1,6 +1,7 @@
 package com.socks.order.vo;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import com.socks.item.vo.Item;
 
@@ -9,16 +10,26 @@ public class Order implements Serializable{
 	private int orderQuantity;
 	private String memberId;
 	private String itemId;
+	private Date orderDate;
 	private Item item;
 	
 	public Order() {
 	}
 
-	public Order(String orderId, int orderQuantity, String memberId, String itemId) {
+	public Order(String orderId, int orderQuantity, String memberId, String itemId, Date orderDate) {
 		this.orderId = orderId;
 		this.orderQuantity = orderQuantity;
 		this.memberId = memberId;
 		this.itemId = itemId;
+		this.orderDate = orderDate;
+	}
+
+	public Order(String orderId, int orderQuantity, String memberId, String itemId, Date orderDate, Item item) {
+		this.orderId = orderId;
+		this.orderQuantity = orderQuantity;
+		this.memberId = memberId;
+		this.itemId = itemId;
+		this.orderDate = orderDate;
 		this.item = item;
 	}
 
@@ -54,6 +65,14 @@ public class Order implements Serializable{
 		this.itemId = itemId;
 	}
 
+	public Date getOrderDate() {
+		return orderDate;
+	}
+
+	public void setOrderDate(Date orderDate) {
+		this.orderDate = orderDate;
+	}
+
 	public Item getItem() {
 		return item;
 	}
@@ -65,7 +84,7 @@ public class Order implements Serializable{
 	@Override
 	public String toString() {
 		return "Order [orderId=" + orderId + ", orderQuantity=" + orderQuantity + ", memberId=" + memberId + ", itemId="
-				+ itemId + ", item=" + item + "]";
+				+ itemId + ", orderDate=" + orderDate + ", item=" + item + "]";
 	}
 
 	@Override
@@ -75,6 +94,7 @@ public class Order implements Serializable{
 		result = prime * result + ((item == null) ? 0 : item.hashCode());
 		result = prime * result + ((itemId == null) ? 0 : itemId.hashCode());
 		result = prime * result + ((memberId == null) ? 0 : memberId.hashCode());
+		result = prime * result + ((orderDate == null) ? 0 : orderDate.hashCode());
 		result = prime * result + ((orderId == null) ? 0 : orderId.hashCode());
 		result = prime * result + orderQuantity;
 		return result;
@@ -104,6 +124,11 @@ public class Order implements Serializable{
 				return false;
 		} else if (!memberId.equals(other.memberId))
 			return false;
+		if (orderDate == null) {
+			if (other.orderDate != null)
+				return false;
+		} else if (!orderDate.equals(other.orderDate))
+			return false;
 		if (orderId == null) {
 			if (other.orderId != null)
 				return false;
@@ -113,5 +138,6 @@ public class Order implements Serializable{
 			return false;
 		return true;
 	}
-
+	
+	
 }
