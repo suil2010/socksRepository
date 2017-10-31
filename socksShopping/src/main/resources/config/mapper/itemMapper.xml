@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="config.mapper.itemMapper">
+	<sql id="select-sql">
+		SELECT item_id,
+			   item_price,
+			   item_quantity,
+			   item_name,
+			   main_cut,
+			   detail_cut
+		FROM   item
+	</sql>
+	
+	<!-- resultMap -->
+	<resultMap type="item" id="item-resultmap">
+		<id column="item_id" property="itemId" />
+		<result column="item_price" property="itemPrice" />
+		<result column="item_quantity" property="itemQuantity" />
+		<result column="item_name" property="itemName" />
+		<result column="main_cut" property="mainCut" />
+		<result column="detail_cut" property="detailCut" />
+	</resultMap>
+	
+	<insert id="insertItem" parameterType="item">
+		insert into item values(#{itemId}, #{itemPrice}, #{itemQuantity}, #{itemName}, #{mainCut}, #{detailCut})
+	</insert>
+	
+	<update id="updateItemById" parameterType="item"><!-- 회원정보 수정 -->
+		update 	item
+		set 	item_price = #{itemPrice},
+			    item_quantity = #{itemQuantity},
+			    item_name = #{itemName},
+			    main_cut = #{mainCut},
+			    detail_cut = #{detailCut}
+		where 	item_id = #{itemId}
+	</update>
+	
+	<delete id="deleteItemById" parameterType = "string">
+		delete from item where item_id = #{itemId} 
+	</delete>
+	
+	<select id="selectItemById" parameterType ="string" resultMap ="item-resultmap">
+		<include refid ="select-sql"/>
+		and item_id = #{itemId}
+	</select>
+	
+</mapper>
