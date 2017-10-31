@@ -9,14 +9,14 @@
 <%@ include file="/WEB-INF/include/header.jsp" %>
 <div class="detail_view">
 	<div class="detail_main_img">
-		<img alt="main_img" src=""> <!-- 제품 메인 사진 -->
+		<img alt="main_img" src='<c:url value="/C:/Java/Test/${request.mainCut }"/>'> <!-- 제품 메인 사진 -->
 	</div>
 	<form class="detail_form" action="">
 		<div class="detail_title">
-			제품 이름 샘플 ㅇㅇㅇㅇㅇㅇ <!-- 제품 이름 -->
+			${requestScope.itemName } <!-- 제품 이름 -->
 		</div>
 		<div class="detail_price">
-			₩ 100000 <!-- 제품 가격 -->
+			₩ ${requestScope.itemPrice } <!-- 제품 가격 -->
 		</div>
 		<div class="detail_bar"></div>	
 		<div class="detail_item_num">
@@ -25,13 +25,13 @@
 			<br>
 			<div class="detail_stuck">
 				상품재고 : 
-				155 개<!-- 재고량이 들어감 -->
+				${requestScope.itemQuantity } 개<!-- 재고량이 들어감 -->
 			</div>
 		</div>
 		<input type="submit" value="add to cart" class="cart_btn">
 	</form>
 	<div class="detail_sub_img">
-		<img alt="sub_img" src=""> <!-- 상세 이미지 들어가는 곳 -->
+		<img alt="sub_img" src='<c:url value="/C:/Java/Test/${request.detailCut }"/>'> <!-- 상세 이미지 들어가는 곳 -->
 	</div>
 </div>
 <%@ include file="/WEB-INF/include/footer.jsp" %>

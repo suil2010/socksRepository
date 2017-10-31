@@ -12,10 +12,10 @@
 <div class="main_form">
 	<c:forEach items="${requestScope.itemList}" var="list">
 		<div class="item_box">
-			<a href="${initParam.rootPath }/item/ItemDetailView.jsp">
+			<a href="${initParam.rootPath }/item/ItemDetailView.jsp?itemId=${list.itemId}">
 				<div class="items">
 					<div class="item_img_box">
-						<img alt="item_img" src='<c:url value="/이미지폴더/${list.itemImage }"/>'>
+						<img alt="item_img" src='<c:url value="/C:/Java/Test/${list.mainCut }"/>'>
 						<!-- 상품 이미지 -->
 					</div>
 					<div class="fl_le">
@@ -23,7 +23,7 @@
 					</div>
 					<div class="fl_le">
 						<div class="item_price">
-							${list.itemPrice }
+							₩ ${list.itemPrice }
 							<!-- 상품 가격 -->
 						</div>
 					</div>
