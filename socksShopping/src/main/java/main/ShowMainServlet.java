@@ -19,7 +19,7 @@ public class ShowMainServlet extends HttpServlet {
        
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		itemService service = itemServiceImpl.getInstance();
-		List<Item> list = service.selectAllItem();
+		List<Item> list = service.findAllItem();
 		
 		request.setAttribute("list", list);
 		request.getRequestDispatcher("/main/mainPage.jsp").forward(request, response);

@@ -44,8 +44,12 @@
 		and item_id = #{itemId}
 	</select>
 
-	
 	<select id="selectAllItem" resultMap="item-resultmap">
 		<include refid="select-sql"/>
+	</select>
+	
+	<select id="selectItemByName" parameterType ="string" resultMap = "item-resultmap">
+		<include refid="select-sql"/>
+		and item_name = #{itemName}
 	</select>
 </mapper>
