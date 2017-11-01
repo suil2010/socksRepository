@@ -3,7 +3,7 @@
 	<header>
 		<div class="logo">
 			<a href="${initParam.rootPath }/main/showMain"> 
-				<img alt="main_logo" src="../img/logo.png"> <!-- 로고 이미지 주소 -->
+				<img alt="main_logo" src="${initParam.rootPath }/img/logo.png"> <!-- 로고 이미지 주소 -->
 			</a>
 		</div>
 		<div class="top_box">

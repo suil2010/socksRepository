@@ -6,16 +6,34 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link href="${initParam.rootPath }/css/css.css" rel="stylesheet">
 </head>
 <body>
-<c:if test="${not empty requestScope.errorMessage }">
-	<span style="color:red">${requestScope.errorMessage }</span>
-</c:if>
-<form action="/socksShopping/loginMember" method="post">
-		ID : <input type="text" name="memberId"><br>
-		Password : <input type="password" name="password"><br>
-		<button type="submit">로그인</button>
-</form>
-<a href="/socksShopping/member/registerMemberView.jsp">회원가입하기</a>
+<%@ include file="/WEB-INF/include/header.jsp"%>
+<div class="login_view">
+
+	<h4>로그인</h4>
+	
+	<form action="/socksShopping/loginMember" method="post" class="login_form">
+		<table class="login_table">
+			<tr>
+				<td>
+					<input type="text" name="memberId" placeholder="ID" class="login_input"><br>
+					<input type="password" name="password" placeholder="PASSWORD" class="login_input">
+				</td>
+				<td>
+					<button type="submit" class="login_btn">Login</button><br>
+					<a href="/socksShopping/member/registerMemberView.jsp" class="go_register">회원가입하기</a>
+				</td>
+			</tr>
+		</table>
+		
+		<c:if test="${not empty requestScope.errorMessage }">
+			<span style="color:red">${requestScope.errorMessage }</span>
+		</c:if>
+	</form>
+	
+</div>
+<%@ include file="/WEB-INF/include/footer.jsp"%>
 </body>
 </html>
