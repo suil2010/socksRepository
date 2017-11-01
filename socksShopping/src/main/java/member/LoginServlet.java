@@ -7,7 +7,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import com.socks.member.service.MemberService;
 import com.socks.member.service.impl.MemberServiceImpl;
@@ -23,23 +22,30 @@ public class LoginServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-		String id = request.getParameter("id");
-		String password = request.getParameter("password");
 		MemberService service = MemberServiceImpl.getInstance();
+		String id = request.getParameter("memberId");
+		String password = request.getParameter("password");
 		Member member = service.findMemberById(id);
-		
-		if(member != null) {
+		System.out.println(member);
+		if(id.equals("socks")){
+			if(password.equals("appeal")) {
+				request.getSession().setAttribute("loginMember", true);
+				response.sendRedirect("/admin"); //관리자페이지
+			}else {
+				request.setAttribute("errorMessage", "비밀번호가 일치하지 않습니다");
+				request.getRequestDispatcher("/member/loginView.jsp").forward(request, response);
+			}
+		}else if(member != null) {
 			if(password.equals(member.getPassword())) {
-				HttpSession session = request.getSession();
-				session.setAttribute("loginMember", member);
-				request.getRequestDispatcher("/main/mainPage.jsp").forward(request, response);
+				request.setAttribute("loginMember", member);
+				request.getRequestDispatcher("/member/loginSuccessView.jsp").forward(request, response);
 			}else {
 			request.setAttribute("errorMessage", "비밀번호가 일치하지 않습니다");
 			request.getRequestDispatcher("/member/loginView.jsp").forward(request, response);
 			}
 			
-		}else if(member == null) {
-			request.setAttribute("errorMessage", "아이디가 일치하지 않습니다");
+		}else {
+			request.setAttribute("errorMessage", "아이디를 확인하세요");
 			request.getRequestDispatcher("/member/loginView.jsp").forward(request, response);
 			
 		}

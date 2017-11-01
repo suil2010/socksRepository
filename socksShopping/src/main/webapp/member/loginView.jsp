@@ -12,7 +12,7 @@
 	<span style="color:red">${requestScope.errorMessage }</span>
 </c:if>
 <form action="/socksShopping/loginMember" method="post">
-		ID : <input type="text" name="id"><br>
+		ID : <input type="text" name="memberId"><br>
 		Password : <input type="password" name="password"><br>
 		<button type="submit">로그인</button>
 </form>
