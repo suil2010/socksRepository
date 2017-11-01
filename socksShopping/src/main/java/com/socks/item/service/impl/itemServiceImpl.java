@@ -91,6 +91,7 @@ public class itemServiceImpl implements itemService{
 			session.close();
 		}
 	}
+
 	
 	public List<Item> findItemByName(String itemName) {
 		try {
@@ -105,9 +106,11 @@ public class itemServiceImpl implements itemService{
 	
 	public List<Item> findAllItem() {
 		
-		SqlSession session = factory.openSession();
 		try {
-			return dao.selectAllItem(session);
+			session = factory.openSession();
+			List<Item> list = dao.selectAllItem(session);
+			session.commit();
+			return list;	
 		}finally {
 			session.close();
 		}

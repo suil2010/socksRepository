@@ -53,24 +53,57 @@ function goFirstForm(){
 }
 
 </script>
+<link href="${initParam.rootPath }/css/css.css" rel="stylesheet">
 </head>
 <body>
-	<h1>회원가입</h1>
+<%@ include file="/WEB-INF/include/header.jsp"%>
+<div class="register_view">
+
+	<h4>회원가입</h4>
 	
-	<form name="regForm" action="/socksShopping/member/forwardMember.jsp" method="post" onsubmit="return inputCheck()">
-	
-		아이디 : <input type="text" name="memberId" onkeydown="idCheck">
-		<c:if test="${not empty requestScope.errorMessage }"><!-- id 중복시 errorMessage를 뿌려준다. -->
-			<span style="color:red">${requestScope.errorMessage }</span>
-		</c:if><br>
-		이름 : <input type="text" name="name"><br> 
-		비밀번호 :<input type="password" name="password"><br> 
-		비밀번호 확인 : <input type="password" name="passwordConf"><br>
-		주소 : <input type="text" name="address"><br> 
-		email : <input type="text" name="email"><br> 
-		<input type="hidden" name="point" value=1000><br><!-- 회원가입시 point는 자동으로 1000원 적립된다.(회원가입창에서 보여지지 않는다) -->
-		<button type="submit">회원가입</button>
-		<input type="button" value="취소" onclick="goFirstForm()">
+	<form name="regForm" action="/socksShopping/member/forwardMember.jsp" method="post" onsubmit="return inputCheck()" class="register_form">
+		<table class="register_table">
+			<tr>
+				<td>아이디</td>
+				<td><input type="text" name="memberId" onkeydown="idCheck"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>
+					<c:if test="${not empty requestScope.errorMessage }"><!-- id 중복시 errorMessage를 뿌려준다. -->
+						<span style="color:red; font-size: 14px; font-weight: normal;">${requestScope.errorMessage }</span>
+					</c:if>
+				</td>
+			</tr>
+			<tr>
+				<td>이름</td>
+				<td><input type="text" name="name"></td>
+			</tr>
+			<tr>
+				<td>비밀번호</td>
+				<td><input type="password" name="password"></td>
+			</tr>
+			<tr>
+				<td>비밀번호 확인</td>
+				<td><input type="password" name="passwordConf"></td>
+			</tr>
+			<tr>
+				<td>주소</td>
+				<td><input type="text" name="address"></td>
+			</tr>
+			<tr>
+				<td>email</td>
+				<td><input type="text" name="email"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="hidden" name="point" value=1000><!-- 회원가입시 point는 자동으로 1000원 적립된다.(회원가입창에서 보여지지 않는다) --></td>
+			</tr>
+		</table>
+		<button type="submit" class="register_btn">회원가입</button>
+		<input type="button" value="취소" onclick="goFirstForm()" class="register_btn">
 	</form>
+</div>
+<%@ include file="/WEB-INF/include/footer.jsp"%>
 </body>
 </html>

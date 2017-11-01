@@ -2,7 +2,7 @@
 	<div class="empty"></div>
 	<footer>
 		<div class="footer_logo">
-			<img alt="logo" src="../img/logo.png"> <!-- 로고 이미지 주소 -->
+			<img alt="logo" src="${initParam.rootPath }/img/logo.png"> <!-- 로고 이미지 주소 -->
 		</div>
 		<span class="footer_txt"> <!-- 푸터 텍스트 -->
 			<div class="footer_empty"></div> <!-- 공간 -->

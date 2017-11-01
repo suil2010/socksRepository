@@ -5,19 +5,20 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link href="../css/css.css?ver=1" rel="stylesheet">
+<link href="${initParam.rootPath }/css/css.css" rel="stylesheet">
 </head>
 <body>
 
 <%@ include file="/WEB-INF/include/header.jsp"%>
 
+
 <div class="main_form">
 	<c:forEach items="${requestScope.list}" var="item">
 		<div class="item_box">
-			<a href="${initParam.rootPath }/item/ItemDetailView.jsp?itemId=${item.itemId}">
+			<a href="${initParam.rootPath }/main/showDetail?itemId=${item.itemId }">
 				<div class="items">
 					<div class="item_img_box">
-						<img style="width: 200px;" alt="item_img" src='/socksShopping/test/${item.mainCut}'>
+						<img style="width: 200px;" alt="item_img" src='/socksShopping/mainImage/${item.mainCut}'>
 						<!-- 상품 이미지 -->
 					</div>
 					<div class="fl_le">
