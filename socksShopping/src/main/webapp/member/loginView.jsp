@@ -16,6 +16,6 @@
 		Password : <input type="password" name="password"><br>
 		<button type="submit">로그인</button>
 </form>
-<a href="">회원가입하기</a>
+<a href="/socksShopping/member/registerMemberView.jsp">회원가입하기</a>
 </body>
 </html>
