@@ -1,8 +1,4 @@
 <%@ page contentType="text/html;charset=utf-8"%>
-<%@ page import="com.socks.member.service.impl.MemberServiceImpl"%>
-<%@ page import="com.socks.member.service.MemberService"%>
-<%@ page import="com.socks.member.dao.impl.MemberDaoImpl"%>
-<%@ page import="com.socks.member.vo.Member"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!DOCTYPE html>
@@ -12,21 +8,19 @@
 <title>마이페이지</title>
 <style type="text/css">
 table {
-	margin-left: auto;
-	margin-right: auto;
-	border: 3px solid skyblue;
+	border: 3px solid gray;
 }
-
 td {
-	border: 1px solid skyblue
+	border: 1px solid gray;
 }
-
 #title {
-	background-color: skyblue
+	background-color: white
 }
 </style>
+
 </head>
 <body>
+
 
 	<c:set var="member" value="${sessionScope.loginMember }" />
 	<table>
@@ -53,7 +47,19 @@ td {
 			<td id="title">주소</td>
 			<td>${member.address}</td>
 		</tr>
-
 	</table>
+	
+	<input type="button" value="정보수정하기" />
+    <input type="submit" value="탈퇴하기"/>  
+
 </body>
 </html>
+
+
+
+
+
+
+
+
+
