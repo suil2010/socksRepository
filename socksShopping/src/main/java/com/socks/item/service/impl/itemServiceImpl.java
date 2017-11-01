@@ -18,6 +18,10 @@ public class itemServiceImpl implements itemService{
 	
 	private itemDaoImpl dao;
 	
+	private SqlSession session =null;
+	
+	private Item item;
+	
 	private itemServiceImpl() throws IOException {
 		factory = SqlSessionFactoryManager.getInstance().getSqlSessionFactory();
 		dao = itemDaoImpl.getInstance();
@@ -30,18 +34,43 @@ public class itemServiceImpl implements itemService{
 	}
 
 	public void addItem(Item item) {
-		
+		try {
+			session = factory.openSession();
+			dao.insertItem(session, item);
+			session.commit();
+		} finally {
+			session.close();
+		}
 	}
 	
 	public void removeItemById(String itemId) {
-		
+		try {
+			session = factory.openSession();
+			dao.deleteItemById(session, itemId);
+			session.commit();
+		} finally {
+			session.close();
+		}
 	}
 	
 	public void updateItemById(Item newItem) {
-		
+		try {
+			session = factory.openSession();
+			dao.updateItemById(session, newItem);
+			session.commit();
+		} finally {
+			session.close();
+		}
 	}
 	
 	public Item selectItemById(String itemId) {
-		return null;
+		try {
+			session = factory.openSession();
+			item = dao.selectItemById(session, itemId);
+			session.commit();
+			return item;
+		} finally {
+			session.close();
+		}
 	}
 }
