@@ -1,7 +1,7 @@
 drop table member
 
 CREATE TABLE member (
-   member_ID  VARCHAR2(10) primary key, -- 회원_ID
+   member_ID  VARCHAR2(30) primary key, -- 회원_ID
    NAME     VARCHAR2(30) NOT NULL, -- 이름
    PASSWORD VARCHAR2(30) NOT NULL, -- 비밀번
    ADDRESS  VARCHAR2(60) NOT NULL, -- 주소
@@ -9,7 +9,7 @@ CREATE TABLE member (
    POINT    NUMBER(5)    NULL      -- 포인
 );
 
-drop table item
+drop table item cascade constraint
 
 CREATE TABLE ITEM (
    ITEM_ID       VARCHAR2(30) primary key, -- 상품번호
@@ -30,6 +30,8 @@ CREATE TABLE order_list(
    item_id  VARCHAR2(30) constraint fk_item_user_id references item
 );
 
+select * from item
+
 insert into member values('userId-1','김창수','2444','경기도 파주','s@s.com',500);
 insert into member values('userId-2','장발장','2345','경기도 하남','a@s.com',500);
 insert into member values('userId-3','강감찬','5676','경기도 용인','b@s.com',500);
@@ -38,7 +40,9 @@ insert into member values('userId-3','강감찬','5676','경기도 용인','b@s.
 insert into item values('itemId-1',12000,1000,'긴 양말','C:\','D:\');
 insert into item values('itemId-2',13000,100,'발목 양말','C:\','D:\');
 insert into item values('itemId-3',14000,200,'겨울 양말','C:\','D:\');
-
+insert into item values('itemId-7',1400,1200,'양말',
+'main.jpg',
+'detail.jpg');
 
 -- 만약에 주문을 구현하면 전체제품수에서 주문개수를 뺀다.
 insert into order_list values('orderId-1',12,'2017-10-30','userId-1','itemId-1');

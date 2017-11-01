@@ -1,6 +1,7 @@
 package com.socks.item.service.impl;
 
 import java.io.IOException;
+import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -70,6 +71,16 @@ public class itemServiceImpl implements itemService{
 			session.commit();
 			return item;
 		} finally {
+			session.close();
+		}
+	}
+	
+	public List<Item> selectAllItem() {
+		
+		SqlSession session = factory.openSession();
+		try {
+			return dao.selectAllItem(session);
+		}finally {
 			session.close();
 		}
 	}
