@@ -38,7 +38,6 @@ public class itemServiceImpl implements itemService{
 
 	public void addItem(Item item) throws DuplicatedItemIdException {
 		if(findItemById(item.getItemId())!=null){//이미 있는 ID이면. 추가를 하지 않는다.
-	
 			throw new DuplicatedItemIdException("상품ID가 중복됩니다.",item.getItemId());
 		} 
 		else {
@@ -55,7 +54,7 @@ public class itemServiceImpl implements itemService{
 	public void removeItemById(String itemId) throws ItemNotFoundException{
 		if(findItemById(itemId)==null){//삭제할 ID의 회원이 없으면 삭제 작업을 처리하지 않는다.
 			//return;
-			throw new ItemNotFoundException("삭제할 회원이 없습니다.", itemId);
+			throw new ItemNotFoundException("삭제할 상품이 없습니다.", itemId);
 		} else {
 			try {
 				session = factory.openSession();
@@ -68,7 +67,10 @@ public class itemServiceImpl implements itemService{
 	}
 	
 	public void updateItemById(Item newItem) throws ItemNotFoundException {
-		if(dao.selectItemById(session,newItem.getItemId()) != null) {
+		if(findItemById(newItem.getItemId()) == null) {
+			throw new ItemNotFoundException("수정할 상품이 없습니다.",newItem.getItemId());
+		}
+		else {
 			try {
 				session = factory.openSession();
 				dao.updateItemById(session, newItem);
@@ -76,9 +78,6 @@ public class itemServiceImpl implements itemService{
 			} finally {
 				session.close();
 			}
-		}
-		else {
-			throw new ItemNotFoundException("수정할 상품이 없습니다.",newItem.getItemId());
 		}
 	}
 	
@@ -93,12 +92,12 @@ public class itemServiceImpl implements itemService{
 		}
 	}
 	
-	public Item findItemByName(String itemName) {
+	public List<Item> findItemByName(String itemName) {
 		try {
 			session = factory.openSession();
-			item = dao.selectItemByName(session, itemName);
+			List<Item> list = dao.selectItemByName(session, itemName);
 			session.commit();
-			return item;
+			return list;
 		} finally {
 			session.close();
 		}

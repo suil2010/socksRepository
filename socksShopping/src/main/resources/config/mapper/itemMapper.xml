@@ -41,7 +41,7 @@
 	
 	<select id="selectItemById" parameterType ="string" resultMap ="item-resultmap">
 		<include refid ="select-sql"/>
-		and item_id = #{itemId}
+		where item_id = #{itemId}
 	</select>
 
 	<select id="selectAllItem" resultMap="item-resultmap">
@@ -50,6 +50,6 @@
 	
 	<select id="selectItemByName" parameterType ="string" resultMap = "item-resultmap">
 		<include refid="select-sql"/>
-		and item_name = #{itemName}
+		where item_name = #{itemName}
 	</select>
 </mapper>
