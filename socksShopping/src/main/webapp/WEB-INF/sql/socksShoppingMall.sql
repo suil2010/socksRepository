@@ -49,6 +49,8 @@ insert into order_list values('orderId-1',12,'2017-10-30','userId-1','itemId-1')
 insert into order_list values('orderId-2',1,'2017-10-30','userId-1','itemId-2');
 insert into order_list values('orderId-3',2,'2017-10-30','userId-1','itemId-3');
 
+select * from item where item_id = 'itemId-7';
+
 insert into order_list values('orderId-4',4,'2017-10-30','userId-2','itemId-1');
 insert into order_list values('orderId-5',5,'2017-10-30','userId-2','itemId-2');
 insert into order_list values('orderId-6',6,'2017-10-30','userId-2','itemId-3');

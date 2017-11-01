@@ -20,14 +20,15 @@ public class ShowDetailServlet extends HttpServlet {
        
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		itemService service = itemServiceImpl.getInstance();
-		String itemId;
-		Item item = new Item();
+		String itemId=null;
+		Item item = null;
 		
 		try {
-			itemId = (String)request.getParameter("itemId");
-			item = service.selectItemById(itemId);
+			itemId = request.getParameter("itemId");
+			item = service.findItemById(itemId);
 		}catch(Exception e){
-			
+			e.getMessage();
+			throw new ServletException(e);
 		}
 		request.setAttribute("item", item);
 		request.getRequestDispatcher("/item/itemDetailView.jsp").forward(request, response);

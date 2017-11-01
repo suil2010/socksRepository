@@ -1,4 +1,4 @@
-package com.socks.item.impl;
+package com.socks.item.dao.impl;
 
 import java.util.List;
 
@@ -39,6 +39,11 @@ public class itemDaoImpl implements itemDao{
 	public Item selectItemById(SqlSession session,String itemId) {
 		return session.selectOne(makeSqlId("selectItemById"),itemId);
 	}
+	
+	public Item selectItemByName(SqlSession session,String itemName) {
+		return session.selectOne(makeSqlId("selectItemByName"),itemName);
+	}
+	
 	public List<Item> selectAllItem(SqlSession session) {
 		return session.selectList(makeSqlId("selectAllItem"));
 	}
