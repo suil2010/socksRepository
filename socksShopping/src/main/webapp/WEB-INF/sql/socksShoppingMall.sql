@@ -43,6 +43,9 @@ insert into item values('itemId-3',14000,200,'겨울 양말','C:\','D:\');
 insert into item values('itemId-7',1400,1200,'양말',
 'main.jpg',
 'detail.jpg');
+delete from item where item_id = 'g234'
+delete from item where item_id = 'itemId-7'
+
 
 -- 만약에 주문을 구현하면 전체제품수에서 주문개수를 뺀다.
 insert into order_list values('orderId-1',12,'2017-10-30','userId-1','itemId-1');

@@ -40,8 +40,8 @@ public class itemDaoImpl implements itemDao{
 		return session.selectOne(makeSqlId("selectItemById"),itemId);
 	}
 	
-	public Item selectItemByName(SqlSession session,String itemName) {
-		return session.selectOne(makeSqlId("selectItemByName"),itemName);
+	public List<Item> selectItemByName(SqlSession session,String itemName) {
+		return session.selectList(makeSqlId("selectItemByName"),itemName);
 	}
 	
 	public List<Item> selectAllItem(SqlSession session) {

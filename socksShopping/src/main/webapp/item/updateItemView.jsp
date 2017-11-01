@@ -6,7 +6,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+<h2>상품 수정페이지</h2>
 <form action="/socksShopping/updateItem" method="post" enctype="multipart/form-data">
 	상품번호 : <input type = "text" name = "itemId"><br>
  	제품가격 : <input type = "text" name = "itemPrice"><br>

@@ -24,7 +24,6 @@ public class registerMemberServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Member member = (Member)request.getAttribute("member");
 		MemberService service = MemberServiceImpl.getInstance();
-
 		try {
 			service.addMember(member);
 			// 3. 처리결과 응답
@@ -35,5 +34,6 @@ public class registerMemberServlet extends HttpServlet {
 		}
 		request.getRequestDispatcher("/member/registerMemberSuccess.jsp").forward(request, response);// 회원가입 성공페이지로 간다.
 	}
+	
 
 }

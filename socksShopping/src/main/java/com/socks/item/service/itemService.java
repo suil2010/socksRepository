@@ -16,7 +16,7 @@ public interface itemService {
 	
 	Item findItemById(String itemId);
 	
-	Item findItemByName(String itemName);
+	List<Item> findItemByName(String itemName);
 	
 	List<Item> findAllItem();
 }
