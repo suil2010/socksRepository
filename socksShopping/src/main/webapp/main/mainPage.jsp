@@ -10,6 +10,8 @@
 <body>
 
 <%@ include file="/WEB-INF/include/header.jsp"%>
+<jsp:include page="/WEB-INF/menu.jsp"/>
+<hr>
 
 <div class="main_form">
 	<c:forEach items="${requestScope.list}" var="item">
