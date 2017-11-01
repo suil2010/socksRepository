@@ -11,7 +11,7 @@
 <% Item item = (Item)request.getAttribute("item"); %>
 <div class="detail_view">
 	<div class="detail_main_img">
-		<img alt="main_img" src='<%--  --%>'> <!-- 제품 메인 사진 -->
+		<img alt="main_img" src='/socksShopping/mainImage/<%= item.getMainCut() %>'> <!-- 제품 메인 사진 -->
 	</div>
 	<form class="detail_form" action="">
 		<div class="detail_title">
@@ -33,7 +33,7 @@
 		<input type="submit" value="add to cart" class="cart_btn">
 	</form>
 	<div class="detail_sub_img">
-		<img alt="sub_img" src='<%= item.getDetailCut() %>'> <!-- 상세 이미지 들어가는 곳 -->
+		<img alt="sub_img" src='/socksShopping/mainImage/<%= item.getDetailCut() %>'> <!-- 상세 이미지 들어가는 곳 -->
 	</div>
 </div>
 <%@ include file="/WEB-INF/include/footer.jsp" %>

@@ -76,10 +76,11 @@ public class itemServiceImpl implements itemService{
 	}
 	
 	public List<Item> selectAllItem() {
-		
-		SqlSession session = factory.openSession();
 		try {
-			return dao.selectAllItem(session);
+			session = factory.openSession();
+			List<Item> list =  dao.selectAllItem(session);
+			session.commit();
+			return list;
 		}finally {
 			session.close();
 		}
