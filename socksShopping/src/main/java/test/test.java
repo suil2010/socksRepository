@@ -45,7 +45,7 @@ public class test {
 					}
 					
 					System.out.println("-----update--------");
-					service.updateItemById(new Item("g234",112300,1222,"빨간 양말","sdlfjldjfs","sdfsdfdf"));
+					//service.updateItemById(new Item("",112300,1222,"빨간 양말","sdlfjldjfs","sdfsdfdf"));
 					session.commit();
 				} finally {
 					session.close();
