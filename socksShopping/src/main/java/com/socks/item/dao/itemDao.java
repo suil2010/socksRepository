@@ -15,4 +15,6 @@ public interface itemDao {
 	int updateItemById(SqlSession session,Item item);
 	
 	Item selectItemById(SqlSession session,String itemId);
+	
+	List<Item> selectAllItem(SqlSession session);
 }

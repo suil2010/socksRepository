@@ -1,5 +1,7 @@
 package com.socks.item.service;
 
+import java.util.List;
+
 import com.socks.item.vo.Item;
 
 public interface itemService {
@@ -11,4 +13,6 @@ public interface itemService {
 	void updateItemById(Item newItem);
 	
 	Item selectItemById(String itemId);
+	
+	List<Item> selectAllItem();
 }
