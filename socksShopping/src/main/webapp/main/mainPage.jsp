@@ -8,22 +8,26 @@
 <link href="../css/css.css?ver=1" rel="stylesheet">
 </head>
 <body>
+
 <%@ include file="/WEB-INF/include/header.jsp"%>
+
 <div class="main_form">
-	<c:forEach items="${requestScope.itemList}" var="list">
+	<c:forEach items="${requestScope.list}" var="item">
 		<div class="item_box">
-			<a href="${initParam.rootPath }/item/ItemDetailView.jsp?itemId=${list.itemId}">
+			<a href="${initParam.rootPath }/item/ItemDetailView.jsp?itemId=${item.itemId}">
 				<div class="items">
 					<div class="item_img_box">
-						<img alt="item_img" src='<c:url value="/C:/Java/Test/${list.mainCut }"/>'>
+						<img style="width: 200px;" alt="item_img" src='/socksShopping/test/${item.mainCut}'>
 						<!-- 상품 이미지 -->
 					</div>
 					<div class="fl_le">
-						<div class="item_name">${list.itemName }</div>
+						<div class="item_name">
+							${item.itemName }
+						</div>
 					</div>
 					<div class="fl_le">
 						<div class="item_price">
-							₩ ${list.itemPrice }
+							₩ ${item.itemPrice }
 							<!-- 상품 가격 -->
 						</div>
 					</div>
