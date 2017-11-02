@@ -13,7 +13,7 @@
 	<div class="detail_main_img">
 		<img style="width: 300px;" alt="main_img" src='/socksShopping/mainImage/<%=item.getMainCut() %>'> <!-- 제품 메인 사진 -->
 	</div>
-	<form class="detail_form" action="#">
+	<form class="detail_form" action="">
 		<div class="detail_title">
 			<%=item.getItemName() %> <!-- 제품 이름 -->
 		</div>
