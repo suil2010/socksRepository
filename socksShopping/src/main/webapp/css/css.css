@@ -16,6 +16,7 @@
 }
 /* 헤더 */
 header{
+<<<<<<< HEAD
 	width: 100%;
 	height: 150px;
 	float: left;
@@ -169,4 +170,753 @@ footer > .footer_txt{
 	border-bottom: dotted 3px #000;
 	width: 100%;
 	height: 30px;
+	height: 150px;
+	float: left;
+	border-bottom: solid #333 1px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #fff;
+	z-index: 1;
+}
+.header_empty{
+	width: 100%;
+	height: 150px;
+	float: left;
+}
+/* 로고 */
+.logo{
+	width: 300px;
+	height: 90px;
+	margin-top: 10px;
+}
+.logo > a > img {
+	width: 100%;
+	height: 100%;
+}
+/* 로그인/로그아웃 + 회원정보 */
+.top_box{
+	float: right;
+	width: 300px;
+	height: 30px;
+	margin-top: -30px;
+}
+.top_box > a{
+	font-weight: bold;
+	color: #333;
+}
+.top_box > a:hover {
+	color: red;
+}
+/* 푸터  */
+footer{
+	width: 100%;
+	height: 150px;
+	background-color: #999;
+	float: left;
+}
+/* 푸터 로고 */
+footer > .footer_logo{
+	width: 200px;
+	height: 40px;
+	float: left;
+	margin-top: 50px;
+	margin-left: 10px;
+}
+footer > .footer_logo > img{
+	height: 40px;
+}
+/* 푸터 텍스트 */
+footer > .footer_txt{
+	font-size: 12px;
+	color: #fff;
+}
+.footer_empty{
+	height: 30px;
+}
+/* 메인 페이지 form */
+.main_form{
+	float: left;
+	width: 100%;
+}
+/* 상품들 */
+.main_form > table {
+	float:left;
+	border-collapse: collapse;
+}
+
+.item_box{
+	width: 220px;
+	height: 300px;
+	float: left;
+}
+.items{
+	width: 210px;
+	height: 280px;
+	margin-top: 10px;
+}
+.item_img_box{
+	border-radius: 20px;
+	width: 200px;
+	height: 200px;
+	float: left;
+	margin-left:5px;
+	margin-top:10px;	
+	border: 1px solid #000;
+	overflow: hidden;
+}
+.item_name{
+	color:#333;
+	font-size: 13px;
+	margin-top: 5px;
+}
+.item_price{
+	color:#333;
+	font-size: 15px;
+	font-weight: bold;
+	margin-top: 5px;
+}
+.item_bar{
+	background-color: #fff;
+	width: 100%;
+	height: 5px;
+	float: left;
+	margin-top: 15px;
+	transition : 0.5s;
+}
+.fl_le{
+	width: 100%;
+	float: left;
+}
+/* 아이템 위에 마우스 올리면 나오는 액션 */
+.item_box > a:hover .item_bar {
+	background-color: hotpink;
+}
+/* 상세 화면 */
+.detail_view{
+	width: 100%;
+	float: left;
+	margin-top: 20px;
+}
+/* 상세 화면 메인이미지 */
+.detail_main_img{
+	width: 300px;
+	height: 300px;
+	border: 1px solid #000;
+	float: left;
+	border-radius: 20px;
+	overflow: hidden;
+	margin-left: 80px;
+}
+/* 상세 화면 전송 폼 */
+.detail_form{
+	width: 500px;
+	height: 300px;
+	float: left;
+	margin-left: 100px;
+}
+/* 상세 화면 제품 이름 */
+.detail_title{
+	color: #333;
+	font-size: 20px;
+	font-weight: bold;
+	width: 100%;
+	height: 30px;
+}
+/* 상세 화면 제품 가격 */
+.detail_price{
+	float: right;
+	margin-right: 20px;
+}
+.detail_bar{
+	border-bottom: dotted 3px #000;
+	width: 100%;
+	height: 30px;
+}
+/* 상세 화면 상품 개수 선택 */
+.detail_item_num{
+	float: left;
+	margin-left: 30px;
+	margin-top: 20px;
+}
+.detail_item_num > input{
+	width: 50px;
+	margin-left: 200px;
+}
+/* 상세 화면 재고량 */
+.detail_stuck{
+	float: right;
+	color: red;
+	font-size: 13px;
+}
+/* 상세화면 장바구니 버튼 */
+.cart_btn{
+	width: 300px;
+	height: 50px;
+	margin-top: 100px;
+	font-weight: bold;
+	font-size: 20px;
+	border: none;
+	background-color: #000;
+	color: #fff;
+}
+/* 장바구니 버튼 호버 */
+.cart_btn:hover {
+	background-color: hotpink;
+}
+/* 상품 부가 이미지 */
+.detail_sub_img{
+	width: 80%;
+	float: left;
+	margin-top: 30px;
+	margin-left: 100px;
+}
+.detail_sub_img > img {
+	width: 100%;
+}
+/* 로그인 뷰 */
+.login_view{
+	float: left;
+	width: 100%;
+}
+.login_view > h4{
+	float: left;
+	margin-top: 30px;
+	margin-left: 20px;
+}
+.login_form{
+	width: 100%;
+	float: left;
+}
+.login_input{
+	width: 300px;
+	height: 40px;
+	font-size: 30px;
+	font-weight: bold;
+	margin-top: 10px;
+}
+
+.login_btn{
+	width: 120px;
+	height: 65px;
+	float: left;
+	margin-top: 7px;
+	background-color: #ccc;
+	font-weight: bold;
+	font-size: 20px;
+	border: none;
+	color: #fff;
+}
+.login_btn:hover{
+	background-color: hotpink;
+	cursor: pointer;
+}
+.go_register{
+	width: 120px;
+	height: 30px;
+	background-color: #000;
+	margin-top: 5px;
+	float: left;
+	color: #fff;
+	line-height: 30px;
+}
+.go_register:hover{
+	background-color: hotpink;
+}
+.login_table{
+	width: 500px;
+	height: 150px;	
+}
+
+/* 회원가입 뷰 */
+.register_view{
+	float: left;
+	width: 100%;
+}
+.register_view > h4{
+	float: left;
+	margin-top: 30px;
+	margin-left: 20px;
+}
+.register_form{
+	width: 100%;
+	height: 430px;
+	float: left;
+	margin-top: 20px;	
+}
+.register_table tr{
+	height: 40px;
+}
+.register_table tr:nth-child(2){
+	height: 12px;
+}
+.register_table td{
+	font-size: 20px;
+	font-weight: bold;
+}
+.register_table td > input{
+	width: 250px;
+	height : 30px;
+	margin-left: 30px;
+}
+.register_form > button{
+	width: 250px;
+	height: 50px;
+	background-color: #ccc;
+}
+.register_form > input{
+	width: 150px;
+	height: 50px;
+	background-color: #000;
+}
+.register_btn{
+	font-size: 30px;
+	font-weight: bold;
+	color: #fff;
+	border: none;
+}
+.register_btn:hover{
+	background-color: hotpink;
+}
+
+/* 장바구니 페이지 */
+.basket_view{
+	width: 100%;
+	float: left;
+}
+.basket_view > h4{
+	float: left;
+	margin-top: 30px;
+	margin-left: 20px;	
+}
+.basket_table{
+	margin-top: 80px;
+	border-collapse: collapse;
+}
+.basket_table td{
+	border-bottom: solid 1px #888;
+	border-collapse: collapse;
+}
+.basket_table > thead td{
+	border:none;
+	font-size: 18px;
+	background-color: hotpink;
+	color: #fff;
+	line-height: 25px;
+	height: 25px;
+}
+.basket_table > tbody td{
+	height: 130px;
+	font-size: 14px;
+}
+.basket_table > tbody td:nth-child(3){
+	text-align: left;
+	font-size: 12px;
+}
+
+.basket_table td:nth-child(1) {
+	width: 50px;
+}
+.basket_table td:nth-child(2) {
+	width: 150px;
+}
+.basket_table td:nth-child(3) {
+	width: 400px;
+}
+.basket_table td:nth-child(4) {
+	width: 100px;
+}
+.basket_table td:nth-child(5) {
+	width: 50px;
+}
+.basket_table td:nth-child(6) {
+	width: 100px;
+}
+
+.basket_img{
+	width: 100px;
+	height: 100px;
+	border-radius: 20px;
+	border: 1px solid #000;
+}
+.basket_img img{
+	width: 100px;
+}
+.basket_remove{
+	width: 80px;
+	height: 30px;
+	border: none;
+	background-color: #ccc;
+	float: left;
+	margin-top: 10px;
+	margin-left: 120px;
+	color: #fff;
+}
+.basket_remove:hover{
+	background-color: #333;
+	cursor: pointer;
+}
+	
+.total_due{
+	float: right;
+	margin-right: 120px;
+	margin-top: 10px;
+}
+.total_due > h3{
+	text-align: right;
+	font-size: 15px;
+	width: 100%;
+}
+.total_due > table td{
+	font-size: 14px;
+	color: #bbb;
+	font-weight: bold;
+}
+.total_due > table td:nth-child(1) {
+	width: 180px;
+	text-align: left;
+}
+.total_due > table td:nth-child(2) {
+	text-align: right;
+}
+.basket_order_btn{
+	float: right;
+	width: 150px;
+	height: 30px;
+	border: none;
+	margin-top: 10px;
+	font-weight: bold;
+	color: #fff;
+	cursor: pointer;
+}
+.basket_order_btn:hover {
+	background-color: hotpink;
+}
+
+
+
+
+
+
+
+/* index 페이지 */
+.index_view{
+	width: 100%;
+	float: left;
+}
+.slide{
+	width: 900px;
+	height: 500px;
+	background-color: red;
+	position: relative;
+	z-index: 0;
+	
+}
+.slide img{
+	position: absolute;
+	left: 100%;
+}
+
+
+
+
+
+/* 관리자 페이지 */
+.manager_view{
+	float: left;
+	width: 100%;
+}
+.manager_view > h4{
+	float: left;
+	margin-top: 20px;
+	margin-left: 30px;
+}
+.manager_link_box{
+	width: 100%;
+	float: left;
+	margin-top: 20px;
+}
+.manager_link_box a{
+	color: #fff;
+	font-weight: bold;
+	font-size: 18px;
+	line-height: 50px;	
+}
+.manager_link_box td div{
+	width: 200px;
+	height: 50px;
+	background-color: #bbb;
+	transition: 0.5s;
+}
+.manager_link_box td div:hover {
+	background-color: hotpink;
+}
+.manager_view img {
+	width: 900px;
+	margin-top: 10px;
+}
+.manager_img{
+	width: 900px;
+	height: 500px;
+	overflow: hidden;
+}
+
+/* 상품 등록 페이지(관리자) */
+.add_item_view{
+	width: 100%;
+	float: left;
+}
+.add_item_view > h4{
+	float: left;
+	margin-top: 20px;
+	margin-left: 30px;
+}
+.add_item_form{
+	width: 100%;
+	float: left;
+	margin-top: 30px;
+}
+.add_item_tbl td{
+	height: 50px;
+	border-collapse: collapse;
+}
+.add_item_tbl{
+	border-collapse: collapse;
+}
+.add_item_tbl td:nth-child(1) {
+	width: 200px;
+}
+.add_item_tbl td:nth-child(2) {
+	width: 500px;
+}
+.add_item_tbl input{
+	width: 400px;
+	height: 30px;
+	font-weight: bold;
+	font-size: 20px;
+}
+.add_item_tbl tr:nth-child(2n) td:nth-child(1) {
+	background-color: #bbb;
+	color: #fff;
+}
+.add_item_form > input{
+	float: right;
+	width: 150px;
+	height: 50px;
+	font-size: 15px;
+	font-weight: bold;
+	background-color: #bbb;
+	color: #fff;
+	border: none;
+	margin-top: 30px;
+	margin-right: 180px;
+}
+.add_item_form > input:hover{
+	background-color: #000;
+	cursor: pointer;
+}
+
+
+/* 등록 완료 화면 */
+.add_item_result{
+	width: 100%;
+	float: left;
+}
+.add_item_result > h4{
+	float: left;
+	margin-top: 20px;
+	margin-left: 30px;
+}
+.item_result_box{
+	width: 100%;
+	float: left;
+	margin-top: 30px;
+}
+.item_result_main{
+	width: 200px;
+	height: 200px;
+	overflow: hidden;
+	border-radius: 20px;
+	float: left;
+	margin-left: 300px;
+}
+.item_result_main > img{
+	width: 200px;
+}
+.item_result_txt{
+	float: left;
+	margin-left: 20px;
+}
+.item_result_txt table{
+	border-collapse: collapse;
+}
+.item_result_txt table tr{
+	border-collapse: collapse;
+}
+.item_result_txt table td{
+	font-size: 18px;
+	line-height: 26px;
+}
+.item_result_txt table tr:nth-child(2){
+	background-color: #bbb;
+	color: #fff;
+}
+.item_result_txt table td:nth-child(1) {
+	width: 80px;
+}
+.item_result_txt table td:nth-child(2) {
+	width: 400px;
+}
+.item_result_detail{
+	width: 100%;
+	float: left;
+	margin-top: 20px;
+}
+.item_result_detail h5{
+	color: #bbb;
+	width: 100%;
+	float: left;
+}
+.item_result_detail img{
+	width: 400px;
+}
+.other_add_item div{
+	width: 300px;
+	height: 30px;
+	background-color: #bbb;
+	color: #fff;
+}
+.other_add_item div:hover{
+	background-color: #000;
+}
+.add_item_link{
+	width: 100%;
+	float: left;
+}
+.item_result_go_manager div{
+	width: 300px;
+	height: 30px;
+	background-color: #777;
+	color: #fff;
+}
+.item_result_go_manager div:hover {
+	background-color: #000;
+}
+
+/* 로그인 성공 창 */
+.login_success{
+	width: 100%;
+	float: left;
+}
+.login_success_box{
+	margin-top:30px;
+	width: 600px;
+	height: 300px;
+	position: relative;
+	border: 2px solid #000;
+}
+.login_success_box > div{
+	position: absolute;
+}
+.welcome_img{
+	z-index: 0;	
+}
+.welcome_txt{
+	z-index: 1;
+	background-color: rgba(0,0,0,0.5);
+	width: 100%;
+	height: 100%;
+	color: #fff;
+}
+.welcome_txt td{
+	width: 200px;
+	height: 50px;
+}
+.welcome_txt td div{
+	width: 100px;
+	height: 30px;
+	background-color: #999;
+	color: #fff;
+	transition : 0.3s;
+}
+.welcome_txt > h5{
+	float: right;
+	margin-top: 10px;
+	margin-right: 10px;
+}
+.welcome_txt table{
+	margin-top: 200px;
+}
+.welcome_txt div:hover{
+	background-color: hotpink;
+}
+
+/* 주문 정보 창 */
+.order_view{
+	width: 100%;
+	float: left;
+}
+.order_view > h4{
+	float: left;
+	margin-left: 30px;
+	margin-left: 20px;
+}
+.order_list{
+	width: 100%;
+	float: left;
+}
+.order_list table tr{
+	border-collapse: collapse;
+}
+.order_list table{
+	border-collapse: collapse;
+	margin-top: 30px;
+}
+.order_list td:nth-child(1), .order_list td:nth-child(6){
+	width: 100px;
+}
+.order_list td:nth-child(3), .order_list td:nth-child(5), .order_list td:nth-child(2) {
+	width: 130px;
+}
+.order_list td:nth-child(4) {
+	width: 300px;
+}
+
+.order_list tbody td{
+	height: 130px;
+	border-bottom: 2px #ccc solid;
+}
+.order_list thead td {
+	border:none;
+	font-size: 18px;
+	background-color: hotpink;
+	color: #fff;
+	line-height: 25px;
+	height: 25px;
+}
+.order_main_img{
+	border-radius: 20px;
+	width: 100px;
+	height: 100px;
+	border : 1px #000 solid;
+	overflow: hidden;
+	padding-bottom: 2px;
+}
+.order_main_img img{
+	width: 100px;
+}
+.order_list tbody td:nth-child(4) {
+	text-align: left;
+	font-size: 13px;
+}
+.order_list tbody td > input{
+	width: 80px;
+	height: 30px;
+	border: none;
+	font-size: 14px;
+	background-color: #bbb;
+	color: #fff;
+>>>>>>> branch 'master' of https://github.com/suil2010/socksRepository.git
 }

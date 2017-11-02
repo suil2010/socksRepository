@@ -7,6 +7,8 @@
 
 	<typeAliases>
 		<package name="com.socks.member.vo" />
+		<package name="com.socks.order.vo" />
+		<package name="com.socks.item.vo" />
 	</typeAliases>
 
 	<environments default="local">
@@ -24,6 +26,8 @@
 
 	<!-- Mapper 등록 -->
 	<mappers>
-		<mapper resource="src/main/resources/config/mapper/memberMapper.xml" />
+		<mapper resource="config/mapper/memberMapper.xml"/>
+		<mapper resource="config/mapper/itemMapper.xml"/>
+		<mapper resource="config/mapper/OrderMapper.xml"/>
 	</mappers>
 </configuration>
