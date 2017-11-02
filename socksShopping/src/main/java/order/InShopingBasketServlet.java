@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.socks.member.dao.impl.MemberDaoImpl;
 import com.socks.order.service.OrderService;
 import com.socks.order.service.impl.OrderServiceImpl;
 import com.socks.order.vo.Order;
@@ -30,6 +31,7 @@ request.setCharacterEncoding("utf-8");
 		HttpSession session = request.getSession();
 		Order order = new Order();
 		OrderService service = OrderServiceImpl.getInstance();
+		MemberDaoImpl dao = MemberDaoImpl.getInstance(); 
 		/*
 		 * 수량 선택 -> 장바구니 클릭 -> 상품담김 -> itemId, itemStock 값을 받음
 		 * 
@@ -41,7 +43,6 @@ request.setCharacterEncoding("utf-8");
 		Date orderDate = new Date(System.currentTimeMillis());
 		String orderId = UUID.randomUUID().toString();;	//일단 가상으로
 		String memberId = "socks";//임시 파일
-		
 		
 		service.insertOrder(new Order(orderId, orderQuantity, memberId, itemId, orderDate));
 		
