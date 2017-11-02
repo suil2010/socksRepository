@@ -6,7 +6,7 @@
 <title>마이페이지</title>
 </head>
 <body>
-${sessionScope.loginMember.memberId }님의 포인트는 ${SessionScope.loginMember.point } 점 입니다.
+${sessionScope.loginMember.memberId }님의 포인트는 ${sessionScope.loginMember.point } 점 입니다.
 
 <p>
 <a href="/socksShopping/member/MemberShowView.jsp">나의 정보</a>
