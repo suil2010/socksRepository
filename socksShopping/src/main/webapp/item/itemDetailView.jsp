@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link href="../css/css.css?ver=2" rel="stylesheet">
+<link href="${initParam.rootPath }/css/css.css" rel="stylesheet">
 </head>
 <body>
 <%@ include file="/WEB-INF/include/header.jsp" %>

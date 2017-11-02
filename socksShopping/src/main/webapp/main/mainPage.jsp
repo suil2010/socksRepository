@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link href="../css/css.css?ver=1" rel="stylesheet">
+<link href="${initParam.rootPath }/css/css.css" rel="stylesheet">
 </head>
 <body>
 
