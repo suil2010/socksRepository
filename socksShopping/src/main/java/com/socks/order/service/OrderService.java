@@ -7,5 +7,5 @@ public interface OrderService {
 	
 	void insertOrder(Order order);
 	
-	
+	void deleteOrder(String orderId);
 }

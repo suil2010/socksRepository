@@ -12,7 +12,7 @@
 ${sessionScope.loginMember.name }님 환영합니다.
 
 <p>
-	<a href="main/mainPage.jsp">메인으로 이동하기</a>
+	<a href="${initParam.rootPath }/main/showMain">메인으로 이동하기</a>
 	<a href="/socksShopping/member/MemberShowView.jsp">마이페이지</a>
 </p>
 <p>
