@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 
+import com.socks.member.vo.Member;
 import com.socks.order.vo.Order;
 
 public interface OrderDao {
@@ -15,7 +16,7 @@ public interface OrderDao {
 	    * @return 처리 결과 수
 	    * 
 	    */
-	   int addOrder(SqlSession session, Order order);
+	   int insertOrder(SqlSession session, Order order);
 	   
 	   /**
 	    * orderId로 주문테이블의 row를 삭제 하는 메소드
@@ -25,9 +26,18 @@ public interface OrderDao {
 	    * @return
 	    * 
 	    */
-	   int deleteOrderById(SqlSession session, String orderId);	
+	   int deleteOrderById(SqlSession session, String orderId);
+	   
+	   int updateOrderById(SqlSession session, Order order);
+	   
 	   /**
 	    * 각 회원이 자신의 장바구니 정보를 싹 다 조회
 	    */
-	   List<Order> selectAllOrder(SqlSession session);
+	   Member selectAllOrderByJoin(SqlSession session,String memberId);
+	   
+	   /*
+	    *  전체 주문현황을 본다.
+	    */
+	   List<Member> selectAllOrder(SqlSession session);
+	    
 }

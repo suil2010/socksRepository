@@ -11,7 +11,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.socks.item.vo.Item;
 import com.socks.member.dao.impl.MemberDaoImpl;
+import com.socks.member.vo.Member;
 import com.socks.order.service.OrderService;
 import com.socks.order.service.impl.OrderServiceImpl;
 import com.socks.order.vo.Order;
@@ -19,7 +21,7 @@ import com.socks.order.vo.Order;
 /**
  * Servlet implementation class InShopingBasketServlet
  */
-@WebServlet("/inShoppingBasket")
+@WebServlet("/InShoppingBasket")
 public class InShopingBasketServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -38,16 +40,17 @@ request.setCharacterEncoding("utf-8");
 		 * 
 		 * 
 		 */
-		String itemId = request.getParameter("아이템 이름");
-		int orderQuantity = Integer.parseInt(request.getParameter("itemNumber아이템수량"));
+		Member member = (Member)session.getAttribute("loginMember");
+		String memberId = member.getMemberId();
+		Item item = (Item)request.getAttribute("item");
+		String itemId = item.getItemId();
+		int orderQuantity = Integer.parseInt(request.getParameter("stuck"));
 		Date orderDate = new Date(System.currentTimeMillis());
-		String orderId = UUID.randomUUID().toString();;	//일단 가상으로
-		String memberId = "socks";//임시 파일
+		String orderId = String.valueOf("order"+System.currentTimeMillis());
 		
-		service.insertOrder(new Order(orderId, orderQuantity, memberId, itemId, orderDate));
+		service.addOrder(new Order(orderId, orderQuantity,memberId, itemId, orderDate));
 		
-		
-		//회원 아이디를 통해 회원이랑 연결, 
+		//회원 아이디를 통해 회원이랑 연결,
 		
 		request.getRequestDispatcher("/order/ShopingBasketView.jsp").forward(request, response);
 		

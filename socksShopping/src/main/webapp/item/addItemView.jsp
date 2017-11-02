@@ -60,6 +60,9 @@ function itemNameCheck(tag){
 </script>
 </head>
 <body>
+
+<a href="/socksShopping/main/mainPage.jsp">메인페이지로 돌아가기</a>
+
 <h2>상품등록페이지</h2>
 
 <form name = "addform" action="/socksShopping/addItem" method="post" enctype="multipart/form-data">

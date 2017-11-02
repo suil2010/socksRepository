@@ -1,10 +1,12 @@
 package com.socks.order.service.impl;
 
 import java.io.IOException;
+import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
+import com.socks.member.vo.Member;
 import com.socks.order.dao.OrderDao;
 import com.socks.order.dao.impl.OrderDaoImpl;
 import com.socks.order.service.OrderService;
@@ -27,12 +29,12 @@ public class OrderServiceImpl implements OrderService{
 		return instance;
 	}
 
-	public void insertOrder(Order order) {
+	public void addOrder(Order order) {
 		SqlSession session = null;
 		try {
 			session = factory.openSession();
 			
-			dao.addOrder(session, order);
+			dao.insertOrder(session, order);
 			
 			session.commit();
 		}finally {
@@ -41,7 +43,7 @@ public class OrderServiceImpl implements OrderService{
 	}
 
 	@Override
-	public void deleteOrder(String orderId) {
+	public void removeOrder(String orderId) {
 		SqlSession session = null;
 		try {
 			session = factory.openSession();
@@ -53,6 +55,31 @@ public class OrderServiceImpl implements OrderService{
 			session.close();
 		}
 		
+	}
+	
+	public Member findOrder(String memberId) {
+		SqlSession session = null;
+		try {
+			session = factory.openSession();
+			
+			Member member = dao.selectAllOrderByJoin(session, memberId);
+			session.commit();
+			return member;
+		}finally {
+			session.close();
+		}
+	}
+	
+	public List<Member> findAllOrder() {
+		SqlSession session = null;
+		try {
+			session = factory.openSession();
+			List<Member> list = dao.selectAllOrder(session);
+			session.commit();
+			return list;
+		}finally {
+			session.close();
+		}
 	}
 
 }

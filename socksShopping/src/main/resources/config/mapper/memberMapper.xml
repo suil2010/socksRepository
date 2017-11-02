@@ -27,7 +27,7 @@
             i.item_name,
             i.main_cut,
             i.detail_cut
-      FROM   member m , order_list o,item i
+      FROM   member m , order_list o ,item i
       WHERE  m.member_id = o.member_id
       and    i.item_id = o.item_id
 	</sql>
@@ -49,6 +49,7 @@
 			<result property = "orderQuantity" column = "order_quantity"/>
 			<result property = "memberId" column = "member_id"/>
 			<result property = "itemId" column = "item_id"/>
+			<result property = "orderDate" column = "order_date"/>
 			
 			<association property="item" javaType="item">
 				<id property="itemId" column="item_id"/>
@@ -67,6 +68,11 @@
 	
 	<select id ="selectAllByJoin" resultMap="member-join-order-reusltmap">
 		<include refid="select-join-member-sql"/>
+	</select>
+	
+	<select id ="selectAllByIdJoin" resultMap="member-join-order-reusltmap">
+		<include refid="select-join-member-sql"/>
+		where member_id= ${memberId}
 	</select>
 	
 	<insert id="insertMember" parameterType="member"><!-- 회원가입 -->

@@ -6,7 +6,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+<a href ="/socksShopping/item/addItemView.jsp">이전페이지로 돌아가기</a>
 속성값<br>
 상품번호 : ${requestScope.item.itemId }<br>
 상품속성 : ${requestScope.item.itemPrice }<br>

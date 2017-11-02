@@ -28,5 +28,6 @@
 	<mappers>
 		<mapper resource="config/mapper/memberMapper.xml"/>
 		<mapper resource="config/mapper/itemMapper.xml"/>
+		<mapper resource="config/mapper/orderMapper.xml"/>
 	</mappers>
 </configuration>
