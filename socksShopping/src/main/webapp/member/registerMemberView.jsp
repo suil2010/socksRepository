@@ -48,9 +48,6 @@ function inputCheck(){
 	}
 	regForm.submit();
 }
-function goFirstForm(){
-	location.href="/socksShopping/main/mainPage.jsp";//메인페이지로 이동하기
-}
 
 </script>
 <link href="${initParam.rootPath }/css/css.css" rel="stylesheet">

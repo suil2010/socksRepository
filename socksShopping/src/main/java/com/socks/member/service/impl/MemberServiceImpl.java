@@ -34,7 +34,7 @@ public class MemberServiceImpl implements MemberService{
       try {
          session = sessionFactory.openSession();
          if (dao.selectMemberById(session, member.getMemberId()) != null) {
-            throw new DuplicatedIdException("중복된 ID 입니다", member.getMemberId());
+        	 throw new DuplicatedIdException("중복된 ID 입니다", member.getMemberId());
          }
          dao.insertMember(session, member);
 
