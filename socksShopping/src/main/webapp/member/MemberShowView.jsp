@@ -17,7 +17,12 @@ td {
 	background-color: white
 }
 </style>
+<script type="text/javascript">
+function removeMember(){
+	window.location.href='/socksShopping/member/forwardMember3.jsp';
+}
 
+</script>
 </head>
 <body>
 
@@ -50,7 +55,7 @@ td {
 	</table>
 	
 	<input type="button" value="정보수정하기" onclick="location.href='/socksShopping/member/MemberModifyView.jsp'"/>
-    <input type="submit" value="탈퇴하기"/>  
+    <input type="submit" value="탈퇴하기" onclick="location.href='/socksShopping/member/deleteMemberView.jsp'"/>  
 
 </body>
 </html>

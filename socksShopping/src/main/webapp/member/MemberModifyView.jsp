@@ -53,6 +53,12 @@ function inputCheck(){
 	}
 	regForm.submit();
 }
+function modifySuccess(){
+	alert("회원정보 수정이 완료되었습니다.");
+}
+function goFirstForm(){
+	location.
+}
 </script>
 </head>
 <body>
@@ -63,12 +69,12 @@ function inputCheck(){
 	${sessionScope.loginMember.memberId }
 		<input type="hidden" name="memberId" value="${sessionScope.loginMember.memberId }"><!-- id는 변경할 수 없다. 따라서 화면에 뿌려주지 않는다. --><br>
 		이름 : <input type="text" name="name" value="${sessionScope.loginMember.name }"><br> 
-		비밀번호 :<input type="password" name="password"><br> 
-		비밀번호 확인 : <input type="password" name="passwordConf"><br>
-		주소 : <input type="text" name="address"><br> 
-		email : <input type="text" name="email"><br> 
+		비밀번호 :<input type="password" name="password" value="${sessionScope.loginMember.password}"><br> 
+		비밀번호 확인 : <input type="password" name="passwordConf" value="${sessionScope.loginMember.password}"><br>
+		주소 : <input type="text" name="address" value="${sessionScope.loginMember.address}"><br> 
+		email : <input type="text" name="email" value="${sessionScope.loginMember.email}"><br> 
 		<input type="hidden" name="point" value=1000><br><!-- 회원가입시 point는 자동으로 1000원 적립된다.(회원가입창에서 보여지지 않는다) -->
-		<button type="submit">수정완료</button>
+		<button type="submit" onclick="window.location.href='socksShoppingMall/member/MemberModifySuccess.jsp'">수정완료</button>
 		<input type="button" value="취소" onclick="goFirstForm()">
 	</form>
 
