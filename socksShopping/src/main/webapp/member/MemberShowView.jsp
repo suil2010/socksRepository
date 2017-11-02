@@ -49,7 +49,7 @@ td {
 		</tr>
 	</table>
 	
-	<input type="button" value="정보수정하기" />
+	<input type="button" value="정보수정하기" onclick="location.href='/socksShopping/member/MemberModifyView.jsp'"/>
     <input type="submit" value="탈퇴하기"/>  
 
 </body>
