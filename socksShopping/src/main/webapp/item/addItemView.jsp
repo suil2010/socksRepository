@@ -58,22 +58,45 @@ function itemNameCheck(tag){
 } 
 
 </script>
+<link href="${initParam.rootPath }/css/css.css" rel="stylesheet">
 </head>
 <body>
-
-<a href="/socksShopping/main/mainPage.jsp">메인페이지로 돌아가기</a>
-
-<h2>상품등록페이지</h2>
-
-<form name = "addform" action="/socksShopping/addItem" method="post" enctype="multipart/form-data">
-	<label> 상품번호 : <input type = "text" name = "itemId" value ="itemId-*" onfocus="clearPlaceholder(this);" onblur ="itemIdCheck(this)"><br></label>
- 	<label> 제품가격 : <input type = "number" name = "itemPrice" value = "10000" onfocus="clearPlaceholder(this);" onblur = "itemPriceCheck(this)"><br> </label> 원
- 	<label> 전체제품수 : <input type ="number" name = "itemQuantity" value ="100" onfocus="clearPlaceholder(this);" onblur = "itemQuantityCheck(this)"><br> </label>
- 	<label> 상품이름 : <input type = "text" name = "itemName" value ="상품명" onfocus="clearPlaceholder(this);" onblur = "itemNameCheck(this)" ><br> </label>
-	<label> 메인이미지 : <input type="file" name="mainImage"><br> </label>
-	<label> 상세이미지 : <input type="file" name="detailImage"><br> </label>
-	<input type="submit" value="전송" onclick="return confirm('상품을 등록하시겠습니까?')">
-</form>
-
+<%@ include file="/WEB-INF/include/header.jsp"%>
+<div class="add_item_view">
+	<h4>상품등록페이지</h4>	
+	
+	<form name = "addform" action="/socksShopping/addItem" method="post" enctype="multipart/form-data" class="add_item_form">
+		<table class="add_item_tbl">
+			<tr>
+				<td>상품번호</td>
+				<td><input type = "text" name = "itemId" placeholder ="itemId-*" onblur ="itemIdCheck(this)"></td>
+			</tr>
+			<tr>
+				<td>제품가격</td>
+				<td><input type = "number" name = "itemPrice" placeholder = "10000" onblur = "itemPriceCheck(this)"></td>
+				<td style="font-weight: bold;">원</td>
+			</tr>
+			<tr>
+				<td>전체제품수</td>
+				<td><input type ="number" name = "itemQuantity" placeholder ="100" onblur = "itemQuantityCheck(this)"></td>
+			</tr>
+			<tr>
+				<td>상품이름</td>
+				<td><input type = "text" name = "itemName" placeholder="상품명" onblur = "itemNameCheck(this)"></td>
+			</tr>
+			<tr>
+				<td>메인이미지</td>
+				<td><input style="font-size: 14px; font-weight: normal;" type="file" name="mainImage"></td>
+			</tr>
+			<tr>
+				<td>상세이미지</td>
+				<td><input style="font-size: 14px; font-weight: normal;" type="file" name="detailImage"></td>
+			</tr>
+		</table>
+	 	
+		<input type="submit" value="전송" onclick="return confirm('상품을 등록하시겠습니까?')">
+	</form>
+</div>
+<%@ include file="/WEB-INF/include/footer.jsp"%>
 </body>
 </html>

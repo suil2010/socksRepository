@@ -7,7 +7,7 @@
 </head>
 <body>
 <h1>회원가입이 완료되었습니다.</h1>
-<a href="/socksShopping/main/mainPage.jsp">메인페이지로 이동하기</a>
+<a href="${initParam.rootPath }/main/showMain">메인페이지로 이동하기</a>
 <input type="submit" value="탈퇴하기" onclick="location.href='socksShopping/member/deleteMemberView.jsp'"/>  
 
 </body>

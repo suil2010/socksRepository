@@ -4,20 +4,45 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link href="${initParam.rootPath }/css/css.css" rel="stylesheet">
 </head>
 <body>
-<a href ="/socksShopping/item/addItemView.jsp">이전페이지로 돌아가기</a>
-속성값<br>
-상품번호 : ${requestScope.item.itemId }<br>
-상품속성 : ${requestScope.item.itemPrice }<br>
-전체제품수 : ${requestScope.item.itemQuantity }<br>
-상품이름 : ${requestScope.item.itemName }<br>
-
-메인이미지<br>
-<img src="/socksShopping/mainImage/${requestScope.item.mainCut }">
-<p>
-상세이미지<br>
-<img src="/socksShopping/detailImage/${requestScope.item.detailCut }">
-
+<%@ include file="/WEB-INF/include/header.jsp"%>
+<div class="add_item_result">
+	<h4>${requestScope.item.itemId } 등록 완료</h4>
+	
+	<div class="item_result_box">
+		<div class="item_result_main">
+			<img alt="main_img" src="/socksShopping/mainImage/${requestScope.item.mainCut }">
+		</div>
+		<div class="item_result_txt">
+			<table>
+				<tr>
+					<td>상품 이름</td>
+					<td>${requestScope.item.itemName }</td>
+				</tr>
+				<tr>
+					<td>상품 가격</td>
+					<td>₩ ${requestScope.item.itemPrice }</td>
+				</tr>
+				<tr>
+					<td>상품 수</td>
+					<td>${requestScope.item.itemQuantity } 개</td>
+				</tr>
+			</table>
+		</div>
+		<div class="item_result_detail">
+			<h5>상세 이미지</h5>
+			<img alt="detail_img" src="/socksShopping/detailImage/${requestScope.item.detailCut }">
+		</div>
+		<table class="add_item_link">
+			<tr>
+				<td><a href ="/socksShopping/item/addItemView.jsp" class="other_add_item"><div>다른 상품 등록</div></a></td>
+				<td><a href ="/socksShopping/item/managerView.jsp" class="item_result_go_manager"><div>관리자 페이지</div></a></td>
+			</tr>
+		</table>
+	</div>
+</div>
+<%@ include file="/WEB-INF/include/footer.jsp"%>
 </body>
 </html>
