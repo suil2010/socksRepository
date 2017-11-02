@@ -74,4 +74,16 @@ public class MemberDaoImpl implements MemberDao{
 	   public List<Member> selectAllByJoin(SqlSession session){
 		   return session.selectList(makeSqlId("selectAllByJoin"));
 	   }
+
+	@Override
+	public Member selectMemberById(SqlSession session, String memberId) {
+		
+		return session.selectOne(makeSqlId("selectMemberById"), memberId);
+	}
+
+	@Override
+	public List<Member> selectAllMember(SqlSession session) {
+		return session.selectList(makeSqlId("selectAllMember"));
+	}
+	   
 }

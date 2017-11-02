@@ -6,6 +6,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+삭제가 완료되었습니다.
 </body>
 </html>

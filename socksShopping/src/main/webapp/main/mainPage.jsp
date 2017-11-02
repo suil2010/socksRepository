@@ -1,37 +1,43 @@
 <%@ page contentType="text/html;charset=utf-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link href="../css/css.css?ver=1" rel="stylesheet">
+<link href="${initParam.rootPath }/css/css.css" rel="stylesheet">
 </head>
 <body>
-<%@ include file="/WEB-INF/include/header.jsp" %>
+
+<%@ include file="/WEB-INF/include/header.jsp"%>
+
+
 <div class="main_form">
-	<%for(int i = 0; i < 25; i++){ %> <!-- 테스트용 -->
+	<c:forEach items="${requestScope.list}" var="item">
 		<div class="item_box">
-			<a href="#">
+			<a href="${initParam.rootPath }/main/showDetail?itemId=${item.itemId }">
 				<div class="items">
 					<div class="item_img_box">
-						<img alt="item_img" src=""> <!-- 상품 이미지 -->
+						<img style="width: 200px;" alt="item_img" src='/socksShopping/mainImage/${item.mainCut}'>
+						<!-- 상품 이미지 -->
 					</div>
 					<div class="fl_le">
 						<div class="item_name">
-							아이템 이름 예시 <!-- 상품 이름 -->
+							${item.itemName }
 						</div>
 					</div>
 					<div class="fl_le">
 						<div class="item_price">
-							₩ 100000 <!-- 상품 가격 -->
+							₩ ${item.itemPrice }
+							<!-- 상품 가격 -->
 						</div>
 					</div>
 					<div class="item_bar"></div>
 				</div>
 			</a>
 		</div>
-	<% } %>
+	</c:forEach>
 </div>
-<%@ include file="/WEB-INF/include/footer.jsp" %>
+<%@ include file="/WEB-INF/include/footer.jsp"%>
 </body>
 </html>

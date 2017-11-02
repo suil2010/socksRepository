@@ -7,27 +7,26 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.socks.item.exception.ItemNotFoundException;
+import com.socks.item.service.impl.itemServiceImpl;
+
 /**
  * Servlet implementation class deleteItemServlet
  */
 @WebServlet("/deleteItem")
 public class deleteItemServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		itemServiceImpl service = itemServiceImpl.getInstance(); 
+		
+		String itemId = request.getParameter("itemId");
+		try {
+			service.removeItemById(itemId);
+		} catch (ItemNotFoundException e) {
+			throw new ServletException(e);
+		}
+		request.getRequestDispatcher("/item/deleteItemResult.jsp").forward(request, response);
 	}
 
 }
