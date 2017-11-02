@@ -562,3 +562,90 @@ footer > .footer_txt{
 	background-color: #000;
 	cursor: pointer;
 }
+
+
+/* 등록 완료 화면 */
+.add_item_result{
+	width: 100%;
+	float: left;
+}
+.add_item_result > h4{
+	float: left;
+	margin-top: 20px;
+	margin-left: 30px;
+}
+.item_result_box{
+	width: 100%;
+	float: left;
+	margin-top: 30px;
+}
+.item_result_main{
+	width: 200px;
+	height: 200px;
+	overflow: hidden;
+	border-radius: 20px;
+	float: left;
+	margin-left: 300px;
+}
+.item_result_main > img{
+	width: 200px;
+}
+.item_result_txt{
+	float: left;
+	margin-left: 20px;
+}
+.item_result_txt table{
+	border-collapse: collapse;
+}
+.item_result_txt table tr{
+	border-collapse: collapse;
+}
+.item_result_txt table td{
+	font-size: 18px;
+	line-height: 26px;
+}
+.item_result_txt table tr:nth-child(2){
+	background-color: #bbb;
+	color: #fff;
+}
+.item_result_txt table td:nth-child(1) {
+	width: 80px;
+}
+.item_result_txt table td:nth-child(2) {
+	width: 400px;
+}
+.item_result_detail{
+	width: 100%;
+	float: left;
+	margin-top: 20px;
+}
+.item_result_detail h5{
+	color: #bbb;
+	width: 100%;
+	float: left;
+}
+.item_result_detail img{
+	width: 400px;
+}
+.other_add_item div{
+	width: 300px;
+	height: 30px;
+	background-color: #bbb;
+	color: #fff;
+}
+.other_add_item div:hover{
+	background-color: #000;
+}
+.add_item_link{
+	width: 100%;
+	float: left;
+}
+.item_result_go_manager div{
+	width: 300px;
+	height: 30px;
+	background-color: #777;
+	color: #fff;
+}
+.item_result_go_manager div:hover {
+	background-color: #000;
+}
