@@ -25,7 +25,9 @@ function removeMember(){
 </script>
 </head>
 <body>
-
+<p>
+<a href="/socksShopping/member/MemberMyPage.jsp">이전페이지로</a>
+</p>
 
 	<c:set var="member" value="${sessionScope.loginMember }" />
 	<table>
@@ -53,6 +55,7 @@ function removeMember(){
 			<td>${member.address}</td>
 		</tr>
 	</table>
+	
 	
 	<input type="button" value="정보수정하기" onclick="location.href='/socksShopping/member/MemberModifyView.jsp'"/>
     <input type="submit" value="탈퇴하기" onclick="location.href='/socksShopping/member/deleteMemberView.jsp'"/>  
