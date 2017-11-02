@@ -507,3 +507,58 @@ footer > .footer_txt{
 	height: 500px;
 	overflow: hidden;
 }
+
+/* 상품 등록 페이지(관리자) */
+.add_item_view{
+	width: 100%;
+	float: left;
+}
+.add_item_view > h4{
+	float: left;
+	margin-top: 20px;
+	margin-left: 30px;
+}
+.add_item_form{
+	width: 100%;
+	float: left;
+	margin-top: 30px;
+}
+.add_item_tbl td{
+	height: 50px;
+	border-collapse: collapse;
+}
+.add_item_tbl{
+	border-collapse: collapse;
+}
+.add_item_tbl td:nth-child(1) {
+	width: 200px;
+}
+.add_item_tbl td:nth-child(2) {
+	width: 500px;
+}
+.add_item_tbl input{
+	width: 400px;
+	height: 30px;
+	font-weight: bold;
+	font-size: 20px;
+}
+.add_item_tbl tr:nth-child(2n) td:nth-child(1) {
+	background-color: #bbb;
+	color: #fff;
+}
+.add_item_form > input{
+	float: right;
+	width: 150px;
+	height: 50px;
+	font-size: 15px;
+	font-weight: bold;
+	background-color: #bbb;
+	color: #fff;
+	border: none;
+	margin-top: 30px;
+	margin-right: 180px;
+}
+.add_item_form > input:hover{
+	background-color: #000;
+	cursor: pointer;
+}

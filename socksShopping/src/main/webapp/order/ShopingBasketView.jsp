@@ -56,7 +56,7 @@
 					<td style="color: red;">₩ 보류</td><!-- sub total + delivery fee? -->
 				</tr>
 			</table>
-			<input type="submit" value="checkout" class="basket_order_btn" src=""><!-- 주문버튼 -->
+			<input type="submit" value="checkout" class="basket_order_btn"><!-- 주문버튼 -->
 		</div>
 	</form>
 </div>
