@@ -31,7 +31,7 @@ public class LoginServlet extends HttpServlet {
 		if(id.equals("socks")){
 			if(password.equals("appeal")) {
 				request.getSession().setAttribute("loginMember", true);
-				response.sendRedirect("/admin"); //관리자페이지
+				response.sendRedirect("/socksShopping/item/managerView.jsp"); //관리자페이지
 			}else {
 				request.setAttribute("errorMessage", "비밀번호가 일치하지 않습니다");
 				request.getRequestDispatcher("/member/loginView.jsp").forward(request, response);
