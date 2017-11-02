@@ -8,10 +8,7 @@
 <link href="${initParam.rootPath }/css/css.css" rel="stylesheet">
 </head>
 <body>
-
 <%@ include file="/WEB-INF/include/header.jsp"%>
-
-
 <div class="main_form">
 	<c:forEach items="${requestScope.list}" var="item">
 		<div class="item_box">

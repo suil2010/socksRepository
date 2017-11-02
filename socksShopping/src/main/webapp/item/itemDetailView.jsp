@@ -18,7 +18,7 @@
 		<form class="detail_form" action="${initParam.rootPath }/member/loginView.jsp" onclick="alert('로그인 후에 사용가능한 기능입니다!')">
 		<% } else { %>
 		<!-- 로그인 되었을 때 사용할 폼 -->
-		<form class="detail_form" action="#">
+		<form class="detail_form" action="#" method="post">
 		<% } %>
 		<div class="detail_title">
 			<%=item.getItemName() %> <!-- 제품 이름 -->
