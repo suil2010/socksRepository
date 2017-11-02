@@ -38,8 +38,8 @@
 		<include refid="select-sql" />
 	</select>
 	
-	<select id="selectMemberById" resultMap="member-resultmap"<!-- id로 회원정보조회(마이페이지) -->
-		parameterType="string">
+	<!-- id로 회원정보조회(마이페이지) -->
+	<select id="selectMemberById" resultMap="member-resultmap" parameterType="string">
 		<include refid="select-sql" />
 		WHERE member_id = #{value}
 	</select>
