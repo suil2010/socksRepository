@@ -28,7 +28,7 @@
 			</tr>
 		</table>
 		<div class="manager_img">
-			<img id="img" alt="manager_page_img" src="${initParam.rootPath }/img/manager_img.jpg">
+			<img id="img" alt="manager_page_img" src="${initParam.rootPath }/img/manager.jpg">
 		</div>
 	</div>
 </div>
