@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 
+import com.socks.member.vo.Member;
 import com.socks.order.dao.OrderDao;
 import com.socks.order.vo.Order;
 
@@ -23,9 +24,8 @@ public class OrderDaoImpl implements OrderDao{
 		return "config.mapper.OrderMapper."+id;
 	}
 	
-	
 	@Override
-	public int addOrder(SqlSession session, Order order) {
+	public int insertOrder(SqlSession session, Order order) {
 		return session.insert(makeId("insertOrder"), order);
 	}
 
@@ -33,11 +33,18 @@ public class OrderDaoImpl implements OrderDao{
 	public int deleteOrderById(SqlSession session, String orderId) {
 		return session.delete(makeId("deleteOrderById"), orderId);
 	}
-
-	@Override
-	public List<Order> selectAllOrder(SqlSession session) {
-		// TODO Auto-generated method stub
-		return null;
+	
+	public int updateOrderById(SqlSession session, Order order) {
+		return session.update(makeId("updateOrderById"),order);
 	}
-
+	@Override
+	public List<Member> selectAllOrder(SqlSession session) {
+		// TODO Auto-generated method stub
+		return session.selectList(makeId("selectAllOrder"));
+	}
+	
+	public Member selectAllOrderByJoin(SqlSession session,String memberId){
+		return session.selectOne(makeId("selectAllOrderByJoin"),memberId);
+	}
+	
 }

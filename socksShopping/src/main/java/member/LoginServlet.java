@@ -51,7 +51,6 @@ public class LoginServlet extends HttpServlet {
 		}else {
 			request.setAttribute("errorMessage", "아이디를 확인하세요");
 			request.getRequestDispatcher("/member/loginView.jsp").forward(request, response);
-			
 		}
 	}
 }

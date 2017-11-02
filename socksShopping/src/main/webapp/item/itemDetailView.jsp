@@ -13,12 +13,14 @@
 	<div class="detail_main_img">
 		<img style="width: 300px;" alt="main_img" src='/socksShopping/mainImage/<%=item.getMainCut() %>'> <!-- 제품 메인 사진 -->
 	</div>
+
 	 <% if(session.getAttribute("loginMember") == null){%>
 	 	<!-- 로그인 되있지않았을 때 사용할 폼 -->
 		<form class="detail_form" action="${initParam.rootPath }/member/loginView.jsp" onclick="alert('로그인 후에 사용가능한 기능입니다!')">
 		<% } else { %>
 		<!-- 로그인 되었을 때 사용할 폼 -->
-		<form class="detail_form" action="#" method="post">
+
+		<form class="detail_form" action="/socksShopping/InShoppingBasket" method = "post">
 		<% } %>
 		<div class="detail_title">
 			<%=item.getItemName() %> <!-- 제품 이름 -->

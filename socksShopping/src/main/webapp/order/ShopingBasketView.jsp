@@ -13,7 +13,7 @@
 <%@ include file="/WEB-INF/include/header.jsp"%>
 <div class="basket_view">
 	<h4>${sessionScope.loginMember.name }회원의 장바구니</h4>
-	<form action="#">
+	<form action="/removeServelte">
 		<table class="basket_table">
 			<thead>
 				<tr>
@@ -26,15 +26,15 @@
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach items="${requestScope.list }" var="item">
+				<c:forEach items= "${requestScope.listOrder }" var="order">
 					<tr>
 						<td><input type="checkbox" name="check"></td>
-						<td><div class="basket_img"><img alt="main_img" src="/socksShopping/mainImage/${item.mainCut }"></div></td>
-						<td>${item.itemName }</td>
-						<td>₩ ${item.itemPrice }</td> <!-- 제품가격 -->
-						<td>${item.orderQuantity } 개</td> <!-- 제품 개수 -->
-						<td>₩ ${item.itemPrice * item.orederQuantity }</td> <!-- 제품가격 * 제품개수 -->
-					<tr>
+						<td><div class="basket_img"><img alt="main_img" src="/socksShopping/mainImage/${order.item.mainCut }"></div></td>
+						<td>${order.item.itemName }</td>
+						<td>₩ ${order.item.itemPrice }</td> <!-- 제품가격 -->
+						<td>${order.orderQuantity } 개</td> <!-- 제품 개수 -->
+						<td>₩ ${order.item.itemPrice * order.orderQuantity}</td> <!-- 제품가격 * 제품개수 -->
+					<tr>	
 				</c:forEach>
 			</tbody>
 		</table>

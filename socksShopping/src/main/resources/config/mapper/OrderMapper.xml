@@ -1,12 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="config.mapper.OrderMapper">
+	<sql id="select-sql">
+		select order_id,
+			   order_quantity,
+			   member_id,
+			   item_id,
+		   	   order_date
+	   	from   order-list	 
+	</sql>
+	
+	<!-- resultMap -->
+	<resultMap type="order" id="order-resultmap">
+		<id column="order_id" property="orderId" />
+		<result column="ORDER_QUANTITY" property="orderQuantity" />
+		<result column="member_id" property="memberId" />
+		<result column="item_id" property="itemId" />
+		<result column="order_date" property="orderDate" />
+	</resultMap>
+	
 	<insert id="insertOrder" parameterType="order">
-		insert into order_list values 
-		(#{order_id},#{order_quantity},#{order_date},#{menber_id},#{item_id})
+		insert into order_list values (#{orderId},#{orderQuantity},#{memberId},#{itemId},#{orderDate})
 	</insert>
 	
 	<delete id="deleteOrderById" parameterType="string">
 		delete from order_list where order_id = #{orderId}
 	</delete>
+	
+	<!-- 수정은 필요할 때 -->
+	<!-- <update id="updateOrderById" parameterType="order">
+		update order_list
+		set    order_id = #{orderId}
+			   ORDER_QUANTITY = #{orderQuantity}
+			   member_id = #{memberId}
+			   item_id = #{itemId}
+			   order_date = #{orderDate}
+	</update> -->
+	
+	<!-- 사용자가 장바구니에 담은 주문 -->
+	<!-- $ : EL  , # : SQL -->
+	<select id ="selectAllOrderByJoin" parameterType="string" resultMap="config.mapper.memberMapper.member-join-order-reusltmap">
+		<include refid="config.mapper.memberMapper.select-join-member-sql"/>
+		and m.member_id = #{memberId}
+	</select> 
+	
+	<!-- 전체 사용자의 장바구니에 담은 주문 -->
+	<select id ="selectAllOrder" resultMap="config.mapper.memberMapper.member-join-order-reusltmap">
+		<include refid="config.mapper.memberMapper.select-join-member-sql"/>
+	</select> 
 </mapper>

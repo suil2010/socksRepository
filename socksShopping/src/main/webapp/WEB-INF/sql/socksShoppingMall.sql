@@ -25,9 +25,9 @@ drop table order_list
 CREATE TABLE order_list(
    order_id VARCHAR2(30) primary key, -- 주문상품
    ORDER_QUANTITY NUMBER(3) not NULL, -- 주문수
-   order_date date not null,
    member_id VARCHAR2(10) constraint fk_order_user_id references member,
-   item_id  VARCHAR2(30) constraint fk_item_user_id references item
+   item_id  VARCHAR2(30) constraint fk_item_item_id references item,
+   order_date date not null
 );
 
 select * from item
@@ -48,19 +48,14 @@ delete from item where item_id = 'itemId-7'
 
 
 -- 만약에 주문을 구현하면 전체제품수에서 주문개수를 뺀다.
-insert into order_list values('orderId-1',12,'2017-10-30','userId-1','itemId-1');
-insert into order_list values('orderId-2',1,'2017-10-30','userId-1','itemId-2');
-insert into order_list values('orderId-3',2,'2017-10-30','userId-1','itemId-3');
+insert into order_list values('orderId-1',12,'userId-1','itemId-1','2017-10-30');
+insert into order_list values('orderId-2',12,'userId-2','itemId-1','2017-10-30');
+insert into order_list values('orderId-3',12,'userId-3','itemId-1','2017-10-30');
+insert into order_list values('orderId-4',12,'userId-1','itemId-3','2017-10-30');
+insert into order_list values('orderId-5',12,'userId-1','itemId-2','2017-10-30');
+insert into order_list values('orderId-6',12,'userId-1','itemId-3','2017-10-30');
 
 select * from item where item_id = 'itemId-7';
-
-insert into order_list values('orderId-4',4,'2017-10-30','userId-2','itemId-1');
-insert into order_list values('orderId-5',5,'2017-10-30','userId-2','itemId-2');
-insert into order_list values('orderId-6',6,'2017-10-30','userId-2','itemId-3');
-
-insert into order_list values('orderId-7',7,'2017-10-30','userId-3','itemId-1');
-insert into order_list values('orderId-8',8,'2017-10-30','userId-3','itemId-2');
-insert into order_list values('orderId-9',9,'2017-10-30','userId-3','itemId-3');
 
 select * from member
 select * from item
@@ -144,10 +139,11 @@ select * from order_list
             m.point,
             o.order_id,
             o.ORDER_QUANTITY,
+            o.order_date,
             i.item_price,
             i.item_quantity,
             i.item_name
-      FROM   member m , shoppingBask o,item i
+      FROM   member m , order_list o,item i
       WHERE  m.member_id = o.member_id
       and    i.item_id = o.item_id
-      and    m.member_id = 'userId-2'
+      and    m.member_id = 'userId-1'
