@@ -23,10 +23,10 @@
 		 			<a href="/socksShopping/item/deleteItemView.jsp"><div>상품삭제</div></a>
 		 		</td>
 		 		<td onmouseover='document.getElementById("img").src ="${initParam.rootPath}/img/manager4.jpg"'>
-		 			<a href="/socksShopping/main/mainPage.jsp"><div>메인페이지로 돌아가기</div></a>
+		 			<a href="${initParam.rootPath }/main/showMain"><div>메인페이지로 돌아가기</div></a>
 		 		</td>
 			</tr>
-		</table>
+		</table> 
 		<div class="manager_img">
 			<img id="img" alt="manager_page_img" src="${initParam.rootPath }/img/manager.jpg">
 		</div>
