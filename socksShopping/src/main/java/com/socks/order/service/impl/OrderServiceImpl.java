@@ -40,4 +40,19 @@ public class OrderServiceImpl implements OrderService{
 		}
 	}
 
+	@Override
+	public void deleteOrder(String orderId) {
+		SqlSession session = null;
+		try {
+			session = factory.openSession();
+			
+			dao.deleteOrderById(session, orderId);
+			
+			session.commit();
+		}finally {
+			session.close();
+		}
+		
+	}
+
 }
