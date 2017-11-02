@@ -10,15 +10,22 @@
 <body>
 <%@ include file="/WEB-INF/include/header.jsp"%>
 <div class="login_success">
-	${sessionScope.loginMember.name }님 환영합니다.
-	
-	<p>
-		<a href="${initParam.rootPath }/main/showMain">메인으로 이동하기</a>
-		<a href="/socksShopping/member/MemberMyPage.jsp">마이페이지</a>
-	</p>
-	<p>
-		<a href="/socksShopping/logoutMember">로그아웃</a>
-	</p>
+	<div class="login_success_box">
+		<div class="welcome_img">
+			<img alt="welcome_img" src="${initParam.rootPath }/img/welcome.jpg">
+		</div>
+		<div class="welcome_txt">
+			<h3>${sessionScope.loginMember.name }님 환영합니다.</h3>
+			<h5>${sessionScope.loginMember.name }님의 포인트 : ${sessionScope.loginMember.point }</h5>
+			<table>
+				<tr>
+					<td><a href="${initParam.rootPath }/main/showMain"><div>메인으로</div></a></td>
+					<td><a href="/socksShopping/member/MemberMyPage.jsp"><div>마이페이지</div></a></td>
+					<td><a href="/socksShopping/logoutMember"><div>로그아웃</div></a></td>
+				</tr>
+			</table>
+		</div>
+	</div>
 </div>
 <%@ include file="/WEB-INF/include/footer.jsp"%>
 </body>

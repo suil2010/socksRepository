@@ -14,16 +14,16 @@
 		<table>
 			<tr>
 				<td onmouseover='document.getElementById("img").src ="${initParam.rootPath}/img/manager.jpg"'>
-					<a href="/socksShopping/item/addItemView.jsp">상품등록</a>
+					<a href="/socksShopping/item/addItemView.jsp"><div>상품등록</div></a>
 				</td>
 		 		<td onmouseover='document.getElementById("img").src ="${initParam.rootPath}/img/manager2.jpg"'>
-		 			<a href="/socksShopping/item/updateItemView.jsp">상품수정(재고관리)</a>
+		 			<a href="/socksShopping/item/updateItemView.jsp"><div>상품수정(재고관리)</div></a>
 		 		</td>
 		 		<td onmouseover='document.getElementById("img").src ="${initParam.rootPath}/img/manager3.jpg"'>
-		 			<a href="/socksShopping/item/deleteItemView.jsp">상품삭제</a>
+		 			<a href="/socksShopping/item/deleteItemView.jsp"><div>상품삭제</div></a>
 		 		</td>
 		 		<td onmouseover='document.getElementById("img").src ="${initParam.rootPath}/img/manager4.jpg"'>
-		 			<a href="/socksShopping/main/mainPage.jsp">메인페이지로 돌아가기</a>
+		 			<a href="/socksShopping/main/mainPage.jsp"><div>메인페이지로 돌아가기</div></a>
 		 		</td>
 			</tr>
 		</table>
