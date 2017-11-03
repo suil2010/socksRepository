@@ -1,16 +1,4 @@
 <%@ page contentType="text/html;charset=utf-8"%>
-<<<<<<< HEAD
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
-
-</body>
-</html>
-=======
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!DOCTYPE html>
@@ -81,6 +69,3 @@ function removeMember(){
 
 
 
-
-
->>>>>>> branch 'master' of https://github.com/suil2010/socksRepository.git

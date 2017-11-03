@@ -10,7 +10,7 @@
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
   <context-param>
-  	<param-name>rootPath</param-name>
-  	<param-value>/socksShopping</param-value>
+    <param-name>rootPath</param-name>
+    <param-value>/socksShopping</param-value>
   </context-param>
 </web-app>

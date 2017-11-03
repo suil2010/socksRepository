@@ -21,6 +21,7 @@ import com.socks.order.vo.Order;
 
 /**
  * Servlet implementation class InShopingBasketServlet
+ * HTTP 500 : null값을 Integer로 변환해서 생김
  */
 @WebServlet("/InShoppingBasket")
 public class InShopingBasketServlet extends HttpServlet {
@@ -32,17 +33,15 @@ public class InShopingBasketServlet extends HttpServlet {
 		//장바구니 담기를 누르면 동작
 		HttpSession session = request.getSession();
 		OrderService service = OrderServiceImpl.getInstance();
-		/*
-		 * 수량 선택 -> 장바구니 클릭 -> 상품담김 -> itemId, itemStock 값을 받음
-		 * 
-		 * 
-		 * 
-		 */
+		
+		//수량 선택 -> 장바구니 클릭 -> 상품담김 -> itemId, itemStock 값을 받음
 		
 		Member member = (Member)session.getAttribute("loginMember");
 		String memberId = member.getMemberId();
 		String itemId = request.getParameter("id");
-		int orderQuantity = Integer.parseInt(request.getParameter("stuck"));
+		//Integer.parseInt(request.getParameter("input") == null 
+		//? 0 : request.getParameter("input"));
+		int orderQuantity = Integer.parseInt(request.getParameter("stuck") == null ? "0" : request.getParameter("stuck"));
 		Date orderDate = new Date();
 		String orderId = String.valueOf("order"+System.currentTimeMillis());
 		
@@ -54,8 +53,13 @@ public class InShopingBasketServlet extends HttpServlet {
 		member = service.findOrder(memberId);
 		List<Order> listOrder = member.getOrderList();
 		
-		request.setAttribute("listOrder", listOrder);
-		request.getRequestDispatcher("/order/ShopingBasketView.jsp").forward(request, response);
+		//리다이렉트방식을 사용하기 위해서
+		session.setAttribute("listOrder", listOrder);
+		//request.getRequestDispatcher("/order/ShopingBasketView.jsp").forward(request, response);
+		
+		/*DB에서 내용을 바꾸거나 server에서 내용을 바꿀때 새로고침을 되면 값이 증가하게 된다.
+		리다이렉트 방식 사용*/
+		response.sendRedirect("/socksShopping/order/ShopingBasketView.jsp");
 	}
 
 }

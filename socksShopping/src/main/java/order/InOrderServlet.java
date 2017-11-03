@@ -12,18 +12,19 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.socks.member.vo.Member;
+import com.socks.order.service.OrderService;
 import com.socks.order.service.impl.OrderServiceImpl;
 import com.socks.order.vo.Order;
 
 /**
- * Servlet implementation class RemoveShoppingBasketServlet
+ * Servlet implementation class InOrderServlet
  */
-@WebServlet("/removeServlet")
-public class RemoveShoppingBasketServlet extends HttpServlet {
+@WebServlet("/InOrder")
+public class InOrderServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		//주문하기를 누르면 동작
 		HttpSession session = request.getSession();
 		OrderServiceImpl service = OrderServiceImpl.getInstance();
 		
@@ -31,12 +32,6 @@ public class RemoveShoppingBasketServlet extends HttpServlet {
 		String memberId = member.getMemberId();
 		//checkbox값이 여러개 이다.
 		String[] orderId = request.getParameterValues("check");
-		
-		//삭제 작업
-		for(int i = 0 ; i < orderId.length ; i++) {
-			System.out.println(orderId[i]);
-			service.removeOrder(orderId[i]);
-		}
 		
 		//삭제 후 findOrder를 회원의 정보를 조회
 		member = service.findOrder(memberId);
@@ -51,9 +46,18 @@ public class RemoveShoppingBasketServlet extends HttpServlet {
 			//상품이 없으면 null을 리턴
 			session.setAttribute("listOrder", null);
 		}
-		//request.getRequestDispatcher("/order/ShopingBasketView.jsp").forward(request, response);
-		response.sendRedirect("/socksShopping/order/ShopingBasketView.jsp");
+		
+		//주문 작업 check한 주문상품의 수를 재고(DB)에서 뺀다.
+		for(int i = 0 ; i < orderId.length ; i++) {
+			System.out.println(orderId[i]);
+			//orderId로 orderId의 주문개수를 조회 (item의 전체제품수도 조회)
+			
+			//전체제품수와 주문개수를 뺀 뒤에 update메소드 사용
+		}
+		
+		
+		//request.getRequestDispatcher("/order/OrderView.jsp").forward(request, response);
+		response.sendRedirect("/socksShopping/order/OrderView.jsp");
 	}
-	
 
 }

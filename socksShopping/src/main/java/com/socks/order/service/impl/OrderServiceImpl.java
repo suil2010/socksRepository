@@ -62,7 +62,6 @@ public class OrderServiceImpl implements OrderService{
 		SqlSession session = null;
 		try {
 			session = factory.openSession();
-			
 			Member member = dao.selectAllOrderByJoin(session, memberId);
 			session.commit();
 			return member;

@@ -116,5 +116,4 @@ public class itemServiceImpl implements itemService{
 		}
 	}
 	
->>>>>>> branch 'master' of https://github.com/suil2010/socksRepository.git
 }

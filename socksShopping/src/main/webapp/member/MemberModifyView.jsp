@@ -1,13 +1,4 @@
-<<<<<<< HEAD
-<%@ page contentType="text/html;charset=utf-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
-=======
+
 <%@page import="com.socks.member.service.impl.MemberServiceImpl"%>
 <%@page import="com.socks.member.service.MemberService"%>
 <%@page import="com.socks.member.dao.impl.MemberDaoImpl"%>
@@ -24,9 +15,6 @@
 <meta charset="UTF-8">
 <title>회원정보 수정 페이지</title>
 <script type="text/javascript">
-
-
-
 
 function inputCheck(){
 	if(regForm.name.value == "") {
@@ -87,7 +75,6 @@ function goFirstForm(){
 		<button type="submit" onclick="window.location.href='socksShoppingMall/member/MemberModifySuccess.jsp'">수정완료</button>
 		<input type="button" value="취소" onclick="goFirstForm()">
 	</form>
->>>>>>> branch 'master' of https://github.com/suil2010/socksRepository.git
 
 </body>
 </html>
