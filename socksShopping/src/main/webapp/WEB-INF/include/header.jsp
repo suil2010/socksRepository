@@ -12,7 +12,7 @@
 			<a href="${initParam.rootPath }/member/registerMemberView.jsp">회원 가입</a>
 			<% } else { %><!-- 로그인이 되면 -->
 			<a href="${initParam.rootPath }/logoutMember">로그아웃</a> &nbsp; | &nbsp; <!-- 로그아웃 페이지로 이동 -->
-			<a href="#">마이 페이지</a>
+			<a href="${initParam.rootPath }/member/MemberShowView.jsp">마이 페이지</a>
 			<% } %>
 		</div>
 	</header>
