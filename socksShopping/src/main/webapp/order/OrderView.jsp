@@ -25,7 +25,7 @@
 				</tr>
 			<thead>
 			<tbody>
-				<c:forEach items="${sessionScope.listOrder}" var="order">
+				<c:forEach items="${sessionScope.checkListOrder}" var="order">
 				<tr>
 					<td>
 						<fmt:setLocale value="ko_KR"/>
@@ -34,7 +34,7 @@
 					<td>${order.itemId }</td>
 					<td><div class="order_main_img"><img alt="main_img" src="/socksShopping/mainImage/${order.item.mainCut}"></div></td>
 					<td>${order.item.itemName }</td>
-					<td> <fmt:formatNumber value = "${order.item.itemPrice }" type ="currency"/>
+					<td> <fmt:formatNumber value = "${order.item.itemPrice * order.orderQuantity}" type ="currency"/>
 					</td>
 					<td><input type="submit" value="주문취소"></td>
 				</tr>
