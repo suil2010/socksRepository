@@ -108,6 +108,13 @@ public class test {
 					for(Order order : member.getOrderList()) {
 						System.out.println(order);
 					}
+					
+					System.out.println("---- selectOrder------");
+					Order order = dao1.selectOrderByJoin(session,"orderId-3");
+					System.out.println(order);
+					
+					System.out.println("-------update-------");
+					cnt = dao1.updateOrderById(session, new Order("orderId-4",100,"userId-1","itemId-3",new Date()));
 					session.commit();
 				} finally {
 					session.close();

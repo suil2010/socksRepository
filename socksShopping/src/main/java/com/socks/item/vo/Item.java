@@ -15,6 +15,8 @@ public class Item implements Serializable{
 	
 	public Item() {
 	}
+	
+	
 
 	public Item(String itemId, int itemPrice, int itemQuantity, String itemName, String mainCut, String detailCut) {
 		super();

@@ -478,6 +478,7 @@ footer > .footer_txt{
 }
 .register_btn:hover{
 	background-color: hotpink;
+	cursor: pointer;
 }
 
 /* 장바구니 페이지 */
@@ -487,8 +488,8 @@ footer > .footer_txt{
 }
 .basket_view > h4{
 	float: left;
-	margin-top: 30px;
-	margin-left: 20px;	
+	margin-top: 20px;
+	margin-left: 30px;	
 }
 .basket_table{
 	margin-top: 80px;
@@ -538,7 +539,6 @@ footer > .footer_txt{
 	width: 100px;
 	height: 100px;
 	border-radius: 20px;
-	border: 1px solid #000;
 }
 .basket_img img{
 	width: 100px;
@@ -758,15 +758,13 @@ footer > .footer_txt{
 	font-size: 18px;
 	line-height: 26px;
 }
-.item_result_txt table tr:nth-child(2){
-	background-color: #bbb;
-	color: #fff;
-}
+
 .item_result_txt table td:nth-child(1) {
-	width: 80px;
+	width: 120px;
+	border-right: 2px #ccc solid;
 }
 .item_result_txt table td:nth-child(2) {
-	width: 400px;
+	width: 300px;
 }
 .item_result_detail{
 	width: 100%;
@@ -782,23 +780,27 @@ footer > .footer_txt{
 	width: 400px;
 }
 .other_add_item div{
-	width: 300px;
+	width: 200px;
 	height: 30px;
 	background-color: #bbb;
 	color: #fff;
+	transition : 0.3s;
+	line-height: 30px;
 }
 .other_add_item div:hover{
 	background-color: #000;
 }
-.add_item_link{
+.add_item_box{
 	width: 100%;
 	float: left;
 }
 .item_result_go_manager div{
-	width: 300px;
+	width: 200px;
 	height: 30px;
 	background-color: #777;
 	color: #fff;
+	transition : 0.3s;
+	line-height: 30px;
 }
 .item_result_go_manager div:hover {
 	background-color: #000;
@@ -814,7 +816,7 @@ footer > .footer_txt{
 	width: 600px;
 	height: 300px;
 	position: relative;
-	border: 2px solid #000;
+	border: 2px solid #ccc;
 }
 .login_success_box > div{
 	position: absolute;
@@ -830,11 +832,11 @@ footer > .footer_txt{
 	color: #fff;
 }
 .welcome_txt td{
-	width: 200px;
-	height: 50px;
+	width: 150px;
+	height: 30px;
 }
 .welcome_txt td div{
-	width: 100px;
+	width: 150px;
 	height: 30px;
 	background-color: #999;
 	color: #fff;
@@ -846,12 +848,14 @@ footer > .footer_txt{
 	margin-right: 10px;
 }
 .welcome_txt table{
-	margin-top: 200px;
+	margin-top: 230px;
 }
 .welcome_txt div:hover{
 	background-color: hotpink;
 }
-
+.welcome_txt a{
+	line-height: 30px;
+}
 /* 주문 정보 창 */
 .order_view{
 	width: 100%;
@@ -860,7 +864,7 @@ footer > .footer_txt{
 .order_view > h4{
 	float: left;
 	margin-left: 30px;
-	margin-left: 20px;
+	margin-top: 20px;
 }
 .order_list{
 	width: 100%;
@@ -917,4 +921,450 @@ footer > .footer_txt{
 	font-size: 14px;
 	background-color: #bbb;
 	color: #fff;
+}
+
+/* 회원가입 성공 페이지 */
+.reg_success{
+	width: 100%;
+	float: left;
+}
+.reg_success_box{
+	margin-top:30px;
+	width: 600px;
+	height: 300px;
+	position: relative;
+	border: 2px solid #ccc;
+}
+.reg_success_box > div{
+	position: absolute;
+}
+.reg_success_img{
+	z-index: 0;	
+}
+.reg_success_txt{
+	z-index: 1;
+	background-color: rgba(0,0,0,0.5);
+	width: 100%;
+	height: 100%;
+	color: #fff;
+}
+.reg_success_txt td{
+	width: 200px;
+	height: 50px;
+}
+.reg_success_txt td div, .reg_success_txt input{
+	width: 200px;
+	height: 30px;
+	background-color: #999;
+	color: #fff;
+	transition : 0.3s;
+	border : none;
+	cursor: none;
+}
+.reg_success_txt table{
+	margin-top: 220px;
+}
+.reg_success_txt div:hover, .reg_success_txt input:hover{
+	background-color: hotpink;
+	cursor: pointer;
+}
+.reg_succeess_txt a, .reg_succeess_txt a{
+	line-height: 30px;
+}
+/* 내정보 조회 */
+.member_show_view{
+	width: 100%;
+	float: left;
+}
+.member_show_view > h4{
+	margin-left: 30px;
+	margin-top: 20px;
+	float: left;
+}
+.member_show_view_box{
+	width: 100%;
+	float: left;
+	margin-top: 20px;
+}
+.member_show_view_box table{
+	border-collapse: collapse;
+}
+.member_show_view_box tr{
+	border-collapse: collapse;
+}
+.member_show_view_box td{
+	height: 30px;
+}
+.member_show_view_box td:nth-child(1){
+	width: 200px;
+	border-right: 1px solid #ccc;
+	font-weight: bold;
+}
+.member_show_view_box td:nth-child(2){
+	width: 400px;
+}
+.member_show_view_box input{
+	width: 150px;
+	height: 40px;
+	background-color: #bbb;
+	border: none;
+	margin-top: 20px;
+	color: #fff;
+	font-weight: bold;
+}
+.member_show_view_box input:nth-child(2){
+	background-color: #000;
+}
+.member_show_view_box input:hover{
+	background-color: hotpink;
+	cursor: pointer;
+}
+/* 마이페이지 */
+.mypage{
+	width: 100%;
+	float: left;
+}
+.mypage > h4{
+	float: left;
+	margin-top: 20px;
+	margin-left: 30px;
+}
+.mypage_box{
+	width: 100%;
+	float: left;
+}
+.mypage_box td{
+	width: 200px;
+	height: 30px;
+}
+.mypage_box td div{
+	width: 200px;
+	height: 30px;
+	background-color: #bbb;
+	transition : 0.3s;
+	color: #fff;
+	font-weight: bold;
+	font-size: 14px;
+	line-height: 30px;
+}
+.mypage_box td div:hover{
+	background-color: hotpink;
+}
+.mypage_box > h5{
+	float: right;
+	margin-right: 260px;
+}
+.mypage_img{
+	width: 600px;
+	height: 300px;
+	overflow: hidden;
+	margin-top: 20px;
+}
+.mypage_img img{
+	width: 600px;
+}
+/* 회원 정보 수정 */
+.member_modify{
+	width: 100%;
+	float: left;
+}
+.member_modify > h4{
+	float: left;
+	margin-left: 30px;
+	margin-top: 20px;
+}
+.member_modify_box{
+	width: 100%;
+	float: left;
+	margin-top: 20px;
+}
+.member_modify_form td{
+	height: 30px;
+}
+.member_modify_form td:nth-child(1) {
+	width: 200px;
+	font-size: 15px;
+	font-weight: bold;
+	border-right: #ccc solid 1px;
+}
+.member_modify_form td:nth-child(2) {
+	width: 400px;
+}
+.member_modify_form td:nth-child(2) > input {
+	width: 350px;
+	height: 25px;
+	font-size: 13px;
+}
+.member_modify_btn{
+	width: 150px;
+	height: 30px;
+	background-color: #bbb;
+	border: none;
+	font-size: 16px;
+	font-weight: bold;
+	color: #fff;
+	line-height: 30px;
+	transition : 0.3s;
+}
+.member_modify_btn:hover{
+	background-color: hotpink;
+	cursor: pointer;
+}
+/* 회원정보 수정 성공 페이지 */
+.mem_mod_success{
+	width: 100%;
+	float: left;
+}
+.mem_mod_success_box{
+	width: 300px;
+	height: 160px;
+	margin-top: 20px;
+}
+.mem_mod_success_box td{
+	height: 30px;
+}
+.mem_mod_success_box td:nth-child(1) {
+	width: 100px;
+	border-right: 1px solid #ccc;
+	font-weight: bold;
+}
+.mem_mod_success_box td:nth-child(2) {
+	width: 200px;
+}
+.mem_mod_success_box tr{
+	border-collapse: collapse;
+}
+.mem_mod_success_box table{
+	border-collapse: collapse;
+}
+.mem_mod_success input{
+	width: 100px;
+	height: 30px;
+	border: none;
+	background-color: #bbb;
+	color: #fff;
+	font-weight: bold;
+}
+.mem_mod_success input:hover{
+	background-color: hotpink;
+	cursor: pointer;
+}
+
+/* 상품 수정 페이지 */
+.update_item{
+	width: 100%;
+	float: left;
+}
+.update_item > h4{
+	float: left;
+	margin-left: 30px;
+	margin-top: 20px;
+}
+.update_box	{
+	margin-top: 30px;
+	float: left;
+	width: 100%;
+}
+.update_form td {
+	height: 50px;
+}
+.update_form tr{
+	border-collapse: collapse;
+}
+.update_form table{
+	border-collapse: collapse;
+}
+.update_form td:nth-child(1) {
+	border-right : #ccc 2px solid;
+	width: 120px;
+}
+.update_form td:nth-child(2) {
+	width: 400px;
+}
+.update_form td input{
+	width: 350px;
+	height: 30px;
+	line-height: 30px;
+}
+.update_form td input[type=text], .update_form td input[type=number]{
+	font-size: 20px;
+	font-weight: bold;
+}
+.update_form > input{
+	margin-top: 20px;
+	width: 120px;
+	height: 30px;
+	font-size: 14px;
+	color: #fff;
+	background-color: #bbb;
+	border: none;
+	font-weight: bold;
+}
+.update_form > input:hover {
+	background-color: hotpink;
+	cursor: pointer;
+}
+
+/* 아이템 수정 완료 페이지 */
+.up_item_result{
+	width: 100%;
+	float: left;
+}
+.up_item_result > h4{
+	float: left;
+	margin-top: 20px;
+	margin-left: 30px;
+}
+.up_result_box{
+	width: 100%;
+	float: left;
+	margin-top: 30px;
+}
+.up_result_main{
+	width: 200px;
+	height: 200px;
+	overflow: hidden;
+	border-radius: 20px;
+	float: left;
+	margin-left: 300px;
+}
+.up_result_main > img{
+	width: 200px;
+}
+.up_result_txt{
+	float: left;
+	margin-left: 20px;
+}
+.up_result_txt table{
+	border-collapse: collapse;
+}
+.up_result_txt table tr{
+	border-collapse: collapse;
+}
+.up_result_txt table td{
+	font-size: 18px;
+	line-height: 26px;
+}
+
+.up_result_txt table td:nth-child(1) {
+	width: 120px;
+	border-right: 2px #ccc solid;
+}
+.up_result_txt table td:nth-child(2) {
+	width: 300px;
+}
+.up_result_detail{
+	width: 100%;
+	float: left;
+	margin-top: 20px;
+}
+.up_result_detail h5{
+	color: #bbb;
+	width: 100%;
+	float: left;
+}
+.up_result_detail img{
+	width: 400px;
+}
+.up_item_link div{
+	width: 200px;
+	height: 30px;
+	background-color: #bbb;
+	color: #fff;
+	transition : 0.3s;
+	line-height: 30px;
+}
+.up_item_link div:hover{
+	background-color: #000;
+}
+.up_item_link{
+	width: 100%;
+	float: left;
+}
+
+/* 상품 삭제 페이지*/
+.delete_item{
+	width: 100%;
+	float: left;
+}
+.delete_item > h4{
+	float: left;
+	margin-left: 30px;
+	margin-top: 20px;
+}
+.delete_box{
+	width: 100%;
+	float: left;
+	margin-top: 20px;
+}
+.delete_form > h5{
+}
+.delete_form > input, .delete_form > button{
+	margin-top: 20px;
+	height: 30px;
+}
+.delete_form > input{
+	width: 300px;
+	font-size: 14px;
+	font-weight: bold;
+}
+.delete_form > button{
+	width: 80px;
+	border: none;
+	background-color: #bbb;
+	color: #fff;
+	font-weight: bold;
+	font-size: 14px;
+}
+.delete_form > button:hover {
+	background-color: hotpink;
+	cursor: pointer;
+}
+.delete_img_box{
+	width: 600px;
+	height: 300px;
+	overflow: hidden;
+	margin-top: 20px;
+	border: 1px #000 solid;
+	box-shadow: 3px 3px #999;
+}
+.delete_img_box img {
+	width: 600px;
+}
+.delete_box > a > div{
+	width: 120px;
+	height: 30px;
+	background-color: #ccc;
+	color: #fff;
+	font-weight: bold;
+	font-size: 14px;
+	margin-top: 20px;
+	line-height: 30px;
+}
+.delete_box > a > div:hover {
+	background-color: #000;
+	cursor: pointer;
+}
+
+/* 제품 삭제 성공 페이지 */
+.delete_result{
+	width: 100%;
+	float: left;
+}
+.delete_result > h3 {
+	margin-top: 30px;
+}
+.delete_result > a > div{
+	width: 400px;
+	height: 40px;
+	background-color: #ccc;
+	color: #fff;
+	font-weight: bold;
+	font-size: 20px;
+	line-height: 40px;
+	margin-top: 20px;
+}
+.delete_result > a > div:hover {
+	background-color: hotpink;
+
 }

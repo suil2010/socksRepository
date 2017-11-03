@@ -46,7 +46,7 @@ public class InShopingBasketServlet extends HttpServlet {
 		String orderId = String.valueOf("order"+System.currentTimeMillis());
 		
 		//회원 아이디를 통해 회원이랑 연결,
-		Order order = new Order(orderId, orderQuantity,memberId, itemId, orderDate);
+		Order order = new Order(orderId, orderQuantity, memberId, itemId, orderDate);
 		service.addOrder(order);
 		
 		//회원 이름으로 장바구니 조회

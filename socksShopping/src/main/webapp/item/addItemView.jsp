@@ -13,7 +13,6 @@ function clearPlaceholder(tag){
 	else if(tag.value == '100'){tag.value ='';}
 	else if(tag.value == '상품명'){tag.value ='';}
 }
-
 function itemIdCheck(tag){
 	var itemNum = document.addform.itemId.value;
 	//15글자 이하
@@ -23,7 +22,6 @@ function itemIdCheck(tag){
 		document.addform.itemId.focus();
 	}
 }
-
 function itemPriceCheck(tag){
 	var itemP = document.addform.itemPrice.value;
 	//100000초과 1000원 미만
@@ -31,9 +29,9 @@ function itemPriceCheck(tag){
 		alert("상품가격을 100000원 미만");
 		document.addform.itemPrice.value ="";
 		document.addform.itemPrice.focus();
-	} 
-}
+	}
 
+}
 function itemQuantityCheck(tag){
 	var itemQ = document.addform.itemQuantity.value;
 	//재고량이 1000개 초과 
@@ -43,7 +41,6 @@ function itemQuantityCheck(tag){
 		document.addform.itemQuantity.focus();
 	}
 }
-
 function itemNameCheck(tag){
 	var itemN = document.addform.itemName.value;
 	//상품명이 10글자 이하
@@ -52,8 +49,7 @@ function itemNameCheck(tag){
 		document.addform.itemName.value="";
 		document.addform.itemName.focus();
 	}
-} 
-
+}
 </script>
 <link href="${initParam.rootPath }/css/css.css" rel="stylesheet">
 </head>
@@ -70,7 +66,7 @@ function itemNameCheck(tag){
 			</tr>
 			<tr>
 				<td>제품가격</td>
-				<td><input type = "number" name = "itemPrice" placeholder = "10000" onblur = "itemPriceCheck(this)"></td>
+				<td><input type = "number" name = "itemPrice" placeholder = "1000" onblur = "itemPriceCheck(this)"></td>
 				<td style="font-weight: bold;">원</td>
 			</tr>
 			<tr>
@@ -90,7 +86,6 @@ function itemNameCheck(tag){
 				<td><input style="font-size: 14px; font-weight: normal;" type="file" name="detailImage"></td>
 			</tr>
 		</table>
-	 	
 		<input type="submit" value="전송" onclick="return confirm('상품을 등록하시겠습니까?')">
 	</form>
 </div>

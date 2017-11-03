@@ -58,6 +58,17 @@ public class OrderServiceImpl implements OrderService{
 		
 	}
 	
+	public void ModifyOrder(Order order) {
+		SqlSession session = null;
+		try {
+			session = factory.openSession();
+			dao.updateOrderById(session, order);
+			session.commit();
+		}finally {
+			session.close();
+		}
+	}
+
 	public Member findOrder(String memberId) {
 		SqlSession session = null;
 		try {
@@ -77,6 +88,19 @@ public class OrderServiceImpl implements OrderService{
 			List<Member> list = dao.selectAllOrder(session);
 			session.commit();
 			return list;
+		}finally {
+			session.close();
+		}
+
+	}
+	
+	public Order findOrderById(String orderId) {
+		SqlSession session = null;
+		try {
+			session = factory.openSession();
+			Order order = dao.selectOrderByJoin(session, orderId);
+			session.commit();
+			return order;
 		}finally {
 			session.close();
 		}
