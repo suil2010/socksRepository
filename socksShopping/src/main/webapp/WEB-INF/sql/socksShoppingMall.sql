@@ -1,4 +1,4 @@
-drop table member
+drop table member cascade constraint
 
 CREATE TABLE member (
    member_ID  VARCHAR2(30) primary key, -- 회원_ID

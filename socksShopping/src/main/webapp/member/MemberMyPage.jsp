@@ -19,12 +19,12 @@
 					</a>
 				</td>
 				<td>
-					<a href="/socksShopping/order/shopingBasketView.jsp">
+					<a href="${initParam.rootPath }/order/ShopingBasketView.jsp">
 						<div onmouseover='document.getElementById("img").src ="${initParam.rootPath}/img/mypage2.jpg"'>장바구니</div>
 					</a>
 				</td>
 				<td>
-					<a href="/socksShopping/order/orderInfoView.jsp">
+					<a href="${initParam.rootPath }/order/OrderView.jsp">
 						<div onmouseover='document.getElementById("img").src ="${initParam.rootPath}/img/mypage3.jpg"'>주문정보</div>
 					</a>
 				</td>

@@ -335,8 +335,8 @@ footer > .footer_txt{
 }
 .basket_view > h4{
 	float: left;
-	margin-top: 30px;
-	margin-left: 20px;	
+	margin-top: 20px;
+	margin-left: 30px;	
 }
 .basket_table{
 	margin-top: 80px;
@@ -386,7 +386,6 @@ footer > .footer_txt{
 	width: 100px;
 	height: 100px;
 	border-radius: 20px;
-	border: 1px solid #000;
 }
 .basket_img img{
 	width: 100px;
@@ -606,15 +605,13 @@ footer > .footer_txt{
 	font-size: 18px;
 	line-height: 26px;
 }
-.item_result_txt table tr:nth-child(2){
-	background-color: #bbb;
-	color: #fff;
-}
+
 .item_result_txt table td:nth-child(1) {
-	width: 80px;
+	width: 120px;
+	border-right: 2px #ccc solid;
 }
 .item_result_txt table td:nth-child(2) {
-	width: 400px;
+	width: 300px;
 }
 .item_result_detail{
 	width: 100%;
@@ -630,23 +627,27 @@ footer > .footer_txt{
 	width: 400px;
 }
 .other_add_item div{
-	width: 300px;
+	width: 200px;
 	height: 30px;
 	background-color: #bbb;
 	color: #fff;
+	transition : 0.3s;
+	line-height: 30px;
 }
 .other_add_item div:hover{
 	background-color: #000;
 }
-.add_item_link{
+.add_item_box{
 	width: 100%;
 	float: left;
 }
 .item_result_go_manager div{
-	width: 300px;
+	width: 200px;
 	height: 30px;
 	background-color: #777;
 	color: #fff;
+	transition : 0.3s;
+	line-height: 30px;
 }
 .item_result_go_manager div:hover {
 	background-color: #000;
@@ -710,7 +711,7 @@ footer > .footer_txt{
 .order_view > h4{
 	float: left;
 	margin-left: 30px;
-	margin-left: 20px;
+	margin-top: 20px;
 }
 .order_list{
 	width: 100%;
@@ -994,4 +995,222 @@ footer > .footer_txt{
 .mem_mod_success input:hover{
 	background-color: hotpink;
 	cursor: pointer;
+}
+
+/* 상품 수정 페이지 */
+.update_item{
+	width: 100%;
+	float: left;
+}
+.update_item > h4{
+	float: left;
+	margin-left: 30px;
+	margin-top: 20px;
+}
+.update_box	{
+	margin-top: 30px;
+	float: left;
+	width: 100%;
+}
+.update_form td {
+	height: 50px;
+}
+.update_form tr{
+	border-collapse: collapse;
+}
+.update_form table{
+	border-collapse: collapse;
+}
+.update_form td:nth-child(1) {
+	border-right : #ccc 2px solid;
+	width: 120px;
+}
+.update_form td:nth-child(2) {
+	width: 400px;
+}
+.update_form td input{
+	width: 350px;
+	height: 30px;
+	line-height: 30px;
+}
+.update_form td input[type=text], .update_form td input[type=number]{
+	font-size: 20px;
+	font-weight: bold;
+}
+.update_form > input{
+	margin-top: 20px;
+	width: 120px;
+	height: 30px;
+	font-size: 14px;
+	color: #fff;
+	background-color: #bbb;
+	border: none;
+	font-weight: bold;
+}
+.update_form > input:hover {
+	background-color: hotpink;
+	cursor: pointer;
+}
+
+/* 아이템 수정 완료 페이지 */
+.up_item_result{
+	width: 100%;
+	float: left;
+}
+.up_item_result > h4{
+	float: left;
+	margin-top: 20px;
+	margin-left: 30px;
+}
+.up_result_box{
+	width: 100%;
+	float: left;
+	margin-top: 30px;
+}
+.up_result_main{
+	width: 200px;
+	height: 200px;
+	overflow: hidden;
+	border-radius: 20px;
+	float: left;
+	margin-left: 300px;
+}
+.up_result_main > img{
+	width: 200px;
+}
+.up_result_txt{
+	float: left;
+	margin-left: 20px;
+}
+.up_result_txt table{
+	border-collapse: collapse;
+}
+.up_result_txt table tr{
+	border-collapse: collapse;
+}
+.up_result_txt table td{
+	font-size: 18px;
+	line-height: 26px;
+}
+
+.up_result_txt table td:nth-child(1) {
+	width: 120px;
+	border-right: 2px #ccc solid;
+}
+.up_result_txt table td:nth-child(2) {
+	width: 300px;
+}
+.up_result_detail{
+	width: 100%;
+	float: left;
+	margin-top: 20px;
+}
+.up_result_detail h5{
+	color: #bbb;
+	width: 100%;
+	float: left;
+}
+.up_result_detail img{
+	width: 400px;
+}
+.up_item_link div{
+	width: 200px;
+	height: 30px;
+	background-color: #bbb;
+	color: #fff;
+	transition : 0.3s;
+	line-height: 30px;
+}
+.up_item_link div:hover{
+	background-color: #000;
+}
+.up_item_link{
+	width: 100%;
+	float: left;
+}
+
+/* 상품 삭제 페이지*/
+.delete_item{
+	width: 100%;
+	float: left;
+}
+.delete_item > h4{
+	float: left;
+	margin-left: 30px;
+	margin-top: 20px;
+}
+.delete_box{
+	width: 100%;
+	float: left;
+	margin-top: 20px;
+}
+.delete_form > h5{
+}
+.delete_form > input, .delete_form > button{
+	margin-top: 20px;
+	height: 30px;
+}
+.delete_form > input{
+	width: 300px;
+	font-size: 14px;
+	font-weight: bold;
+}
+.delete_form > button{
+	width: 80px;
+	border: none;
+	background-color: #bbb;
+	color: #fff;
+	font-weight: bold;
+	font-size: 14px;
+}
+.delete_form > button:hover {
+	background-color: hotpink;
+	cursor: pointer;
+}
+.delete_img_box{
+	width: 600px;
+	height: 300px;
+	overflow: hidden;
+	margin-top: 20px;
+	border: 1px #000 solid;
+	box-shadow: 3px 3px #999;
+}
+.delete_img_box img {
+	width: 600px;
+}
+.delete_box > a > div{
+	width: 120px;
+	height: 30px;
+	background-color: #ccc;
+	color: #fff;
+	font-weight: bold;
+	font-size: 14px;
+	margin-top: 20px;
+	line-height: 30px;
+}
+.delete_box > a > div:hover {
+	background-color: #000;
+	cursor: pointer;
+}
+
+/* 제품 삭제 성공 페이지 */
+.delete_result{
+	width: 100%;
+	float: left;
+}
+.delete_result > h3 {
+	margin-top: 30px;
+}
+.delete_result > a > div{
+	width: 400px;
+	height: 40px;
+	background-color: #ccc;
+	color: #fff;
+	font-weight: bold;
+	font-size: 20px;
+	line-height: 40px;
+	margin-top: 20px;
+}
+.delete_result > a > div:hover {
+	background-color: hotpink;
 }
