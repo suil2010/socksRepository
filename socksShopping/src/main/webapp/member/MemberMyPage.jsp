@@ -30,7 +30,7 @@
 				</td>
 			</tr>
 		</table>
-		<h5>${sessionScope.loginMember.memberId }님의 포인트는 ${sessionScope.loginMember.point } 점 입니다.</h5>
+		<h5>${sessionScope.loginMember.name }님의 포인트는 ${sessionScope.loginMember.point } 점 입니다.</h5>
 		<div class="mypage_img">
 			<img id="img" alt="mypage_img" src="${initParam.rootPath }/img/mypage1.jpg" style="margin-top: -100px;">
 		</div>
