@@ -694,12 +694,14 @@ footer > .footer_txt{
 	margin-right: 10px;
 }
 .welcome_txt table{
-	margin-top: 200px;
+	margin-top: 230px;
 }
 .welcome_txt div:hover{
 	background-color: hotpink;
 }
-
+.welcome_txt a{
+	line-height: 30px;
+}
 /* 주문 정보 창 */
 .order_view{
 	width: 100%;
@@ -806,11 +808,14 @@ footer > .footer_txt{
 	cursor: none;
 }
 .reg_success_txt table{
-	margin-top: 200px;
+	margin-top: 220px;
 }
 .reg_success_txt div:hover, .reg_success_txt input:hover{
 	background-color: hotpink;
 	cursor: pointer;
+}
+.reg_succeess_txt a, .reg_succeess_txt a{
+	line-height: 30px;
 }
 /* 내정보 조회 */
 .member_show_view{
@@ -903,4 +908,90 @@ footer > .footer_txt{
 }
 .mypage_img img{
 	width: 600px;
+}
+/* 회원 정보 수정 */
+.member_modify{
+	width: 100%;
+	float: left;
+}
+.member_modify > h4{
+	float: left;
+	margin-left: 30px;
+	margin-top: 20px;
+}
+.member_modify_box{
+	width: 100%;
+	float: left;
+	margin-top: 20px;
+}
+.member_modify_form td{
+	height: 30px;
+}
+.member_modify_form td:nth-child(1) {
+	width: 200px;
+	font-size: 15px;
+	font-weight: bold;
+	border-right: #ccc solid 1px;
+}
+.member_modify_form td:nth-child(2) {
+	width: 400px;
+}
+.member_modify_form td:nth-child(2) > input {
+	width: 350px;
+	height: 25px;
+	font-size: 13px;
+}
+.member_modify_btn{
+	width: 150px;
+	height: 30px;
+	background-color: #bbb;
+	border: none;
+	font-size: 16px;
+	font-weight: bold;
+	color: #fff;
+	line-height: 30px;
+	transition : 0.3s;
+}
+.member_modify_btn:hover{
+	background-color: hotpink;
+	cursor: pointer;
+}
+/* 회원정보 수정 성공 페이지 */
+.mem_mod_success{
+	width: 100%;
+	float: left;
+}
+.mem_mod_success_box{
+	width: 300px;
+	height: 160px;
+	margin-top: 20px;
+}
+.mem_mod_success_box td{
+	height: 30px;
+}
+.mem_mod_success_box td:nth-child(1) {
+	width: 100px;
+	border-right: 1px solid #ccc;
+	font-weight: bold;
+}
+.mem_mod_success_box td:nth-child(2) {
+	width: 200px;
+}
+.mem_mod_success_box tr{
+	border-collapse: collapse;
+}
+.mem_mod_success_box table{
+	border-collapse: collapse;
+}
+.mem_mod_success input{
+	width: 100px;
+	height: 30px;
+	border: none;
+	background-color: #bbb;
+	color: #fff;
+	font-weight: bold;
+}
+.mem_mod_success input:hover{
+	background-color: hotpink;
+	cursor: pointer;
 }
