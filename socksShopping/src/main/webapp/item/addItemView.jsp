@@ -30,10 +30,6 @@ function itemPriceCheck(tag){
 		alert("상품가격을 100000원 미만");
 		document.addform.itemPrice.value ="";
 		document.addform.itemPrice.focus();
-	} else if(itemP < 1000){
-		alert("상품가격을 1000원이상");
-		document.addform.itemPrice.value= "";
-		document.addform.itemPrice.focus();
 	}
 }
 

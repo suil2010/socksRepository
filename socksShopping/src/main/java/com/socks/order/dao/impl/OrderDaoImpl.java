@@ -46,5 +46,10 @@ public class OrderDaoImpl implements OrderDao{
 	public Member selectAllOrderByJoin(SqlSession session,String memberId){
 		return session.selectOne(makeId("selectAllOrderByJoin"),memberId);
 	}
+
+	@Override
+	public Order selectOrderByJoin(SqlSession session, String orderId) {
+		return session.selectOne(makeId("selectOrderByJoin"),orderId);
+	}
 	
 }
