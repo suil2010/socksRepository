@@ -26,7 +26,7 @@
 			</tr>
 			<tr>
 				<td>EMAIL</td>
-				<td>${sessionScope.loginMember.address }</td>
+				<td>${sessionScope.loginMember.email }</td>
 			</tr>
 			<tr>
 				<td>POINT</td>
