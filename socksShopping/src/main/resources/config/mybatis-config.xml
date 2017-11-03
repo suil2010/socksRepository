@@ -4,13 +4,15 @@
 	<settings>
 		<setting name="jdbcTypeForNull" value="NULL" />
 	</settings>
-
+	
 	<typeAliases>
 		<package name="com.socks.member.vo" />
 		<package name="com.socks.order.vo" />
 		<package name="com.socks.item.vo" />
+		<package name="com.socks.orderdetail.vo" />
+		<package name="com.socks.ordermember.vo" />
 	</typeAliases>
-
+	
 	<environments default="local">
 		<environment id="local">
 			<transactionManager type="JDBC" />
@@ -29,5 +31,7 @@
 		<mapper resource="config/mapper/memberMapper.xml"/>
 		<mapper resource="config/mapper/itemMapper.xml"/>
 		<mapper resource="config/mapper/OrderMapper.xml"/>
+		<mapper resource="config/mapper/orderDetailMapper.xml"/>
+		<mapper resource="config/mapper/orderMemberMapper.xml"/>
 	</mappers>
 </configuration>

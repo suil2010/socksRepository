@@ -29,8 +29,53 @@ CREATE TABLE order_list(
    item_id  VARCHAR2(30) constraint fk_item_item_id references item on delete cascade,
    order_date date not null
 );
-		
-select * from memberorder
+
+drop table order_member cascade constraint
+
+create table order_member(
+	order_num varchar2(30) primary key,
+	member_id VARCHAR2(10) constraint fk_order_member_user_id references member on delete cascade,
+	order_date date not null
+)
+
+drop table order_detail cascade constraint
+
+create table order_detail(
+	order_detail_id varchar2(30) primary key,
+	order_num varchar2(30) constraint fk_order_detail_member_id references order_member on delete cascade,
+	ITEM_ID         VARCHAR2(30) not null,
+	ORDER_QUANTITY  NUMBER(3) not NULL, -- 주문수
+	ITEM_PRICE      NUMBER(10)   NOT NULL,
+	ITEM_NAME       VARCHAR2(30) NOT NULL,
+	MAIN_CUT        VARCHAR2(50) NOT NULL
+)
+
+
+
+
+insert into order_member values('orderNum-1','userId-1','2017-07-01');
+insert into order_member values('orderNum-2','userId-1','2017-07-01');
+insert into order_member values('orderNum-3','userId-1','2017-07-01');
+insert into order_member values('orderNum-4','userId-2','2017-07-01');
+insert into order_member values('orderNum-5','userId-2','2017-07-01');
+insert into order_member values('orderNum-6','userId-3','2017-07-01');
+insert into order_member values('orderNum-7','userId-3','2017-07-01');
+
+insert into order_detail values('orderDetailId-1','orderNum-1','itemId-1',1,12000,'기타리스트 루스터', '1052.jpg');
+insert into order_detail values('orderDetailId-2','orderNum-1','itemId-2',2,12000,'기타리스트 루스터', '1052.jpg');
+insert into order_detail values('orderDetailId-3','orderNum-1','itemId-3',3,12000,'기타리스트 루스터', '1052.jpg');
+
+insert into order_detail values('orderDetailId-4','orderNum-2','itemId-1',3,12000,'기타리스트 루스터', '1052.jpg');
+insert into order_detail values('orderDetailId-5','orderNum-2','itemId-1',2,12000,'기타리스트 루스터', '1052.jpg');
+insert into order_detail values('orderDetailId-6','orderNum-2','itemId-2',1,12000,'기타리스트 루스터', '1052.jpg');
+
+insert into order_detail values('orderDetailId-7','orderNum-4','itemId-2',1,12000,'기타리스트 루스터', '1052.jpg');
+insert into order_detail values('orderDetailId-8','orderNum-6','itemId-2',1,12000,'기타리스트 루스터', '1052.jpg');
+insert into order_detail values('orderDetailId-9','orderNum-7','itemId-2',1,12000,'기타리스트 루스터', '1052.jpg');
+
+select * from ORDER_MEMBER
+
+select * from ORDER_DETAIL
 
 select * from item
 
@@ -87,6 +132,26 @@ select * from item where item_id = 'itemId-7';
 select * from member
 select * from item
 select * from order_list
+		
+		--회원아이디로 주문조히
+		select 	m.member_id ,
+            m.name,
+            m.password,
+            m.address,
+            m.email,
+            m.point,
+            o.order_num,
+            o.order_date,
+            d.order_detail_id,
+            d.ITEM_ID,
+            d.ORDER_QUANTITY,
+            d.ITEM_PRICE,
+            d.ITEM_NAME,
+            d.MAIN_CUT
+		from 	member m, ORDER_MEMBER o, ORDER_DETAIL d
+		where 	m.member_id = o.member_id
+		and 	o.order_num = d.order_num
+		and 	m.member_id = 'bb'
 
         SELECT m.member_id ,
             m.name,

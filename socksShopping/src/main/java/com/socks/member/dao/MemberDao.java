@@ -54,11 +54,15 @@ public interface MemberDao {
 	// 전체조회
 	List<Member> selectAll(SqlSession session);
 
-	// 전체조인조회
+	// 전체조인조회 -장바구니리스트
 	List<Member> selectAllByJoin(SqlSession session);
-
+	
+	// id로 회원 조회
 	Member selectMemberById(SqlSession session, String memberId);
 
+	// 모든 회원조회
 	List<Member> selectAllMember(SqlSession session);
-
+	
+	// 회원 ID로 주문 조회
+	Member selectOrderMemberById(SqlSession session, String memberId);
 }

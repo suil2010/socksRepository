@@ -1,10 +1,11 @@
 package com.socks.member.vo;
 
 import java.io.Serializable;
-
+import java.util.ArrayList;
 import java.util.List;
 
 import com.socks.order.vo.Order;
+import com.socks.ordermember.vo.OrderMember;
 
 public class Member implements Serializable{
 	private String memberId;
@@ -13,9 +14,11 @@ public class Member implements Serializable{
 	private String address;
 	private String email;
 	private int point;
-	private List<Order> orderList;
+	private List<Order> orderList; //장바구니 리스트
+	private ArrayList<OrderMember> orderMemberList; //주문 리스트
 	
 	public Member() {
+		
 	}
 
 	public Member(String memberId, String name, String password, String address, String email, int point,
@@ -39,6 +42,18 @@ public class Member implements Serializable{
 		this.point = point;
 	}
 
+	public Member(String memberId, String name, String password, String address, String email, int point,
+			ArrayList<OrderMember> orderMemberList) {
+		super();
+		this.memberId = memberId;
+		this.name = name;
+		this.password = password;
+		this.address = address;
+		this.email = email;
+		this.point = point;
+		this.orderMemberList = orderMemberList;
+	}
+	
 	public String getMemberId() {
 		return memberId;
 	}
@@ -78,9 +93,11 @@ public class Member implements Serializable{
 	public void setEmail(String email) {
 		this.email = email;
 	}
+
 	public int getPoint() {
 		return point;
 	}
+
 	public void setPoint(int point) {
 		this.point = point;
 	}
@@ -93,10 +110,19 @@ public class Member implements Serializable{
 		this.orderList = orderList;
 	}
 
+	public ArrayList<OrderMember> getOrderMemberList() {
+		return orderMemberList;
+	}
+
+	public void setOrderMemberList(ArrayList<OrderMember> orderMemberList) {
+		this.orderMemberList = orderMemberList;
+	}
+
 	@Override
 	public String toString() {
 		return "Member [memberId=" + memberId + ", name=" + name + ", password=" + password + ", address=" + address
-				+ ", email=" + email + ", point=" + point + ", orderList=" + orderList + "]";
+				+ ", email=" + email + ", point=" + point + ", orderList=" + orderList + ", orderMemberList="
+				+ orderMemberList + "]";
 	}
 
 	@Override
@@ -108,6 +134,7 @@ public class Member implements Serializable{
 		result = prime * result + ((memberId == null) ? 0 : memberId.hashCode());
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		result = prime * result + ((orderList == null) ? 0 : orderList.hashCode());
+		result = prime * result + ((orderMemberList == null) ? 0 : orderMemberList.hashCode());
 		result = prime * result + ((password == null) ? 0 : password.hashCode());
 		result = prime * result + point;
 		return result;
@@ -146,6 +173,11 @@ public class Member implements Serializable{
 			if (other.orderList != null)
 				return false;
 		} else if (!orderList.equals(other.orderList))
+			return false;
+		if (orderMemberList == null) {
+			if (other.orderMemberList != null)
+				return false;
+		} else if (!orderMemberList.equals(other.orderMemberList))
 			return false;
 		if (password == null) {
 			if (other.password != null)

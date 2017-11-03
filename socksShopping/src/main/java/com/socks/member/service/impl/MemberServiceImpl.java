@@ -26,7 +26,8 @@ import com.socks.member.vo.Member;
 import com.socks.util.SqlSessionFactoryManager;
 
 public class MemberServiceImpl implements MemberService{
-   private static SqlSessionFactory sessionFactory;
+
+private static SqlSessionFactory sessionFactory;
    private static MemberDao dao;
    
    private static MemberServiceImpl instance;
@@ -106,4 +107,15 @@ public class MemberServiceImpl implements MemberService{
          session.close();
       }
    }
+   
+   @Override
+  	public Member findOrderMemberById(String id) {
+	   SqlSession session = null;
+	      try {
+	         session = sessionFactory.openSession();
+	         return dao.selectOrderMemberById(session, id);
+	      } finally {
+	         session.close();
+	      }
+  	}
 }
