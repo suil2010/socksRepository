@@ -36,6 +36,7 @@
 	<resultMap type="member" id="member-resultmap">
 		<id column="member_id" property="memberId" />
 		<result column="password" property="password" />
+		<result column="address" property="address" />
 		<result column="name" property="name" />
 		<result column="email" property="email" />
 		<result column="point" property="point" />

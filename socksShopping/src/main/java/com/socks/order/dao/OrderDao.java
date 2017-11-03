@@ -39,5 +39,8 @@ public interface OrderDao {
 	    *  전체 주문현황을 본다.
 	    */
 	   List<Member> selectAllOrder(SqlSession session);
+	   
+	   //주문 id로 주문정보를 조회 한다.
+	   Order selectOrderByJoin(SqlSession session, String orderId);
 	    
 }
