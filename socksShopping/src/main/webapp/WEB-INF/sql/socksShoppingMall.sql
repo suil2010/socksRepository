@@ -25,8 +25,8 @@ drop table order_list
 CREATE TABLE order_list(
    order_id VARCHAR2(30) primary key, -- 주문상품
    ORDER_QUANTITY NUMBER(3) not NULL, -- 주문수
-   member_id VARCHAR2(10) constraint fk_order_user_id references member,
-   item_id  VARCHAR2(30) constraint fk_item_item_id references item,
+   member_id VARCHAR2(10) constraint fk_order_user_id references member on delete cascade,
+   item_id  VARCHAR2(30) constraint fk_item_item_id references item on delete cascade,
    order_date date not null
 );
 
