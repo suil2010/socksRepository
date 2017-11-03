@@ -56,11 +56,13 @@
 	
 	<update id="updateOrderById" parameterType="order">
 		update order_list
-		set    order_id = #{orderId}
-			   ORDER_QUANTITY = #{orderQuantity}
-			   member_id = #{memberId}
-			   item_id = #{itemId}
+		
+		set    ORDER_QUANTITY = #{orderQuantity},
+			   member_id = #{memberId},
+			   item_id = #{itemId},
 			   order_date = #{orderDate}
+			   
+	    where  order_id = #{orderId}  
 	</update> 
 	
 	<!-- 사용자가 장바구니에 담은 주문 -->

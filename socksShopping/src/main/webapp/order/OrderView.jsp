@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,13 +25,17 @@
 				</tr>
 			<thead>
 			<tbody>
-				<c:forEach items="${requestScope.list}" var="order">
+				<c:forEach items="${sessionScope.listOrder}" var="order">
 				<tr>
-					<td>${order.orderDate }</td>
-					<td>${order.ItemId }</td>
-					<td><div class="order_main_img"><img alt="main_img" src="/socksShopping/mainImage/${order.mainCut}"></div></td>
-					<td>${order.itemName }</td>
-					<td>₩ ${order.itemPrice }</td>
+					<td>
+						<fmt:setLocale value="ko_KR"/>
+						<fmt:formatDate value="${order.orderDate }" type ="date"/>
+					</td>
+					<td>${order.itemId }</td>
+					<td><div class="order_main_img"><img alt="main_img" src="/socksShopping/mainImage/${order.item.mainCut}"></div></td>
+					<td>${order.item.itemName }</td>
+					<td> <fmt:formatNumber value = "${order.item.itemPrice }" type ="currency"/>
+					</td>
 					<td><input type="submit" value="주문취소"></td>
 				</tr>
 				</c:forEach>
