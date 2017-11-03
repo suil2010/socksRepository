@@ -325,6 +325,7 @@ footer > .footer_txt{
 }
 .register_btn:hover{
 	background-color: hotpink;
+	cursor: pointer;
 }
 
 /* 장바구니 페이지 */
@@ -661,7 +662,7 @@ footer > .footer_txt{
 	width: 600px;
 	height: 300px;
 	position: relative;
-	border: 2px solid #000;
+	border: 2px solid #ccc;
 }
 .login_success_box > div{
 	position: absolute;
@@ -677,11 +678,11 @@ footer > .footer_txt{
 	color: #fff;
 }
 .welcome_txt td{
-	width: 200px;
-	height: 50px;
+	width: 150px;
+	height: 30px;
 }
 .welcome_txt td div{
-	width: 100px;
+	width: 150px;
 	height: 30px;
 	background-color: #999;
 	color: #fff;
@@ -764,4 +765,142 @@ footer > .footer_txt{
 	font-size: 14px;
 	background-color: #bbb;
 	color: #fff;
+}
+
+/* 회원가입 성공 페이지 */
+.reg_success{
+	width: 100%;
+	float: left;
+}
+.reg_success_box{
+	margin-top:30px;
+	width: 600px;
+	height: 300px;
+	position: relative;
+	border: 2px solid #ccc;
+}
+.reg_success_box > div{
+	position: absolute;
+}
+.reg_success_img{
+	z-index: 0;	
+}
+.reg_success_txt{
+	z-index: 1;
+	background-color: rgba(0,0,0,0.5);
+	width: 100%;
+	height: 100%;
+	color: #fff;
+}
+.reg_success_txt td{
+	width: 200px;
+	height: 50px;
+}
+.reg_success_txt td div, .reg_success_txt input{
+	width: 200px;
+	height: 30px;
+	background-color: #999;
+	color: #fff;
+	transition : 0.3s;
+	border : none;
+	cursor: none;
+}
+.reg_success_txt table{
+	margin-top: 200px;
+}
+.reg_success_txt div:hover, .reg_success_txt input:hover{
+	background-color: hotpink;
+	cursor: pointer;
+}
+/* 내정보 조회 */
+.member_show_view{
+	width: 100%;
+	float: left;
+}
+.member_show_view > h4{
+	margin-left: 30px;
+	margin-top: 20px;
+	float: left;
+}
+.member_show_view_box{
+	width: 100%;
+	float: left;
+	margin-top: 20px;
+}
+.member_show_view_box table{
+	border-collapse: collapse;
+}
+.member_show_view_box tr{
+	border-collapse: collapse;
+}
+.member_show_view_box td{
+	height: 30px;
+}
+.member_show_view_box td:nth-child(1){
+	width: 200px;
+	border-right: 1px solid #ccc;
+	font-weight: bold;
+}
+.member_show_view_box td:nth-child(2){
+	width: 400px;
+}
+.member_show_view_box input{
+	width: 150px;
+	height: 40px;
+	background-color: #bbb;
+	border: none;
+	margin-top: 20px;
+	color: #fff;
+	font-weight: bold;
+}
+.member_show_view_box input:nth-child(2){
+	background-color: #000;
+}
+.member_show_view_box input:hover{
+	background-color: hotpink;
+	cursor: pointer;
+}
+/* 마이페이지 */
+.mypage{
+	width: 100%;
+	float: left;
+}
+.mypage > h4{
+	float: left;
+	margin-top: 20px;
+	margin-left: 30px;
+}
+.mypage_box{
+	width: 100%;
+	float: left;
+}
+.mypage_box td{
+	width: 200px;
+	height: 30px;
+}
+.mypage_box td div{
+	width: 200px;
+	height: 30px;
+	background-color: #bbb;
+	transition : 0.3s;
+	color: #fff;
+	font-weight: bold;
+	font-size: 14px;
+	line-height: 30px;
+}
+.mypage_box td div:hover{
+	background-color: hotpink;
+}
+.mypage_box > h5{
+	float: right;
+	margin-right: 260px;
+}
+.mypage_img{
+	width: 600px;
+	height: 300px;
+	overflow: hidden;
+	margin-top: 20px;
+}
+.mypage_img img{
+	width: 600px;
 }
