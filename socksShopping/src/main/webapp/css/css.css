@@ -335,8 +335,8 @@ footer > .footer_txt{
 }
 .basket_view > h4{
 	float: left;
-	margin-top: 30px;
-	margin-left: 20px;	
+	margin-top: 20px;
+	margin-left: 30px;	
 }
 .basket_table{
 	margin-top: 80px;
@@ -711,7 +711,7 @@ footer > .footer_txt{
 .order_view > h4{
 	float: left;
 	margin-left: 30px;
-	margin-left: 20px;
+	margin-top: 20px;
 }
 .order_list{
 	width: 100%;

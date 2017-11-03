@@ -57,7 +57,7 @@
 			<c:choose>
 			<c:when test="${sessionScope.listOrder eq null}">	
 				<tr>
-					<td>조회된 상품이 없습니다.</td>
+					<td colspan="6">조회된 상품이 없습니다.</td>
 				<tr>
 			</c:when>
 			<c:otherwise>
