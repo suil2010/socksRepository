@@ -33,10 +33,11 @@ public class InOrderServlet extends HttpServlet {
 		//checkbox값이 여러개 이다.
 		String[] orderId = request.getParameterValues("check");
 		
+		Order order = null;
 		//삭제 후 findOrder를 회원의 정보를 조회
 		member = service.findOrder(memberId);
 		
-		List<Order> listOrder;
+		List<Order> listOrder = null;
 		//null.getOrderList(); -> NullpointExcoption 발생
 		if(member != null) {
 			//상품이 있으면 requestScope에 저장
@@ -51,8 +52,11 @@ public class InOrderServlet extends HttpServlet {
 		for(int i = 0 ; i < orderId.length ; i++) {
 			System.out.println(orderId[i]);
 			//orderId로 orderId의 주문개수를 조회 (item의 전체제품수도 조회)
-			
-			//전체제품수와 주문개수를 뺀 뒤에 update메소드 사용
+			order = service.findOrderById(orderId[i]);
+			//전체제품수와 주문개수를 뺀 뒤에 Modify메소드 사용
+			int number = order.getItem().getItemQuantity() - order.getOrderQuantity();
+			service.ModifyOrder(new Order(order.getOrderId(),number,
+					order.getMemberId(),order.getItemId(),order.getOrderDate()));
 		}
 		
 		
