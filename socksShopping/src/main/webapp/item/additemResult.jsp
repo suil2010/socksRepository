@@ -9,7 +9,7 @@
 <body>
 <%@ include file="/WEB-INF/include/header.jsp"%>
 <div class="add_item_result">
-	<h4>${requestScope.item.itemId } 등록 완료</h4>
+	<h4>${requestScope.item.itemName } 등록 완료</h4>
 	
 	<div class="item_result_box">
 		<div class="item_result_main">
@@ -17,6 +17,10 @@
 		</div>
 		<div class="item_result_txt">
 			<table>
+				<tr>
+					<td>상품 ID</td>
+					<td>${requestScope.item.itemId }</td>
+				</tr>
 				<tr>
 					<td>상품 이름</td>
 					<td>${requestScope.item.itemName }</td>
@@ -35,12 +39,14 @@
 			<h5>상세 이미지</h5>
 			<img alt="detail_img" src="/socksShopping/detailImage/${requestScope.item.detailCut }">
 		</div>
-		<table class="add_item_link">
-			<tr>
-				<td><a href ="/socksShopping/item/addItemView.jsp" class="other_add_item"><div>다른 상품 등록</div></a></td>
-				<td><a href ="/socksShopping/item/managerView.jsp" class="item_result_go_manager"><div>관리자 페이지</div></a></td>
-			</tr>
-		</table>
+		<div class="add_item_box">
+			<table class="add_item_link">
+				<tr>
+					<td><a href ="/socksShopping/item/addItemView.jsp" class="other_add_item"><div>다른 상품 등록</div></a></td>
+					<td><a href ="/socksShopping/item/managerView.jsp" class="item_result_go_manager"><div>관리자 페이지</div></a></td>
+				</tr>
+			</table>
+		</div>
 	</div>
 </div>
 <%@ include file="/WEB-INF/include/footer.jsp"%>
