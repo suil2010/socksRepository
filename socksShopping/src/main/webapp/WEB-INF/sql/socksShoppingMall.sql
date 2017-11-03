@@ -30,6 +30,11 @@ CREATE TABLE order_list(
    order_date date not null
 );
 
+create table memberorder(
+	member_id varchar2(10) primary key, 
+	order_id varchar2(30) primary key 
+)
+
 select * from item
 
 insert into member values('userId-1','김창수','2444','경기도 파주','s@s.com',500);
