@@ -29,11 +29,8 @@ CREATE TABLE order_list(
    item_id  VARCHAR2(30) constraint fk_item_item_id references item,
    order_date date not null
 );
-
-create table memberorder(
-	member_id varchar2(10) primary key, 
-	order_id varchar2(30) primary key 
-)
+		
+select * from memberorder
 
 select * from item
 
@@ -42,10 +39,6 @@ insert into member values('userId-2','장발장','2345','경기도 하남','a@s.
 insert into member values('userId-3','강감찬','5676','경기도 용인','b@s.com',500);
 
 --파열경로 ex) C:\java\apache-tomcat-8.0.47\webapps\FileuploadExam_image\upImage\fileName
-insert into item values('itemId-1',12000,1000,'긴 양말','C:\','D:\');
-insert into item values('itemId-2',13000,100,'발목 양말','C:\','D:\');
-insert into item values('itemId-3',14000,200,'겨울 양말','C:\','D:\');
-insert into item values('itemId-7',1400,1200,'양말', 'main.jpg', 'detail.jpg');
 
 delete from item where item_id = 'itemId-13'
 delete from item where item_id = 'itemId-7'
@@ -85,6 +78,9 @@ insert into order_list values('orderId-3',12,'userId-3','itemId-1','2017-10-30')
 insert into order_list values('orderId-4',12,'userId-1','itemId-3','2017-10-30');
 insert into order_list values('orderId-5',12,'userId-1','itemId-2','2017-10-30');
 insert into order_list values('orderId-6',12,'userId-1','itemId-3','2017-10-30');
+
+----------------
+insert into memberorder values('userId-1','orderId-1');
 
 select * from item where item_id = 'itemId-7';
 
