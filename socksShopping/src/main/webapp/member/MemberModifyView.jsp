@@ -74,7 +74,7 @@ function modifySuccess(){
 					<td><input type="text" name="email" value="${sessionScope.loginMember.email}"> </td>
 				</tr>
 			</table>
-			<input style="display: none;" type="hidden" name="point" value=${sessionScope.loginMemeber.point }><br><!-- 회원가입시 point는 자동으로 1000원 적립된다.(회원가입창에서 보여지지 않는다) -->
+			<input style="display: none;" type="text" name="point" value="${sessionScope.loginMember.point }"><br><!-- 회원가입시 point는 자동으로 1000원 적립된다.(회원가입창에서 보여지지 않는다) -->
 			<button class="member_modify_btn" type="submit" onclick="window.location.href='/socksShopping/member/MemberModifyView.jsp'">수정완료</button>
 			<input class="member_modify_btn" type="button" value="취소" onclick="window.location.href='MemberMyPage.jsp'">
 		</form>	
