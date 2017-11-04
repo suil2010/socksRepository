@@ -1,13 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="config.mapper.orderDetailMapper">
-
+	
+	<sql id = "select-join-item-sql">
+		select o.order_detail_id,
+			   o.order_num,
+			   o.item_id,
+			   o.order_quantity,
+			   i.item_price,
+			   i.item_quantity,
+			   i.item_name,
+			   i.main_cut,
+			   i.detail_cut
+		from   order_detail o, item i
+		where  o.item_id = i.item_id	   
+	</sql>
+	
+	<resultMap type ="OrderDetail" id ="orderdetail-join-resultmap">
+		<id column="order_detail_id" property="orderDetailId" />
+		<result column="order_num" property="orderNum" />
+		<result column="item_id" property="itemId" />
+		<result column="order_quantity" property="orderQuantity" />
+		
+		<association property="item" javaType = "item">
+			<id column="item_id" property="itemId"/>
+			<result column="item_price" property="itemPrice"/>
+			<result column="item_quantity" property="itemQuantity"/>
+			<result column="item_name" property="itemName"/>
+			<result column="main_cut" property="mainCut"/>
+			<result column="detail_cut" property="detailCut"/>
+		</association>
+	</resultMap>
+	
 	<insert id="insertOrderDetail" parameterType="orderDetail">
-		insert into order_detail values (#{orderDetailId},#{orderNum},
-		#{itemId},#{orderQuantity},#{itemPrice},#{itemName},#{mainCut})
+		insert into order_detail values (#{orderDetailId},#{orderNum},#{itemId},#{orderQuantity})
 	</insert>
 	
 	<delete id="deleteOrderDetailById" parameterType="string">
 		delete from order_detail where order_detail_id = #{orderDetailId}
 	</delete>
+	
+	
+	<select id="selectOrderDetailByJoin" parameterType="string" resultMap="orderdetail-join-resultmap">
+		<include refid="select-join-item-sql"></include>
+		and o.item_id = #{itemId}
+	</select>
 </mapper>

@@ -1,5 +1,7 @@
 package com.socks.orderdetail;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 
 import com.socks.orderdetail.vo.OrderDetail;
@@ -27,5 +29,10 @@ public class OrderDetailDaoImpl implements OrderDetailDao{
 	
 	public int deleteOrderDetailById(SqlSession session, String orderDetailId) {
 		return session.delete(makeSqlId("deleteOrderDetailById"),orderDetailId);
+	}
+
+	@Override
+	public List<OrderDetail> selectOrderDetailByJoin(SqlSession session, String itemId) {
+		return session.selectList(makeSqlId("selectOrderDetailByJoin"),itemId);
 	}
 }

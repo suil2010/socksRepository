@@ -6,4 +6,6 @@ public interface OrderMemberService {
 	void addOrderMember(OrderMember orderMember);
 	
 	void removeOrderMemberById(String orderNum);
+	
+	void orderProcessing(String[] orderId,String memberId);
 }

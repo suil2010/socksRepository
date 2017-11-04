@@ -1,6 +1,5 @@
 package test;
 import java.io.IOException;
-import java.util.Date;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
@@ -15,8 +14,8 @@ import com.socks.member.vo.Member;
 import com.socks.order.dao.impl.OrderDaoImpl;
 import com.socks.order.service.impl.OrderServiceImpl;
 import com.socks.orderdetail.OrderDetailServiceImpl;
+import com.socks.orderdetail.vo.OrderDetail;
 import com.socks.ordermember.OrderMemberServiceImpl;
-import com.socks.ordermember.vo.OrderMember;
 import com.socks.util.SqlSessionFactoryManager;
 
 public class test {
@@ -136,6 +135,11 @@ public class test {
 					//service4.addOrderMember(new OrderMember("orderNum-100","userId-3",new Date()));
 					System.out.println("-----delete------");
 					service4.removeOrderMemberById("orderNum-7");
+					System.out.println("----select-----");
+					List<OrderDetail> order = service3.findOrderDetail("itemId-1");
+					for(OrderDetail list1 : order) {
+						System.out.println(list1);
+					}
 					session.commit();
 				} finally {
 					session.close();

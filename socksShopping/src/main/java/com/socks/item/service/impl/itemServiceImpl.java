@@ -11,6 +11,8 @@ import com.socks.item.exception.DuplicatedItemIdException;
 import com.socks.item.exception.ItemNotFoundException;
 import com.socks.item.service.itemService;
 import com.socks.item.vo.Item;
+import com.socks.order.service.impl.OrderServiceImpl;
+import com.socks.order.vo.Order;
 import com.socks.util.SqlSessionFactoryManager;
 
 public class itemServiceImpl implements itemService{
@@ -20,6 +22,9 @@ public class itemServiceImpl implements itemService{
 	private SqlSessionFactory factory;
 	
 	private itemDaoImpl dao;
+	
+	//장바구니 service
+	private OrderServiceImpl service = OrderServiceImpl.getInstance();
 	
 	private SqlSession session =null;
 	
@@ -81,6 +86,8 @@ public class itemServiceImpl implements itemService{
 		}
 	}
 	
+	
+	
 	public Item findItemById(String itemId) {
 		try {
 			session = factory.openSession();
@@ -91,8 +98,26 @@ public class itemServiceImpl implements itemService{
 			session.close();
 		}
 	}
-
 	
+	@Override
+	public void managerOrderList(String[] orderId) throws ItemNotFoundException {
+		// 주문처리된 상품의 주문 상품 수 와 전체 상품 수를 뺀다.
+		int number = 0;
+		for(int i = 0 ; i < orderId.length ; i++) {
+			try {
+			Order order = service.findOrderById(orderId[i]);
+			System.out.println(order);
+			number = order.getItem().getItemQuantity() - order.getOrderQuantity();
+			
+			updateItemById(new Item(order.getItem().getItemId()
+					,order.getItem().getItemPrice(),number,order.getItem().getItemName(),
+					order.getItem().getMainCut(),order.getItem().getDetailCut()));
+			} catch(Exception e) {
+
+			}
+		}
+	}
+
 	public List<Item> findItemByName(String itemName) {
 		try {
 			session = factory.openSession();
@@ -115,5 +140,6 @@ public class itemServiceImpl implements itemService{
 			session.close();
 		}
 	}
+	
 	
 }

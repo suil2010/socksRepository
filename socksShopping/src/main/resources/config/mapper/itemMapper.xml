@@ -14,12 +14,12 @@
 	
 	<!-- resultMap -->
 	<resultMap type="item" id="item-resultmap">
-		<id column="item_id" property="itemId" />
-		<result column="item_price" property="itemPrice" />
-		<result column="item_quantity" property="itemQuantity" />
-		<result column="item_name" property="itemName" />
-		<result column="main_cut" property="mainCut" />
-		<result column="detail_cut" property="detailCut" />
+		<id column="item_id" property="itemId"/>
+		<result column="item_price" property="itemPrice"/>
+		<result column="item_quantity" property="itemQuantity"/>
+		<result column="item_name" property="itemName"/>
+		<result column="main_cut" property="mainCut"/>
+		<result column="detail_cut" property="detailCut"/>
 	</resultMap>
 	
 	<insert id="insertItem" parameterType="item">

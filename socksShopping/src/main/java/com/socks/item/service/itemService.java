@@ -14,6 +14,8 @@ public interface itemService {
 	
 	void updateItemById(Item newItem) throws ItemNotFoundException;
 	
+	void managerOrderList(String[] orderId) throws ItemNotFoundException;
+	
 	Item findItemById(String itemId);
 	
 	List<Item> findItemByName(String itemName);

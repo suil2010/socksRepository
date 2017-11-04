@@ -69,4 +69,6 @@ public interface MemberService {
 	Member findMemberById(String id);
 
 	Member findOrderMemberById(String id);
+	
+
 }

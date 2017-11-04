@@ -118,4 +118,6 @@ private static SqlSessionFactory sessionFactory;
 	         session.close();
 	      }
   	}
+   
+	
 }

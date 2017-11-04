@@ -44,12 +44,13 @@
 	            d.order_detail_id,
 	            d.ITEM_ID,
 	            d.ORDER_QUANTITY,
-	            d.ITEM_PRICE,
-	            d.ITEM_NAME,
-	            d.MAIN_CUT
-		from 	member m, ORDER_MEMBER o, ORDER_DETAIL d
+	            i.ITEM_PRICE,
+	            i.item_name,
+	            i.main_cut
+		from 	member m, ORDER_MEMBER o, ORDER_DETAIL d, item i 
 		where 	m.member_id = o.member_id
 		and 	o.order_num = d.order_num
+		and     d.item_id = i.item_id
 	</sql>
 
 	<!-- resultMap -->
@@ -96,9 +97,12 @@
 				<result property="orderNum" column="order_num"/>
 				<result property="itemId" column="item_id"/>
 				<result property="orderQuantity" column="order_quantity"/>
+			<association property="item" javaType="item">
+				<id property="itemId" column="item_id"/>                                 
 				<result property="itemPrice" column="ITEM_PRICE"/>
-				<result property="itemName" column="ITEM_NAME"/>
-				<result property="mainCut" column="MAIN_CUT"/>
+				<result property="itemName" column="item_name"/>
+				<result property="mainCut" column="main_cut "/>
+			</association>
 			</collection>
 		</collection>
 	</resultMap>

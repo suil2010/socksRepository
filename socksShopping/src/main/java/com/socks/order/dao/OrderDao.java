@@ -41,5 +41,7 @@ public interface OrderDao {
 	   List<Member> selectAllOrder(SqlSession session);
 
 	   Order selectOrderByJoin(SqlSession session, String orderId);
+	   
+	  
 	    
 }

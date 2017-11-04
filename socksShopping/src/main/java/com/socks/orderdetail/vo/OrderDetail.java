@@ -2,28 +2,33 @@ package com.socks.orderdetail.vo;
 
 import java.io.Serializable;
 
+import com.socks.item.vo.Item;
+
 //주문 상세 VO 클래스 
 public class OrderDetail implements Serializable{
 	private String orderDetailId; //주문상세번호
 	private String orderNum; //주문번호
 	private String itemId; //상품번호
 	private int orderQuantity; //상품 주문 수
-	private int itemPrice; //상품 가격
-	private String itemName; //상품 이름
-	private String mainCut; //상품 메인 이미지
+	private Item item;
 	
 	public OrderDetail() {}
 
-	public OrderDetail(String orderDetailId, String orderNum, String itemId, int orderQuantity, int itemPrice,
-			String itemName, String mainCut) {
+	public OrderDetail(String orderDetailId, String orderNum, String itemId, int orderQuantity) {
 		super();
 		this.orderDetailId = orderDetailId;
 		this.orderNum = orderNum;
 		this.itemId = itemId;
 		this.orderQuantity = orderQuantity;
-		this.itemPrice = itemPrice;
-		this.itemName = itemName;
-		this.mainCut = mainCut;
+	}
+
+	public OrderDetail(String orderDetailId, String orderNum, String itemId, int orderQuantity, Item item) {
+		super();
+		this.orderDetailId = orderDetailId;
+		this.orderNum = orderNum;
+		this.itemId = itemId;
+		this.orderQuantity = orderQuantity;
+		this.item = item;
 	}
 
 	public String getOrderDetailId() {
@@ -58,45 +63,26 @@ public class OrderDetail implements Serializable{
 		this.orderQuantity = orderQuantity;
 	}
 
-	public int getItemPrice() {
-		return itemPrice;
+	public Item getItem() {
+		return item;
 	}
 
-	public void setItemPrice(int itemPrice) {
-		this.itemPrice = itemPrice;
-	}
-
-	public String getItemName() {
-		return itemName;
-	}
-
-	public void setItemName(String itemName) {
-		this.itemName = itemName;
-	}
-
-	public String getmainCut() {
-		return mainCut;
-	}
-
-	public void setmainCut(String mainCut) {
-		this.mainCut = mainCut;
+	public void setItem(Item item) {
+		this.item = item;
 	}
 
 	@Override
 	public String toString() {
-		return "orderDetail [orderDetailId=" + orderDetailId + ", orderNum=" + orderNum + ", itemId=" + itemId
-				+ ", orderQuantity=" + orderQuantity + ", itemPrice=" + itemPrice + ", itemName=" + itemName
-				+ ", mainCut=" + mainCut + "]";
+		return "OrderDetail [orderDetailId=" + orderDetailId + ", orderNum=" + orderNum + ", itemId=" + itemId
+				+ ", orderQuantity=" + orderQuantity + ", item=" + item + "]";
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
+		result = prime * result + ((item == null) ? 0 : item.hashCode());
 		result = prime * result + ((itemId == null) ? 0 : itemId.hashCode());
-		result = prime * result + ((itemName == null) ? 0 : itemName.hashCode());
-		result = prime * result + itemPrice;
-		result = prime * result + ((mainCut == null) ? 0 : mainCut.hashCode());
 		result = prime * result + ((orderDetailId == null) ? 0 : orderDetailId.hashCode());
 		result = prime * result + ((orderNum == null) ? 0 : orderNum.hashCode());
 		result = prime * result + orderQuantity;
@@ -112,22 +98,15 @@ public class OrderDetail implements Serializable{
 		if (getClass() != obj.getClass())
 			return false;
 		OrderDetail other = (OrderDetail) obj;
+		if (item == null) {
+			if (other.item != null)
+				return false;
+		} else if (!item.equals(other.item))
+			return false;
 		if (itemId == null) {
 			if (other.itemId != null)
 				return false;
 		} else if (!itemId.equals(other.itemId))
-			return false;
-		if (itemName == null) {
-			if (other.itemName != null)
-				return false;
-		} else if (!itemName.equals(other.itemName))
-			return false;
-		if (itemPrice != other.itemPrice)
-			return false;
-		if (mainCut == null) {
-			if (other.mainCut != null)
-				return false;
-		} else if (!mainCut.equals(other.mainCut))
 			return false;
 		if (orderDetailId == null) {
 			if (other.orderDetailId != null)
