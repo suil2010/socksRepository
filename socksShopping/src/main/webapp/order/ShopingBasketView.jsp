@@ -27,7 +27,7 @@
 						cnt++;	
 					}
 				}
-			if(cnt == 0 ){
+			if(cnt == -1 ){
 				alert("상품을 체크하거나 장바구니에 상품을 넣으세요");
 				return false; //원래 창으로 돌아간다.
 			} else{
