@@ -11,7 +11,7 @@
 <div class="del_mem_success">
 	<h3>회원탈퇴가 완료되었습니다</h3>
 	<div>
-	<a href="${initParam.rootPath }/logoutMember"><div>처음으로</div></a>	
+	<a href="/socksShopping/main/index.jsp"><div>처음으로</div></a>	
 	</div>
 </div>
 <%@ include file="/WEB-INF/include/footer.jsp"%>

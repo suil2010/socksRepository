@@ -32,7 +32,7 @@ private static final long serialVersionUID = 1L;
 			request.getRequestDispatcher("/member/deleteMemberView.jsp").forward(request, response);
 			e.printStackTrace();
 		}
-		request.getRequestDispatcher("/member/memberDeleteSuccess.jsp").forward(request, response);// 회원탈퇴 성공페이지로 간다.
+		request.getRequestDispatcher("/logoutMember").forward(request, response);// 회원탈퇴 성공페이지로 간다.
 	}
 	
 
