@@ -743,10 +743,10 @@ footer > .footer_txt{
 .order_list td:nth-child(2), .order_list td:nth-child(7){
 	width: 100px;
 }
-.order_list td:nth-child(4), .order_list td:nth-child(6), .order_list td:nth-child(3) {
+.order_list td:nth-child(5), .order_list td:nth-child(6), .order_list td:nth-child(3) {
 	width: 130px;
 }
-.order_list td:nth-child(5) {
+.order_list td:nth-child(4) {
 	width: 300px;
 }
 .order_list td:nth-child(1){
@@ -776,7 +776,7 @@ footer > .footer_txt{
 .order_main_img img{
 	width: 100px;
 }
-.order_list tbody td:nth-child(5) {
+.order_list tbody td:nth-child(4) {
 	text-align: left;
 	font-size: 13px;
 }
