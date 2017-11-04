@@ -26,10 +26,10 @@
 				<tr>
 					<td></td>
 					<td>Date</td>
-					<td>Order Num</td>
-					<td>Product Price</td>
 					<td>Product Image</td>
 					<td>Product Name</td>
+					<td>Product Price</td>
+					<td>Order Num</td>
 					<td>Total</td>
 				</tr>
 			<thead>
@@ -42,11 +42,12 @@
 							<fmt:setLocale value="ko_KR"/>
 							<fmt:formatDate value="${orderMember.orderDate }" type ="date"/>
 						</td>
+						<td><div class="order_main_img"><img alt="main_img" src="/socksShopping/mainImage/${orderDetail.mainCut}"></div></td>
+						<td>${orderDetail.itemName }</td>
+						<td>${orderDetail.itemPrice }</td>	
 						<td>${orderDetail.orderQuantity }</td>
-						<td>${orderDetail.item.itemPrice }</td>
-						<td><div class="order_main_img"><img alt="main_img" src="/socksShopping/mainImage/${orderDetail.item.mainCut}"></div></td>
-						<td>${orderDetail.item.itemName }</td>
-						<td> <fmt:formatNumber value = "${orderDetail.item.itemPrice * orderDetail.orderQuantity}" type ="currency"/></td>
+						<td> <fmt:formatNumber value = "${orderDetail.itemPrice * orderDetail.orderQuantity}" type ="currency"/>
+						</td>
 					</tr>
 					</c:forEach>
 				</c:forEach>

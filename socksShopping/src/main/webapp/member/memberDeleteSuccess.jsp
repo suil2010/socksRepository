@@ -4,9 +4,16 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link href="${initParam.rootPath }/css/css.css" rel="stylesheet">
 </head>
 <body>
-<h1>회원탈퇴가 완료되었습니다</h1>
-<a href="/socksShopping/main/mainPage.jsp">처음페이지로 돌아가기</a>
+<%@ include file="/WEB-INF/include/header.jsp"%>
+<div class="del_mem_success">
+	<h3>회원탈퇴가 완료되었습니다</h3>
+	<div>
+	<a href="/socksShopping/main/index.jsp"><div>처음으로</div></a>	
+	</div>
+</div>
+<%@ include file="/WEB-INF/include/footer.jsp"%>
 </body>
 </html>
