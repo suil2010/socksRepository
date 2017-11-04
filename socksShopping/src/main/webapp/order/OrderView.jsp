@@ -37,16 +37,16 @@
 				<c:forEach items="${sessionScope.checkListOrder}" var="orderMember">
 					<c:forEach items="${orderMember.orderDetailList}" var="orderDetail">
 					<tr>
-						<td><input type="checkbox" name="check"></td>
+						<td><input type="checkbox" name="checkOrder" value=${orderMember.orderNum }></td>
 						<td>
 							<fmt:setLocale value="ko_KR"/>
 							<fmt:formatDate value="${orderMember.orderDate }" type ="date"/>
 						</td>
-						<td><div class="order_main_img"><img alt="main_img" src="/socksShopping/mainImage/${orderDetail.mainCut}"></div></td>
-						<td>${orderDetail.itemName }</td>
-						<td>${orderDetail.itemPrice }</td>	
+						<td><div class="order_main_img"><img alt="main_img" src="/socksShopping/mainImage/${orderDetail.item.mainCut}"></div></td>
+						<td>${orderDetail.item.itemName }</td>
+						<td>${orderDetail.item.itemPrice }</td>	
 						<td>${orderDetail.orderQuantity }</td>
-						<td> <fmt:formatNumber value = "${orderDetail.itemPrice * orderDetail.orderQuantity}" type ="currency"/>
+						<td> <fmt:formatNumber value = "${orderDetail.item.itemPrice * orderDetail.orderQuantity}" type ="currency"/>
 						</td>
 					</tr>
 					</c:forEach>

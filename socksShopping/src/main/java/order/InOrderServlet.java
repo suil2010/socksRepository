@@ -49,15 +49,15 @@ public class InOrderServlet extends HttpServlet {
 		//삭제 후 findOrder를 회원의 정보를 조회
 		member = service.findOrder(memberId);
 		
-		//주문을 처리하는 메소드(주문테이블, 주문 상세테이블 column추가, 장바구니테이블 column삭제)
-		serviceOrder.orderProcessing(orderId, memberId); 
-		
 		// 주문처리된 상품의 주문 상품 수 와 전체 상품 수를 뺀다.
 		try {
 			serviceItem.managerOrderList(orderId);
 		} catch (ItemNotFoundException e) {
 			throw new ServletException(e);
 		}
+		
+		//주문을 처리하는 메소드(주문테이블, 주문 상세테이블 column추가, 장바구니테이블 column삭제)
+		serviceOrder.orderProcessing(orderId, memberId); 
 		
 		member = serviceMember.findOrderMemberById(memberId);
 		List<OrderMember> list = member.getOrderMemberList();

@@ -127,6 +127,26 @@ select * from member
 select * from item
 select * from order_list
 
+		select 	m.member_id,
+	            m.name,
+	            m.password,
+	            m.address,
+	            m.email,
+	            m.point,
+	            o.order_num,
+	            o.order_date,
+	            d.order_detail_id,
+	            d.ITEM_ID,
+	            d.ORDER_QUANTITY,
+	            i.ITEM_PRICE,
+	            i.item_name,
+	            i.main_cut
+		from 	member m, ORDER_MEMBER o, ORDER_DETAIL d, item i 
+		where 	m.member_id = o.member_id
+		and 	o.order_num = d.order_num
+		and     d.item_id = i.item_id
+		and     m.member_id = 'aa'
+
 		select o.order_detail_id,
 			   o.order_num,
 			   o.item_id,

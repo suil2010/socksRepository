@@ -3,8 +3,11 @@ package com.socks.ordermember;
 import java.io.IOException;
 import java.util.Date;
 
+import javax.management.RuntimeErrorException;
+
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
+import org.w3c.dom.ranges.RangeException;
 
 import com.socks.order.dao.impl.OrderDaoImpl;
 import com.socks.order.service.impl.OrderServiceImpl;
@@ -67,7 +70,7 @@ public class OrderMemberServiceImpl implements OrderMemberService{
 	
 		//주문 처리과정 - service를 사용하여 각 session을 이용해야 한다.
 		@Override
-		public void orderProcessing(String[] orderId,String memberId) {
+		public void orderProcessing(String[] orderId,String memberId) throws RuntimeException{
 			//1. 주문 테이블에 insert
 			String orderNum = "orderNum-"+System.currentTimeMillis();
 			// String orderNum, memberId, orderDate
@@ -81,11 +84,23 @@ public class OrderMemberServiceImpl implements OrderMemberService{
 				service1.addOrderDetail(new OrderDetail("orderDetailId"+System.currentTimeMillis(),
 						orderNum, order.getItem().getItemId() ,order.getOrderQuantity()));
 				
-				//3. 장바구니 테이블에서 주문한  column을 삭제
+				//3. 장바구니 테이블에서 주문한  column을 삭제 -> 장바구니의 체크한 값이 사라짐 -> managerOrderList가 null을 가짐
 				service.removeOrder(orderId[i]);
 				}
 			} catch(Exception e) {
-				
+				throw new RuntimeException(e);
+			}
+		}
+
+		@Override
+		public void cancelOrderProcessing(String[] orderNum) throws RuntimeException {
+			try {
+				for(int i = 0 ; i < orderNum.length ; i++ ) {
+					removeOrderMemberById(orderNum[i]);
+					System.out.println(orderNum[i]);
+				}
+			} catch(Exception e) {
+				throw new RuntimeException(e);
 			}
 		}
 }

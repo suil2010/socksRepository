@@ -8,4 +8,6 @@ public interface OrderMemberService {
 	void removeOrderMemberById(String orderNum);
 	
 	void orderProcessing(String[] orderId,String memberId);
+	
+	void cancelOrderProcessing(String[] orderNum);
 }

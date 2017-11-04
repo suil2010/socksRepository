@@ -30,7 +30,7 @@ public class RemoveShoppingBasketServlet extends HttpServlet {
 		Member member = (Member)session.getAttribute("loginMember");
 		String memberId = member.getMemberId();
 		//checkbox값이 여러개 이다.
-		String[] orderId = request.getParameterValues("check");
+		String[] orderId = request.getParameterValues("check"); //주문번호를 받아옴
 		
 		//삭제 작업
 		for(int i = 0 ; i < orderId.length ; i++) {

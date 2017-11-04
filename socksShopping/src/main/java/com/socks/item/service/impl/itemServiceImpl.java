@@ -3,6 +3,8 @@ package com.socks.item.service.impl;
 import java.io.IOException;
 import java.util.List;
 
+import javax.management.RuntimeErrorException;
+
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
@@ -100,21 +102,19 @@ public class itemServiceImpl implements itemService{
 	}
 	
 	@Override
-	public void managerOrderList(String[] orderId) throws ItemNotFoundException {
+	public void managerOrderList(String[] orderId) throws ItemNotFoundException ,RuntimeException{
 		// 주문처리된 상품의 주문 상품 수 와 전체 상품 수를 뺀다.
-		int number = 0;
-		for(int i = 0 ; i < orderId.length ; i++) {
-			try {
-			Order order = service.findOrderById(orderId[i]);
-			System.out.println(order);
-			number = order.getItem().getItemQuantity() - order.getOrderQuantity();
-			
-			updateItemById(new Item(order.getItem().getItemId()
-					,order.getItem().getItemPrice(),number,order.getItem().getItemName(),
-					order.getItem().getMainCut(),order.getItem().getDetailCut()));
-			} catch(Exception e) {
-
-			}
+		try {
+			for(int i = 0 ; i < orderId.length ; i++) {
+				Order order = service.findOrderById(orderId[i]);
+				System.out.println(order);
+				int number = order.getItem().getItemQuantity() - order.getOrderQuantity();
+				updateItemById(new Item(order.getItem().getItemId()
+						,order.getItem().getItemPrice(),number,order.getItem().getItemName(),
+						order.getItem().getMainCut(),order.getItem().getDetailCut()));
+			} 
+		} catch(Exception e) {
+			throw new RuntimeException(e);
 		}
 	}
 
