@@ -101,7 +101,7 @@
 				<id property="itemId" column="item_id"/>                                 
 				<result property="itemPrice" column="ITEM_PRICE"/>
 				<result property="itemName" column="item_name"/>
-				<result property="mainCut" column="main_cut "/>
+				<result property="mainCut" column="main_cut"/>
 			</association>
 			</collection>
 		</collection>

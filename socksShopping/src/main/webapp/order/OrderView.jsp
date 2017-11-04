@@ -42,7 +42,7 @@
 							<fmt:setLocale value="ko_KR"/>
 							<fmt:formatDate value="${orderMember.orderDate }" type ="date"/>
 						</td>
-						<td><div class="order_main_img"><img alt="main_img" src="/socksShopping/mainImage/${orderDetail.item.mainCut}"></div></td>
+						<td><div class="order_main_img"><img alt="main_img" src="/socksShopping/mainImage/${orderDetail.item.mainCut }"></div></td>
 						<td>${orderDetail.item.itemName }</td>
 						<td>${orderDetail.item.itemPrice }</td>	
 						<td>${orderDetail.orderQuantity }</td>
