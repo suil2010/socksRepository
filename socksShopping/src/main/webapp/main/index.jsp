@@ -4,9 +4,9 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link href="${initParam.rootPath }/css/css.css" rel="stylesheet">
 <script type="text/javascript" src="${initParam.rootPath }/js/jquery-1.12.3.js"></script>
 <script type="text/javascript" src="${initParam.rootPath }/js/js.js"></script>
+<link href="${initParam.rootPath }/css/css.css" rel="stylesheet">
 </head>
 <body>
 <%@ include file="/WEB-INF/include/header.jsp"%>

@@ -1,3 +1,4 @@
+/* 전체 */
 *{
 	margin: 0 auto;
 	padding: 0;
@@ -14,161 +15,11 @@
 	float: left;
 	width: 1px;
 }
+
+
 /* 헤더 */
 header{
 	width: 100%;
-	height: 150px;
-	float: left;
-	border-bottom: solid #333 1px;
-}
-/* 로고 */
-.logo{
-	width: 300px;
-	height: 90px;
-	margin-top: 10px;
-}
-.logo > a > img {
-	width: 100%;
-	height: 100%;
-}
-/* 로그인/로그아웃 + 회원정보 */
-.top_box{
-	float: right;
-	width: 300px;
-	height: 30px;
-	margin-top: -30px;
-}
-.top_box > a{
-	font-weight: bold;
-	color: #333;
-}
-.top_box > a:hover {
-	color: red;
-}
-/* 푸터  */
-footer{
-	width: 100%;
-	height: 150px;
-	background-color: #999;
-	float: left;
-}
-/* 푸터 로고 */
-footer > .footer_logo{
-	width: 200px;
-	height: 40px;
-	float: left;
-	margin-top: 50px;
-	margin-left: 10px;
-}
-footer > .footer_logo > img{
-	height: 40px;
-}
-/* 푸터 텍스트 */
-footer > .footer_txt{
-	font-size: 12px;
-}
-.footer_empty{
-	height: 30px;
-}
-/* 메인 페이지 form */
-.main_form{
-	float: left;
-	width: 100%;
-}
-/* 상품들 */
-.main_form > table {
-	float:left;
-	border-collapse: collapse;
-}
-
-.item_box{
-	width: 220px;
-	height: 300px;
-	float: left;
-}
-.items{
-	width: 210px;
-	height: 280px;
-	margin-top: 10px;
-}
-.item_img_box{
-	border-radius: 20px;
-	width: 200px;
-	height: 200px;
-	float: left;
-	margin-left:5px;
-	margin-top:10px;	
-	border: 1px solid #000;
-	overflow: hidden;
-}
-.item_name{
-	color:#333;
-	font-size: 13px;
-	margin-top: 5px;
-}
-.item_price{
-	color:#333;
-	font-size: 15px;
-	font-weight: bold;
-	margin-top: 5px;
-}
-.item_bar{
-	background-color: #fff;
-	width: 100%;
-	height: 5px;
-	float: left;
-	margin-top: 15px;
-	transition : 0.5s;
-}
-.fl_le{
-	width: 100%;
-	float: left;
-}
-/* 아이템 위에 마우스 올리면 나오는 액션 */
-.item_box > a:hover .item_bar {
-	background-color: red;
-}
-/* 상세 화면 */
-.detail_view{
-	width: 100%;
-	float: left;
-	margin-top: 20px;
-}
-/* 상세 화면 메인이미지 */
-.detail_main_img{
-	width: 300px;
-	height: 300px;
-	border: 1px solid #000;
-	float: left;
-	border-radius: 20px;
-	overflow: hidden;
-	margin-left: 30px;
-}
-/* 상세 화면 전송 폼 */
-.detail_form{
-	width: 500px;
-	height: 300px;
-	background-color: red;
-	float: left;
-	margin-left: 150px;
-}
-/* 상세 화면 제품 이름 */
-.detail_title{
-	color: #333;
-	font-size: 20px;
-	font-weight: bold;
-	width: 100%;
-	height: 30px;
-}
-/* 상세 화면 제품 가격 */
-.detail_price{
-	float: right;
-	margin-right: 20px;
-}
-.detail_bar{
-	border-bottom: dotted 3px #000;
-	width: 100%;
-	height: 30px;
 	height: 150px;
 	float: left;
 	border-bottom: solid #333 1px;
@@ -185,7 +36,7 @@ footer > .footer_txt{
 	height: 150px;
 	float: left;
 }
-/* 로고 */
+
 .logo{
 	width: 300px;
 	height: 90px;
@@ -195,6 +46,7 @@ footer > .footer_txt{
 	width: 100%;
 	height: 100%;
 }
+
 /* 로그인/로그아웃 + 회원정보 */
 .top_box{
 	float: right;
@@ -216,7 +68,7 @@ footer{
 	background-color: #999;
 	float: left;
 }
-/* 푸터 로고 */
+
 footer > .footer_logo{
 	width: 200px;
 	height: 40px;
@@ -227,15 +79,15 @@ footer > .footer_logo{
 footer > .footer_logo > img{
 	height: 40px;
 }
-/* 푸터 텍스트 */
+
 footer > .footer_txt{
 	font-size: 12px;
-	color: #fff;
 }
 .footer_empty{
 	height: 30px;
 }
-/* 메인 페이지 form */
+
+/* 메인 페이지 화면 */
 .main_form{
 	float: left;
 	width: 100%;
@@ -245,7 +97,6 @@ footer > .footer_txt{
 	float:left;
 	border-collapse: collapse;
 }
-
 .item_box{
 	width: 220px;
 	height: 300px;
@@ -289,7 +140,6 @@ footer > .footer_txt{
 	width: 100%;
 	float: left;
 }
-/* 아이템 위에 마우스 올리면 나오는 액션 */
 .item_box > a:hover .item_bar {
 	background-color: hotpink;
 }
@@ -299,7 +149,6 @@ footer > .footer_txt{
 	float: left;
 	margin-top: 20px;
 }
-/* 상세 화면 메인이미지 */
 .detail_main_img{
 	width: 300px;
 	height: 300px;
@@ -309,14 +158,12 @@ footer > .footer_txt{
 	overflow: hidden;
 	margin-left: 80px;
 }
-/* 상세 화면 전송 폼 */
 .detail_form{
 	width: 500px;
 	height: 300px;
 	float: left;
 	margin-left: 100px;
 }
-/* 상세 화면 제품 이름 */
 .detail_title{
 	color: #333;
 	font-size: 20px;
@@ -324,7 +171,6 @@ footer > .footer_txt{
 	width: 100%;
 	height: 30px;
 }
-/* 상세 화면 제품 가격 */
 .detail_price{
 	float: right;
 	margin-right: 20px;
@@ -334,7 +180,6 @@ footer > .footer_txt{
 	width: 100%;
 	height: 30px;
 }
-/* 상세 화면 상품 개수 선택 */
 .detail_item_num{
 	float: left;
 	margin-left: 30px;
@@ -344,13 +189,11 @@ footer > .footer_txt{
 	width: 50px;
 	margin-left: 200px;
 }
-/* 상세 화면 재고량 */
 .detail_stuck{
 	float: right;
 	color: red;
 	font-size: 13px;
 }
-/* 상세화면 장바구니 버튼 */
 .cart_btn{
 	width: 300px;
 	height: 50px;
@@ -361,11 +204,9 @@ footer > .footer_txt{
 	background-color: #000;
 	color: #fff;
 }
-/* 장바구니 버튼 호버 */
 .cart_btn:hover {
 	background-color: hotpink;
 }
-/* 상품 부가 이미지 */
 .detail_sub_img{
 	width: 80%;
 	float: left;
@@ -375,7 +216,7 @@ footer > .footer_txt{
 .detail_sub_img > img {
 	width: 100%;
 }
-/* 로그인 뷰 */
+/* 로그인 화면 */
 .login_view{
 	float: left;
 	width: 100%;
@@ -396,7 +237,6 @@ footer > .footer_txt{
 	font-weight: bold;
 	margin-top: 10px;
 }
-
 .login_btn{
 	width: 120px;
 	height: 65px;
@@ -429,7 +269,7 @@ footer > .footer_txt{
 	height: 150px;	
 }
 
-/* 회원가입 뷰 */
+/* 회원가입 페이지 */
 .register_view{
 	float: left;
 	width: 100%;
@@ -480,7 +320,6 @@ footer > .footer_txt{
 	background-color: hotpink;
 	cursor: pointer;
 }
-
 /* 장바구니 페이지 */
 .basket_view{
 	width: 100%;
@@ -534,7 +373,6 @@ footer > .footer_txt{
 .basket_table td:nth-child(6) {
 	width: 100px;
 }
-
 .basket_img{
 	width: 100px;
 	height: 100px;
@@ -557,7 +395,6 @@ footer > .footer_txt{
 	background-color: #333;
 	cursor: pointer;
 }
-	
 .total_due{
 	float: right;
 	margin-right: 120px;
@@ -655,7 +492,6 @@ footer > .footer_txt{
 	height: 500px;
 	overflow: hidden;
 }
-
 /* 상품 등록 페이지(관리자) */
 .add_item_view{
 	width: 100%;
@@ -710,8 +546,6 @@ footer > .footer_txt{
 	background-color: #000;
 	cursor: pointer;
 }
-
-
 /* 등록 완료 화면 */
 .add_item_result{
 	width: 100%;
@@ -852,7 +686,7 @@ footer > .footer_txt{
 }
 /* 주문 정보 창 */
 .order_view{
-	width: 100%;
+	width: 100%;	
 	float: left;
 }
 .order_view > h4{
