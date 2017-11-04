@@ -996,7 +996,7 @@ footer > .footer_txt{
 	float: left;
 }
 .mem_mod_success_box{
-	width: 300px;
+	width: 500px;
 	height: 160px;
 	margin-top: 20px;
 }
@@ -1009,7 +1009,7 @@ footer > .footer_txt{
 	font-weight: bold;
 }
 .mem_mod_success_box td:nth-child(2) {
-	width: 200px;
+	width: 400px;
 }
 .mem_mod_success_box tr{
 	border-collapse: collapse;
@@ -1024,6 +1024,7 @@ footer > .footer_txt{
 	background-color: #bbb;
 	color: #fff;
 	font-weight: bold;
+	margin-top: 20px;
 }
 .mem_mod_success input:hover{
 	background-color: hotpink;
@@ -1246,5 +1247,51 @@ footer > .footer_txt{
 }
 .delete_result > a > div:hover {
 	background-color: hotpink;
-
+}
+/* 탈퇴 페이지 */
+.del_member{
+	width: 100%;
+	float: left;
+}
+.del_member > h3{
+	margin-top: 20px;
+}
+.del_member > form > button{
+	margin-top: 20px;
+	width: 80px;
+	height: 30px;
+	background-color: #bbb;
+	color: #fff;
+	font-weight: bold;
+	font-size: 14px;
+	border: none;
+}
+.del_member > form > button:hover {
+	background-color: hotpink;
+	cursor: pointer;
+}
+/* 탈퇴 성공 페이지 */
+.del_mem_success{
+	width: 100%;
+	float: left;
+}
+.del_mem_success > h3{
+	margin-top: 20px;
+}
+.del_mem_success > div{
+	margin-top: 20px;
+}
+.del_mem_success > div > a > div{
+	width: 120px;
+	height: 30px;
+	font-size: 15px;
+	font-weight: bold;
+	background-color: #bbb;
+	color: #fff;
+	transition: 0.3s;
+	line-height: 30px;
+}
+.del_mem_success > div > a > div:hover{
+	background-color: hotpink;
+	cursor: pointer;
 }
