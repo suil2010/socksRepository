@@ -42,6 +42,7 @@ insert into item values('itemId-2',13000,100,'발목 양말','C:\','D:\');
 insert into item values('itemId-3',14000,200,'겨울 양말','C:\','D:\');
 insert into item values('itemId-7',1400,1200,'양말', 'main.jpg', 'detail.jpg');
 
+delete from MEMBER where member_id = '222' cascade 
 delete from item where item_id = 'itemId-13'
 delete from item where item_id = 'itemId-7'
 delete from ORDER_LISt

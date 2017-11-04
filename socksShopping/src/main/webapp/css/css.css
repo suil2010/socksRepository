@@ -796,17 +796,18 @@ footer > .footer_txt{
 	color: #fff;
 }
 .reg_success_txt td{
-	width: 200px;
+	width: 150px;
 	height: 50px;
 }
 .reg_success_txt td div, .reg_success_txt input{
-	width: 200px;
+	width: 130px;
 	height: 30px;
 	background-color: #999;
 	color: #fff;
 	transition : 0.3s;
 	border : none;
 	cursor: none;
+	font-weight: bold;
 }
 .reg_success_txt table{
 	margin-top: 220px;
@@ -815,7 +816,7 @@ footer > .footer_txt{
 	background-color: hotpink;
 	cursor: pointer;
 }
-.reg_succeess_txt a, .reg_succeess_txt a{
+.reg_succeess_txt div, .reg_succeess_txt input{
 	line-height: 30px;
 }
 /* 내정보 조회 */
