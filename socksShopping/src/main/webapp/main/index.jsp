@@ -14,8 +14,16 @@
 	<div class="sli_main_img">
 		<div class="slide">
 			<img alt="slide1" src="${initParam.rootPath }/slideImgs/slide1.jpg">
-			<img alt="slide1" src="${initParam.rootPath }/slideImgs/slide2.jpg">
-			<img alt="slide1" src="${initParam.rootPath }/slideImgs/slide3.jpg">
+			<img alt="slide2" src="${initParam.rootPath }/slideImgs/slide2.jpg">
+			<img alt="slide3" src="${initParam.rootPath }/slideImgs/slide3.jpg">
+		</div>
+		<div class="index_btn">
+			<table>
+				<tr>
+					<td><a href="${initParam.rootPath }/main/showMain"><div>상점페이지</div></a></td>
+					<td><a href="${initParam.rootPath }/member/loginView.jsp"><div>로그인페이지</div></a></td>
+				</tr>
+			</table>
 		</div>
 	</div>
 </div>

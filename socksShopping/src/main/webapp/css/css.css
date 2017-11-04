@@ -437,20 +437,30 @@ footer > .footer_txt{
 	float: left;
 }
 .sli_main_img{
-	width: 900px;
+	float :left;
+	width: 100%;
 	height: 500px;
+	margin-top: 30px;
+	position: relative;
 }
 .slide{
 	width : 900px;
 	height: 100%;
 	position: relative;
-	float: left;
 	overflow: hidden;
+	border: 2px #ccc solid;
 }
 .slide img{
 	position: absolute;
 	width: 900px;
 	height: 500px;
+	left:0;
+}
+.index_btn{
+	width : 100%;
+	height: 50px;
+	background-color: rgba(0,0,0,0.3);
+	position: absolute;
 }
 
 /* 관리자 페이지 */
@@ -705,14 +715,17 @@ footer > .footer_txt{
 	border-collapse: collapse;
 	margin-top: 30px;
 }
-.order_list td:nth-child(1), .order_list td:nth-child(6){
+.order_list td:nth-child(2), .order_list td:nth-child(7){
 	width: 100px;
 }
-.order_list td:nth-child(3), .order_list td:nth-child(5), .order_list td:nth-child(2) {
+.order_list td:nth-child(4), .order_list td:nth-child(6), .order_list td:nth-child(3) {
 	width: 130px;
 }
-.order_list td:nth-child(4) {
+.order_list td:nth-child(5) {
 	width: 300px;
+}
+.order_list td:nth-child(1){
+	width: 50px;
 }
 
 .order_list tbody td{
@@ -738,17 +751,29 @@ footer > .footer_txt{
 .order_main_img img{
 	width: 100px;
 }
-.order_list tbody td:nth-child(4) {
+.order_list tbody td:nth-child(5) {
 	text-align: left;
 	font-size: 13px;
 }
 .order_list tbody td > input{
-	width: 80px;
+	width: 18px;
+	height: 18px;
+}
+.order_list > input{
+	width: 100px;
 	height: 30px;
-	border: none;
-	font-size: 14px;
 	background-color: #bbb;
 	color: #fff;
+	border: none;
+	font-size: 14px;
+	font-weight: bold;
+	margin-top: 20px;
+	float: right;
+	margin-right: 80px;
+}
+.order_list > input:hover{
+	background-color: #000;
+	cursor: pointer;
 }
 
 /* 회원가입 성공 페이지 */

@@ -13,23 +13,24 @@
 <%@ include file="/WEB-INF/include/header.jsp"%>
 <div class="order_view">
 	<h4>ORDER LIST</h4>
-	<div class="order_list">
+	<form class="order_list">
 		<table>
 			<thead>
 				<tr>
+					<td></td>
 					<td>Date</td>
 					<td>Order Num</td>
 					<td>Product Price</td>
 					<td>Product Image</td>
 					<td>Product Name</td>
 					<td>Total</td>
-					<td></td>
 				</tr>
 			<thead>
 			<tbody>
 				<c:forEach items="${sessionScope.checkListOrder}" var="orderMember">
 					<c:forEach items="${orderMember.orderDetailList}" var="orderDetail">
 					<tr>
+						<td><input type="checkbox" name="check"></td>
 						<td>
 							<fmt:setLocale value="ko_KR"/>
 							<fmt:formatDate value="${orderMember.orderDate }" type ="date"/>
@@ -40,13 +41,13 @@
 						<td>${orderDetail.itemName }</td>
 						<td> <fmt:formatNumber value = "${orderDetail.itemPrice * orderDetail.orderQuantity}" type ="currency"/>
 						</td>
-						<td><input type="submit" value="주문취소"></td>
 					</tr>
 					</c:forEach>
 				</c:forEach>
 			</tbody>
 		</table>
-	</div>
+		<input class="order_cancle_btn" type="submit" value="주문취소">
+	</form>
 </div>
 <%@ include file="/WEB-INF/include/footer.jsp"%>
 </body>

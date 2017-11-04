@@ -13,5 +13,5 @@ $(document).ready(function(){
 		imgs.eq(now).css({"left":"100%"});
 		imgs.eq(pre).animate({"left":"-100%"},1000);
 		imgs.eq(now).animate({"left":"0"},1000);
-	},2000);
+	},3000);
 });
