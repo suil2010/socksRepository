@@ -15,7 +15,6 @@
 <input type="hidden" name="email" value="${sessionScope.loginMember.email }">
 <input type="hidden" name="point" value="${sessionScope.loginMember.point }">
 <button type="submit">탈퇴하기</button>
-<button type="submit" onclick="location.href='/socksShopping/member/memberDeleteSuccess.jsp'">탈퇴하기</button>
 </form>
 </body>
 </html>
