@@ -152,7 +152,7 @@ select * from order_list
 		from 	member m, ORDER_MEMBER o, ORDER_DETAIL d
 		where 	m.member_id = o.member_id
 		and 	o.order_num = d.order_num
-		and 	m.member_id = 'bb'
+		and 	m.member_id = 'aa'
 
         SELECT m.member_id ,
             m.name,

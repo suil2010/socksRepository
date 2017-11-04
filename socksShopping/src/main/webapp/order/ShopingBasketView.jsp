@@ -19,23 +19,22 @@
 			document.basketForm.submit();
 		}
 		if(index == 2){
-			<%-- 자바스크립트는 DOM구조이다. --%>
-			var checkList = document.basketForm.check;
-			var cnt = 0;
-			for(var i =0; i < checkList.length ; i++){
-					if(checkList[i].checked){
-						cnt++;	
+				<%-- 자바스크립트는 DOM구조이다. --%>
+				var check = document.basketForm.check.value;
+				var cnt = 0;
+				for(var i = 0; i < checkList.length ; i++){
+						if(checkList[i].checked){
+							cnt++;	
+						}
 					}
+				if(cnt == 0 ){
+					alert("상품을 체크하거나 장바구니에 상품을 넣으세요");
+				} else{
+					document.basketForm.action = "/socksShopping/InOrder";
+					document.basketForm.submit();
 				}
-			if(cnt == 0 ){
-				alert("상품을 체크하거나 장바구니에 상품을 넣으세요");
-				return false; //원래 창으로 돌아간다.
-			} else{
-				document.basketForm.action = "/socksShopping/InOrder";
-				document.basketForm.submit();
 			}
-		}
-	}
+		}		
 </script>
 </head>
 <body>
@@ -117,7 +116,7 @@
 					</td><!-- sub total + delivery fee? -->
 				</tr>
 			</table>
-			<input type="button" value="checkout" class="basket_order_btn" onclick = "mySubmit(2)"><!-- 주문버튼 -->
+			<input type="button" value="checkout" class="basket_order_btn" onclick ="mySubmit(2)"><!-- 주문버튼 -->
 		</div>
 	</form>
 </div>

@@ -8,11 +8,18 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link href="${initParam.rootPath }/css/css.css" rel="stylesheet">
+<script type="text/javascript">
+	function mySubmit(){
+			document.orderForm.action = "/socksShopping/removeOrder";
+			document.orderForm.submit();
+	}
+</script>
 </head>
 <body>
 <%@ include file="/WEB-INF/include/header.jsp"%>
 <div class="order_view">
-	<h4>ORDER LIST</h4>
+	<h4>${sessionScope.loginMember.name }회원의 주문내역</h4>
+	<form name = "orderForm" method = "post">
 	<div class="order_list">
 		<table>
 			<thead>
@@ -39,14 +46,15 @@
 						<td><div class="order_main_img"><img alt="main_img" src="/socksShopping/mainImage/${orderDetail.mainCut}"></div></td>
 						<td>${orderDetail.itemName }</td>
 						<td> <fmt:formatNumber value = "${orderDetail.itemPrice * orderDetail.orderQuantity}" type ="currency"/>
-						</td>
-						<td><input type="submit" value="주문취소"></td>
+						</td>						
+						<td><input type="submit" value="${orderDetail}" name="order" onclick= "mySubmit()"></td>
 					</tr>
 					</c:forEach>
 				</c:forEach>
 			</tbody>
 		</table>
 	</div>
+	</form>
 </div>
 <%@ include file="/WEB-INF/include/footer.jsp"%>
 </body>
