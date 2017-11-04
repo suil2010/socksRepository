@@ -7,6 +7,7 @@
 <link href="${initParam.rootPath }/css/css.css" rel="stylesheet">
 </head>
 <body>
+
 <%@ include file="/WEB-INF/include/header.jsp"%>
 <div class="delete_item">
 	<h4>상품 삭제 페이지</h4>
@@ -23,5 +24,6 @@
 	</div>
 </div>
 <%@ include file="/WEB-INF/include/footer.jsp"%>
+
 </body>
 </html>

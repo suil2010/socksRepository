@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="config.mapper.orderMemberMapper">
+
+	<insert id="insertOrderMember" parameterType= "orderMember">
+		insert into order_member values (#{orderNum},#{memberId},#{orderDate})
+	</insert>
+	
+	<delete id="deleteOrderMemberById" parameterType="string">
+		delete from order_member where order_num = #{orderNum}
+	</delete>
+
+</mapper>

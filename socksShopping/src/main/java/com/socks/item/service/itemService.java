@@ -19,4 +19,5 @@ public interface itemService {
 	List<Item> findItemByName(String itemName);
 	
 	List<Item> findAllItem();
+
 }

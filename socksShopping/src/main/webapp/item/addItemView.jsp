@@ -4,6 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+
 <script type="text/javascript">
 function clearPlaceholder(tag){
 	if(tag.value == 'itemId-*'){tag.value ='';}
@@ -29,6 +30,7 @@ function itemPriceCheck(tag){
 		document.addform.itemPrice.value ="";
 		document.addform.itemPrice.focus();
 	}
+
 }
 function itemQuantityCheck(tag){
 	var itemQ = document.addform.itemQuantity.value;
@@ -88,5 +90,6 @@ function itemNameCheck(tag){
 	</form>
 </div>
 <%@ include file="/WEB-INF/include/footer.jsp"%>
+
 </body>
 </html>

@@ -17,9 +17,8 @@
 			<h3>회원가입이 완료되었습니다.</h3>
 			<table>
 				<tr>
-					<td><a href="${initParam.rootPath }/main/showMain"><div>메인으로</div></a></td>
-					<td><a href="${initParam.rootPath }/member/loginView.jsp"><div>로그인</div></a></td>
-					<td><input type="submit" value="탈퇴하기" onclick="location.href='${initParam.rootPath}/member/deleteMemberView.jsp'"/></td>
+					<td><a href="${initParam.rootPath }/main/showMain"><div>메인으로 이동</div></a></td>
+					<td><a href="${initParam.rootPath }/member/loginView.jsp"><div>로그인하기</div></a></td>
 				</tr>
 			</table>
 		</div>

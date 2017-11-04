@@ -1,3 +1,4 @@
+
 <%@page import="com.socks.member.service.impl.MemberServiceImpl"%>
 <%@page import="com.socks.member.service.MemberService"%>
 <%@page import="com.socks.member.dao.impl.MemberDaoImpl"%>
@@ -11,33 +12,34 @@
 <meta charset="UTF-8">
 <title>회원정보 수정 페이지</title>
 <script type="text/javascript">
+
 function inputCheck(){
-	if(regForm.name.value == "") {
+	if(modForm.name.value == "") {
 		alert("이름를 입력하시오.");
-		regForm.name.focus();
+		modForm.name.focus();
 		return false;
 	}
-	if(regForm.password.value == "") {
+	if(modForm.password.value == "") {
 		alert("passwd를 입력하시오.");
-		regForm.password.focus();
+		modForm.password.focus();
 		return false;
 	}
-	if(regForm.password.value !== regForm.passwordConf.value) {
+	if(modForm.password.value !== modForm.passwordConf.value) {
 		alert("비밀번호가 일치하지 않습니다!");
-		regForm.password.focus();
+		modForm.password.focus();
 		return false;
 	}
-	if(regForm.address.value == "") {
+	if(modForm.address.value == "") {
 		alert("address를 입력하시오.");
-		regForm.address.focus();
+		modForm.address.focus();
 		return false;
 	}
-	if(regForm.email.value == "") {
+	if(modForm.email.value == "") {
 		alert("email를 입력하시오.");
 		regForm.email.focus();
 		return false;
 	}
-	regForm.submit();
+	modForm.submit();
 }
 function modifySuccess(){
 	alert("회원정보 수정이 완료되었습니다.");
@@ -74,8 +76,8 @@ function modifySuccess(){
 					<td><input type="text" name="email" value="${sessionScope.loginMember.email}"> </td>
 				</tr>
 			</table>
-			<input style="display: none;" type="hidden" name="point" value=${sessionScope.loginMemeber.point }><br><!-- 회원가입시 point는 자동으로 1000원 적립된다.(회원가입창에서 보여지지 않는다) -->
-			<button class="member_modify_btn" type="submit" onclick="window.location.href='socksShoppingMall/member/MemberModifySuccess.jsp'">수정완료</button>
+			<input style="display: none;" type="text" name="point" value="${sessionScope.loginMember.point }"><br><!-- 회원가입시 point는 자동으로 1000원 적립된다.(회원가입창에서 보여지지 않는다) -->
+			<button class="member_modify_btn" type="submit" onclick="window.location.href='/socksShopping/member/MemberModifyView.jsp'">수정완료</button>
 			<input class="member_modify_btn" type="button" value="취소" onclick="window.location.href='MemberMyPage.jsp'">
 		</form>	
 	</div>

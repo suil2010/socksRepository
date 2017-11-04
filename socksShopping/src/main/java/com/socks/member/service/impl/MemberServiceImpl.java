@@ -1,5 +1,16 @@
 package com.socks.member.service.impl;
 
+import java.util.List;
+
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+
+import com.socks.member.dao.MemberDao;
+import com.socks.member.exception.DuplicatedIdException;
+import com.socks.member.exception.MemberNotFoundException;
+import com.socks.member.service.MemberService;
+import com.socks.member.vo.Member;
+
 import java.io.IOException;
 import java.util.List;
 
@@ -15,7 +26,8 @@ import com.socks.member.vo.Member;
 import com.socks.util.SqlSessionFactoryManager;
 
 public class MemberServiceImpl implements MemberService{
-   private static SqlSessionFactory sessionFactory;
+
+private static SqlSessionFactory sessionFactory;
    private static MemberDao dao;
    
    private static MemberServiceImpl instance;
@@ -96,5 +108,14 @@ public class MemberServiceImpl implements MemberService{
       }
    }
    
-   
+   @Override
+  	public Member findOrderMemberById(String id) {
+	   SqlSession session = null;
+	      try {
+	         session = sessionFactory.openSession();
+	         return dao.selectOrderMemberById(session, id);
+	      } finally {
+	         session.close();
+	      }
+  	}
 }

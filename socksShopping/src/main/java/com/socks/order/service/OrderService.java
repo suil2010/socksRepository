@@ -1,5 +1,6 @@
 package com.socks.order.service;
 
+
 import java.util.List;
 
 import com.socks.member.vo.Member;
@@ -20,6 +21,7 @@ public interface OrderService {
 	Member findOrder(String memberId);
 	
 	//모든 주문 현황 보기
+
 	List<Member> findAllOrder();
 	
 	//order id로 하나의 주문을 조회한다.

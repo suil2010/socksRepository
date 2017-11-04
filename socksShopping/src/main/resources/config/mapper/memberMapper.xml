@@ -31,6 +31,26 @@
       WHERE  m.member_id = o.member_id
       and    i.item_id = o.item_id
 	</sql>
+	
+	<sql id = "select-join-ordermember-sql">
+		select 	m.member_id,
+	            m.name,
+	            m.password,
+	            m.address,
+	            m.email,
+	            m.point,
+	            o.order_num,
+	            o.order_date,
+	            d.order_detail_id,
+	            d.ITEM_ID,
+	            d.ORDER_QUANTITY,
+	            d.ITEM_PRICE,
+	            d.ITEM_NAME,
+	            d.MAIN_CUT
+		from 	member m, ORDER_MEMBER o, ORDER_DETAIL d
+		where 	m.member_id = o.member_id
+		and 	o.order_num = d.order_num
+	</sql>
 
 	<!-- resultMap -->
 	<resultMap type="member" id="member-resultmap">
@@ -42,7 +62,7 @@
 		<result column="point" property="point" />
 	</resultMap>
 
-	<!-- resultMap - join -->
+	<!-- resultMap - orderList -join -->
 	<resultMap type="member" id="member-join-order-reusltmap" extends = "member-resultmap">
 		
 		<collection property ="orderList" ofType ="order">
@@ -63,6 +83,26 @@
 		</collection>
 	</resultMap>
 	
+	<!-- resultMap - orderMember -join -->
+	<resultMap type="member" id="member-join-ordermember-reusltmap" extends = "member-resultmap">
+		
+		<collection property ="orderMemberList" ofType ="OrderMember">
+			<id property ="orderNum" column = "order_num"/>
+			<result property = "memberId" column = "member_id"/>
+			<result property = "orderDate" column = "order_date"/>
+			
+			<collection property="orderDetailList" ofType="OrderDetail">
+				<id property="orderDetailId" column="order_detail_id"/>
+				<result property="orderNum" column="order_num"/>
+				<result property="itemId" column="item_id"/>
+				<result property="orderQuantity" column="order_quantity"/>
+				<result property="itemPrice" column="ITEM_PRICE"/>
+				<result property="itemName" column="ITEM_NAME"/>
+				<result property="mainCut" column="MAIN_CUT"/>
+			</collection>
+		</collection>
+	</resultMap>
+	
 	<select id = "selectAll" resultMap="member-resultmap">
 		<include refid ="select-sql"/>
 	</select>
@@ -80,6 +120,10 @@
 		insert into member values (#{memberId},#{name},#{password},#{address},#{email},#{point})
 	</insert>
 	
+	<delete id="deleteMemberById" parameterType="string"><!-- 회원 탈퇴 -->
+		delete from member where member_id = #{memberId}  
+	</delete>
+	
 	<update id="updateMemeberById" parameterType="member"><!-- 회원정보 수정 -->
 		update 	member
 		set 	name = #{name},
@@ -93,12 +137,15 @@
 	<select id="selectAllMember" resultMap="member-resultmap"><!-- 전체회원조회 -->
 		<include refid="select-sql"/>
 	</select>
+	
 	<select id="selectMemberById" resultMap="member-resultmap" parameterType="string"><!-- id로 회원 조회 -->
 		<include refid="select-sql"/>
 		where member_id = #{memberId}
 	</select>
 	
-	<delete id="deleteMemberById" parameterType="string"><!-- 회원 탈퇴 -->
-		delete from member where member_id = #{memberId}  
-	</delete>
+	<select id="selectOrderMemberById" parameterType="string" resultMap = "member-join-ordermember-reusltmap">
+		<include refid="select-join-ordermember-sql"/>
+		and m.member_id = #{memberId}
+	</select>
+	
 </mapper>

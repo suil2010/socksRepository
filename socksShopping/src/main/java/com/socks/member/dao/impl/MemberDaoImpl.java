@@ -7,6 +7,13 @@ import org.apache.ibatis.session.SqlSession;
 import com.socks.member.dao.MemberDao;
 import com.socks.member.vo.Member;
 
+import java.util.List;
+
+import org.apache.ibatis.session.SqlSession;
+
+import com.socks.member.dao.MemberDao;
+import com.socks.member.vo.Member;
+
 import org.apache.ibatis.session.SqlSession;
 
 import com.socks.member.vo.Member;
@@ -85,5 +92,9 @@ public class MemberDaoImpl implements MemberDao{
 	public List<Member> selectAllMember(SqlSession session) {
 		return session.selectList(makeSqlId("selectAllMember"));
 	}
-	   
+
+	@Override
+	public Member selectOrderMemberById(SqlSession session, String memberId) {
+		return session.selectOne(makeSqlId("selectOrderMemberById"),memberId);
+	}
 }

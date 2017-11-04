@@ -34,6 +34,5 @@ public class registerMemberServlet extends HttpServlet {
 		}
 		request.getRequestDispatcher("/member/registerMemberSuccess.jsp").forward(request, response);// 회원가입 성공페이지로 간다.
 	}
-	
 
 }

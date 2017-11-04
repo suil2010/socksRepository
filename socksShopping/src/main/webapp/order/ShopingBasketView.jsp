@@ -1,3 +1,4 @@
+
 <%@page import="java.util.List"%>
 <%@page import="com.socks.order.vo.Order"%>
 <%@ page contentType="text/html;charset=utf-8"%>
@@ -11,7 +12,7 @@
 <link href="${initParam.rootPath }/css/css.css" rel="stylesheet">
 
 <script type="text/javascript">
-	
+
 	function mySubmit(index){
 		if(index == 1){
 			document.basketForm.action = "/socksShopping/removeServlet";
@@ -85,6 +86,7 @@
 						  	  <c:set var = "sum" value = "${sum+order.item.itemPrice * order.orderQuantity}"/>    
 						  </c:forEach>
 						  <%-- type : number(기본)-단위구분자, currency :통화기호, percent : %기호 --%>
+
 						  <fmt:formatNumber value = "${sum }" type ="currency"/>
 					</td><!-- (각제품가격 * 제품개수)+..+..?  -->
 				</tr>

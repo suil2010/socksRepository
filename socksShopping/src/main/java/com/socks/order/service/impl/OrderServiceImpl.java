@@ -1,5 +1,6 @@
 package com.socks.order.service.impl;
 
+
 import java.io.IOException;
 import java.util.List;
 
@@ -72,7 +73,6 @@ public class OrderServiceImpl implements OrderService{
 		SqlSession session = null;
 		try {
 			session = factory.openSession();
-			
 			Member member = dao.selectAllOrderByJoin(session, memberId);
 			session.commit();
 			return member;
@@ -91,6 +91,7 @@ public class OrderServiceImpl implements OrderService{
 		}finally {
 			session.close();
 		}
+
 	}
 	
 	public Order findOrderById(String orderId) {

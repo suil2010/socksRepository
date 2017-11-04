@@ -10,10 +10,13 @@ import com.socks.item.dao.impl.itemDaoImpl;
 import com.socks.item.exception.ItemNotFoundException;
 import com.socks.item.service.impl.itemServiceImpl;
 import com.socks.item.vo.Item;
+import com.socks.member.service.impl.MemberServiceImpl;
 import com.socks.member.vo.Member;
 import com.socks.order.dao.impl.OrderDaoImpl;
 import com.socks.order.service.impl.OrderServiceImpl;
-import com.socks.order.vo.Order;
+import com.socks.orderdetail.OrderDetailServiceImpl;
+import com.socks.ordermember.OrderMemberServiceImpl;
+import com.socks.ordermember.vo.OrderMember;
 import com.socks.util.SqlSessionFactoryManager;
 
 public class test {
@@ -22,9 +25,13 @@ public class test {
 				SqlSessionFactory factory = SqlSessionFactoryManager.getInstance().getSqlSessionFactory();
 				itemServiceImpl service = itemServiceImpl.getInstance();
 				OrderServiceImpl service1 = OrderServiceImpl.getInstance();
+				MemberServiceImpl service2 = MemberServiceImpl.getInstance();
+				OrderDetailServiceImpl service3 = OrderDetailServiceImpl.getInstance();
+				OrderMemberServiceImpl service4 = OrderMemberServiceImpl.getInstance();
 				
 				itemDaoImpl dao = itemDaoImpl.getInstance();
 				OrderDaoImpl dao1 = OrderDaoImpl.getInstance();
+				 
 				
 				SqlSession session = null;
 				//List<Item> list = null;
@@ -97,7 +104,7 @@ public class test {
 					service1.removeOrder("orderId-6");
 					*/
 					
-					System.out.println("----selelct------");
+					/*ystem.out.println("----selelct------");
 					list = service1.findAllOrder();
 					for(Member m : list) {
 						System.out.println(m);
@@ -115,6 +122,20 @@ public class test {
 					
 					System.out.println("-------update-------");
 					cnt = dao1.updateOrderById(session, new Order("orderId-4",100,"userId-1","itemId-3",new Date()));
+					System.out.println("-------select--------");*/
+					/*Member member = service2.findOrderMemberById("userId-1");
+					System.out.println(member);
+					
+					System.out.println("-------insert----------");
+					service3.addOrderDetail(new OrderDetail("orderDetailId-101","orderNum-7",
+							"itemId-3",10,1000,"sdfsdf","/webapps"));
+					System.out.println("-------delete---------");
+					service3.removeOrderDetailById("orderDetailId-1");*/
+					
+					System.out.println("-----------insert--------");
+					//service4.addOrderMember(new OrderMember("orderNum-100","userId-3",new Date()));
+					System.out.println("-----delete------");
+					service4.removeOrderMemberById("orderNum-7");
 					session.commit();
 				} finally {
 					session.close();

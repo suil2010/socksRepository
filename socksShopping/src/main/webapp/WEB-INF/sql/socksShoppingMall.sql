@@ -25,10 +25,57 @@ drop table order_list
 CREATE TABLE order_list(
    order_id VARCHAR2(30) primary key, -- 주문상품
    ORDER_QUANTITY NUMBER(3) not NULL, -- 주문수
-   member_id VARCHAR2(10) constraint fk_order_user_id references member,
-   item_id  VARCHAR2(30) constraint fk_item_item_id references item,
+   member_id VARCHAR2(10) constraint fk_order_user_id references member on delete cascade,
+   item_id  VARCHAR2(30) constraint fk_item_item_id references item on delete cascade,
    order_date date not null
 );
+
+drop table order_member cascade constraint
+
+create table order_member(
+	order_num varchar2(30) primary key,
+	member_id VARCHAR2(10) constraint fk_order_member_user_id references member on delete cascade,
+	order_date date not null
+)
+
+drop table order_detail cascade constraint
+
+create table order_detail(
+	order_detail_id varchar2(30) primary key,
+	order_num varchar2(30) constraint fk_order_detail_member_id references order_member on delete cascade,
+	ITEM_ID         VARCHAR2(30) not null,
+	ORDER_QUANTITY  NUMBER(3) not NULL, -- 주문수
+	ITEM_PRICE      NUMBER(10)   NOT NULL,
+	ITEM_NAME       VARCHAR2(30) NOT NULL,
+	MAIN_CUT        VARCHAR2(50) NOT NULL
+)
+
+
+
+
+insert into order_member values('orderNum-1','userId-1','2017-07-01');
+insert into order_member values('orderNum-2','userId-1','2017-07-01');
+insert into order_member values('orderNum-3','userId-1','2017-07-01');
+insert into order_member values('orderNum-4','userId-2','2017-07-01');
+insert into order_member values('orderNum-5','userId-2','2017-07-01');
+insert into order_member values('orderNum-6','userId-3','2017-07-01');
+insert into order_member values('orderNum-7','userId-3','2017-07-01');
+
+insert into order_detail values('orderDetailId-1','orderNum-1','itemId-1',1,12000,'기타리스트 루스터', '1052.jpg');
+insert into order_detail values('orderDetailId-2','orderNum-1','itemId-2',2,12000,'기타리스트 루스터', '1052.jpg');
+insert into order_detail values('orderDetailId-3','orderNum-1','itemId-3',3,12000,'기타리스트 루스터', '1052.jpg');
+
+insert into order_detail values('orderDetailId-4','orderNum-2','itemId-1',3,12000,'기타리스트 루스터', '1052.jpg');
+insert into order_detail values('orderDetailId-5','orderNum-2','itemId-1',2,12000,'기타리스트 루스터', '1052.jpg');
+insert into order_detail values('orderDetailId-6','orderNum-2','itemId-2',1,12000,'기타리스트 루스터', '1052.jpg');
+
+insert into order_detail values('orderDetailId-7','orderNum-4','itemId-2',1,12000,'기타리스트 루스터', '1052.jpg');
+insert into order_detail values('orderDetailId-8','orderNum-6','itemId-2',1,12000,'기타리스트 루스터', '1052.jpg');
+insert into order_detail values('orderDetailId-9','orderNum-7','itemId-2',1,12000,'기타리스트 루스터', '1052.jpg');
+
+select * from ORDER_MEMBER
+
+select * from ORDER_DETAIL
 
 select * from item
 
@@ -37,10 +84,6 @@ insert into member values('userId-2','장발장','2345','경기도 하남','a@s.
 insert into member values('userId-3','강감찬','5676','경기도 용인','b@s.com',500);
 
 --파열경로 ex) C:\java\apache-tomcat-8.0.47\webapps\FileuploadExam_image\upImage\fileName
-insert into item values('itemId-1',12000,1000,'긴 양말','C:\','D:\');
-insert into item values('itemId-2',13000,100,'발목 양말','C:\','D:\');
-insert into item values('itemId-3',14000,200,'겨울 양말','C:\','D:\');
-insert into item values('itemId-7',1400,1200,'양말', 'main.jpg', 'detail.jpg');
 
 delete from MEMBER where member_id = '222' cascade 
 delete from item where item_id = 'itemId-13'
@@ -82,11 +125,34 @@ insert into order_list values('orderId-4',12,'userId-1','itemId-3','2017-10-30')
 insert into order_list values('orderId-5',12,'userId-1','itemId-2','2017-10-30');
 insert into order_list values('orderId-6',12,'userId-1','itemId-3','2017-10-30');
 
+----------------
+insert into memberorder values('userId-1','orderId-1');
+
 select * from item where item_id = 'itemId-7';
 
 select * from member
 select * from item
 select * from order_list
+		
+		--회원아이디로 주문조히
+		select 	m.member_id ,
+            m.name,
+            m.password,
+            m.address,
+            m.email,
+            m.point,
+            o.order_num,
+            o.order_date,
+            d.order_detail_id,
+            d.ITEM_ID,
+            d.ORDER_QUANTITY,
+            d.ITEM_PRICE,
+            d.ITEM_NAME,
+            d.MAIN_CUT
+		from 	member m, ORDER_MEMBER o, ORDER_DETAIL d
+		where 	m.member_id = o.member_id
+		and 	o.order_num = d.order_num
+		and 	m.member_id = 'bb'
 
         SELECT m.member_id ,
             m.name,
