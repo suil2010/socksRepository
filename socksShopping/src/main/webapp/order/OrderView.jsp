@@ -17,26 +17,27 @@
 </head>
 <body>
 <%@ include file="/WEB-INF/include/header.jsp"%>
+
 <div class="order_view">
-	<h4>${sessionScope.loginMember.name }회원의 주문내역</h4>
-	<form name = "orderForm" method = "post">
-	<div class="order_list">
+	<h4>ORDER LIST</h4>
+	<form class="order_list">
 		<table>
 			<thead>
 				<tr>
+					<td></td>
 					<td>Date</td>
 					<td>Order Num</td>
 					<td>Product Price</td>
 					<td>Product Image</td>
 					<td>Product Name</td>
 					<td>Total</td>
-					<td></td>
 				</tr>
 			<thead>
 			<tbody>
 				<c:forEach items="${sessionScope.checkListOrder}" var="orderMember">
 					<c:forEach items="${orderMember.orderDetailList}" var="orderDetail">
 					<tr>
+						<td><input type="checkbox" name="check"></td>
 						<td>
 							<fmt:setLocale value="ko_KR"/>
 							<fmt:formatDate value="${orderMember.orderDate }" type ="date"/>
@@ -45,15 +46,13 @@
 						<td>${orderDetail.itemPrice }</td>
 						<td><div class="order_main_img"><img alt="main_img" src="/socksShopping/mainImage/${orderDetail.mainCut}"></div></td>
 						<td>${orderDetail.itemName }</td>
-						<td> <fmt:formatNumber value = "${orderDetail.itemPrice * orderDetail.orderQuantity}" type ="currency"/>
-						</td>						
-						<td><input type="submit" value="${orderDetail}" name="order" onclick= "mySubmit()"></td>
+						<td> <fmt:formatNumber value = "${orderDetail.itemPrice * orderDetail.orderQuantity}" type ="currency"/></td>
 					</tr>
 					</c:forEach>
 				</c:forEach>
 			</tbody>
 		</table>
-	</div>
+		<input class="order_cancle_btn" type="submit" value="주문취소">
 	</form>
 </div>
 <%@ include file="/WEB-INF/include/footer.jsp"%>

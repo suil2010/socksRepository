@@ -30,7 +30,7 @@
 		<div class="detail_bar"></div>	
 		<div class="detail_item_num">
 			상품 개수 선택
-			<input type="number" size="3" maxlength="3" name="stuck"> 개 <!-- 제품 개수 선택 -->
+			<input type="number" size="3" min="0" maxlength="3" name="stuck"> 개 <!-- 제품 개수 선택 -->
 			<br>
 			<div class="detail_stuck">
 				상품재고 : 

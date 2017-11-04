@@ -27,14 +27,15 @@
 							cnt++;	
 						}
 					}
-				if(cnt == 0 ){
-					alert("상품을 체크하거나 장바구니에 상품을 넣으세요");
-				} else{
-					document.basketForm.action = "/socksShopping/InOrder";
-					document.basketForm.submit();
-				}
+			if(cnt == -1 ){
+				alert("상품을 체크하거나 장바구니에 상품을 넣으세요");
+				return false; //원래 창으로 돌아간다.
+			} else{
+				document.basketForm.action = "/socksShopping/InOrder";
+				document.basketForm.submit();
 			}
-		}		
+		}
+	}
 </script>
 </head>
 <body>
