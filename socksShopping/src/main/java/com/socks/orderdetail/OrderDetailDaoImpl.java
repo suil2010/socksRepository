@@ -35,4 +35,15 @@ public class OrderDetailDaoImpl implements OrderDetailDao{
 	public List<OrderDetail> selectOrderDetailByJoin(SqlSession session, String itemId) {
 		return session.selectList(makeSqlId("selectOrderDetailByJoin"),itemId);
 	}
+
+	@Override
+	public OrderDetail selectOrderDetail(SqlSession session, String orderDetailId) {
+		return session.selectOne(makeSqlId("selectOrderDetail"), orderDetailId);
+	}
+	
+	@Override
+	public OrderDetail selectOrderDetailByIdJoin(SqlSession session, String orderDetailId) {
+		return session.selectOne(makeSqlId("selectOrderDetailByIdJoin"),orderDetailId);
+	}
+	
 }

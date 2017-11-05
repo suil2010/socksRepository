@@ -29,4 +29,10 @@ public class OrderMemberDaoImpl implements OrderMemberDao{
 	public int deleteOrderMemberById(SqlSession session, String orderNum) {
 		return session.delete(makeSqlId("deleteOrderMemberById"),orderNum);
 	}
+
+	@Override
+	public OrderMember selectOrderMemberByNumJoin(SqlSession session, String orderNum) {
+		return session.selectOne(makeSqlId("selectOrderMemberByNumJoin"),orderNum);
+	}
+	
 }

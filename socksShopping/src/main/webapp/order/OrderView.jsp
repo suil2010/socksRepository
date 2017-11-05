@@ -10,8 +10,12 @@
 <link href="${initParam.rootPath }/css/css.css" rel="stylesheet">
 <script type="text/javascript">
 	function mySubmit(){
-			document.orderForm.action = "/socksShopping/removeOrder";
-			document.orderForm.submit();
+			if(confirm("주문을 취소하시겠습니까?")){
+				document.orderForm.action = "/socksShopping/removeOrder";
+				document.orderForm.submit();
+			} else{
+				return false;
+			}
 	}
 </script>
 </head>
@@ -19,8 +23,8 @@
 <%@ include file="/WEB-INF/include/header.jsp"%>
 
 <div class="order_view">
-	<h4>ORDER LIST</h4>
-	<form class="order_list">
+	<h4>${sessionScope.loginMember.name }님의 주문목록</h4>
+	<form class="order_list" name ="orderForm" method ="post">
 		<table>
 			<thead>
 				<tr>
@@ -34,10 +38,17 @@
 				</tr>
 			<thead>
 			<tbody>
+			<c:choose>
+				<c:when test="${sessionScope.checkListOrder eq null}">
+					<tr>
+						<td colspan="7">주문된 상품이 없습니다.</td>
+					</tr>
+				</c:when>
+				<c:otherwise>
 				<c:forEach items="${sessionScope.checkListOrder}" var="orderMember">
 					<c:forEach items="${orderMember.orderDetailList}" var="orderDetail">
 					<tr>
-						<td><input type="checkbox" name="checkOrder" value=${orderMember.orderNum }></td>
+						<td><input type="checkbox" name="checkOrderDetailId" value=${orderDetail.orderDetailId }></td>
 						<td>
 							<fmt:setLocale value="ko_KR"/>
 							<fmt:formatDate value="${orderMember.orderDate }" type ="date"/>
@@ -51,9 +62,11 @@
 					</tr>
 					</c:forEach>
 				</c:forEach>
+				</c:otherwise>
+				</c:choose>
 			</tbody>
 		</table>
-		<input class="order_cancle_btn" type="submit" value="주문취소">
+		<input class="order_cancle_btn" type="button" value="주문취소" onclick ="mySubmit()">
 	</form>
 </div>
 <%@ include file="/WEB-INF/include/footer.jsp"%>

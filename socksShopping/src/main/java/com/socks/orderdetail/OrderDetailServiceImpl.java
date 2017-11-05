@@ -1,13 +1,10 @@
 package com.socks.orderdetail;
 
 import java.io.IOException;
-import java.util.List;
 
+import java.util.List;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
-
-import com.socks.order.dao.impl.OrderDaoImpl;
-import com.socks.order.vo.Order;
 import com.socks.orderdetail.vo.OrderDetail;
 import com.socks.util.SqlSessionFactoryManager;
 
@@ -67,7 +64,28 @@ public class OrderDetailServiceImpl implements OrderDetailService{
 			session.close();
 		}
 	}
-	
-	
-	
+
+	@Override
+	public OrderDetail findOrderDetailOne(String orderDetailId) {
+		try {
+			session = factory.openSession();
+			OrderDetail orderDetail = dao.selectOrderDetail(session, orderDetailId);
+			session.commit();
+			return orderDetail;
+		} finally {
+			session.close();
+		}
+	}
+
+	@Override
+	public OrderDetail findOrderDetailJoinItem(String orderDetaiId) {
+		try {
+			session = factory.openSession();
+			OrderDetail orderDetail = dao.selectOrderDetailByIdJoin(session, orderDetaiId);
+			session.commit();
+			return orderDetail;
+		} finally {
+			session.close();
+		}
+	}
 }

@@ -3,10 +3,9 @@ package com.socks.item.service.impl;
 import java.io.IOException;
 import java.util.List;
 
-import javax.management.RuntimeErrorException;
-
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
+import org.omg.CORBA.ServiceDetail;
 
 import com.socks.item.dao.impl.itemDaoImpl;
 import com.socks.item.exception.DuplicatedItemIdException;
@@ -15,6 +14,10 @@ import com.socks.item.service.itemService;
 import com.socks.item.vo.Item;
 import com.socks.order.service.impl.OrderServiceImpl;
 import com.socks.order.vo.Order;
+import com.socks.orderdetail.OrderDetailServiceImpl;
+import com.socks.orderdetail.vo.OrderDetail;
+import com.socks.ordermember.OrderMemberServiceImpl;
+import com.socks.ordermember.vo.OrderMember;
 import com.socks.util.SqlSessionFactoryManager;
 
 public class itemServiceImpl implements itemService{
@@ -27,6 +30,8 @@ public class itemServiceImpl implements itemService{
 	
 	//장바구니 service
 	private OrderServiceImpl service = OrderServiceImpl.getInstance();
+	private OrderMemberServiceImpl serviceOrder = OrderMemberServiceImpl.getInstance();
+	private OrderDetailServiceImpl serviceDetail = OrderDetailServiceImpl.getInstance();
 	
 	private SqlSession session =null;
 	
@@ -113,6 +118,21 @@ public class itemServiceImpl implements itemService{
 						,order.getItem().getItemPrice(),number,order.getItem().getItemName(),
 						order.getItem().getMainCut(),order.getItem().getDetailCut()));
 			} 
+		} catch(Exception e) {
+			throw new RuntimeException(e);
+		}
+	}
+	
+	public void cancelManagerOrderList(String[] orderDetailIdList) throws RuntimeException{
+		try {
+			for(int i = 0 ; i < orderDetailIdList.length ; i++) {
+				OrderDetail orderDetail = serviceDetail.findOrderDetailJoinItem(orderDetailIdList[i]);
+					System.out.println(orderDetail);
+					int number = orderDetail.getItem().getItemQuantity() + orderDetail.getOrderQuantity();
+					Item item = orderDetail.getItem();
+					updateItemById(new Item(orderDetail.getItemId(),item.getItemPrice(),number,
+								item.getItemName(),item.getMainCut(),item.getDetailCut()));
+				}
 		} catch(Exception e) {
 			throw new RuntimeException(e);
 		}

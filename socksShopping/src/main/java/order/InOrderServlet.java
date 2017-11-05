@@ -43,10 +43,11 @@ public class InOrderServlet extends HttpServlet {
 	
 		Member member = (Member)session.getAttribute("loginMember");
 		String memberId = member.getMemberId();
+		member = serviceMember.findOrderMemberById(memberId);
 		
 		String[] orderId = request.getParameterValues("check");
 		System.out.println(orderId);
-		//삭제 후 findOrder를 회원의 정보를 조회
+		//삭제 후 findOrder를 회원의 정보를 조회 (장바구니)
 		member = service.findOrder(memberId);
 		
 		// 주문처리된 상품의 주문 상품 수 와 전체 상품 수를 뺀다.

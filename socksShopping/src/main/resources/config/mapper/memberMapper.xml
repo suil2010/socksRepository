@@ -45,8 +45,10 @@
 	            d.ITEM_ID,
 	            d.ORDER_QUANTITY,
 	            i.ITEM_PRICE,
+	            i.item_quantity,
 	            i.item_name,
-	            i.main_cut
+	            i.main_cut,
+	            i.detail_cut
 		from 	member m, ORDER_MEMBER o, ORDER_DETAIL d, item i 
 		where 	m.member_id = o.member_id
 		and 	o.order_num = d.order_num
@@ -100,8 +102,10 @@
 			<association property="item" javaType="item">
 				<id property="itemId" column="item_id"/>                                 
 				<result property="itemPrice" column="ITEM_PRICE"/>
+				<result property="itemQuantity" column="ITEM_quantity"/>
 				<result property="itemName" column="item_name"/>
 				<result property="mainCut" column="main_cut"/>
+				<result property="detailCut" column = "detail_cut"/>
 			</association>
 			</collection>
 		</collection>

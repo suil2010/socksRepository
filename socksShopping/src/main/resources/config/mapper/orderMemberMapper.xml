@@ -1,7 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="config.mapper.orderMemberMapper">
-
+	
+	<sql id ="select-join-orderDetail-sql">
+		select 	o.order_num,
+				o.member_id,
+	            o.order_date,
+	            d.order_detail_id,
+	            d.ITEM_ID,
+	            d.ORDER_QUANTITY,
+	            i.item_price,
+           		i.item_quantity,
+                i.item_name,
+                i.main_cut,
+                i.detail_cut
+         from   ORDER_MEMBER o, ORDER_DETAIL d, item i
+         where  o.order_num = d.order_num
+         and	d.item_id = i.item_id
+	</sql>
+	
+	<resultMap type="orderMember" id="ordermember-join-orderdetail-resultmap">
+		<id property="orderNum" column="order_num" />
+		<result property="memberId" column="member_id"/>
+		<result property="orderDate" column="order_date"/>
+	
+		<collection property="orderDetailList" ofType="OrderDetail">
+			<id property="orderDetailId" column="order_detail_id"/>
+			<result property="orderNum" column="order_num"/>
+			<result property="itemId" column="item_id"/>
+			<result property="orderQuantity" column="order_quantity"/>
+		<association property="item" javaType="item">
+				<id property="itemId" column="item_id"/>
+				<result property="itemPrice" column="item_price"/>
+				<result property="itemQuantity" column="item_quantity"/>
+				<result property="itemName" column="item_name"/>
+				<result property="mainCut" column="main_cut"/>
+				<result property="detailCut" column="detail_cut"/>
+		</association>
+		</collection>
+	</resultMap>
+	
 	<insert id="insertOrderMember" parameterType= "orderMember">
 		insert into order_member values (#{orderNum},#{memberId},#{orderDate})
 	</insert>
@@ -9,5 +47,10 @@
 	<delete id="deleteOrderMemberById" parameterType="string">
 		delete from order_member where order_num = #{orderNum}
 	</delete>
+	
+	<select id="selectOrderMemberByNumJoin" parameterType ="string" resultMap="ordermember-join-orderdetail-resultmap">
+		<include refid="select-join-orderDetail-sql"/>
+		and o.order_num = #{orderNum}
+	</select>
 
 </mapper>

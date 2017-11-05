@@ -35,7 +35,6 @@ public class InShopingBasketServlet extends HttpServlet {
 		OrderService service = OrderServiceImpl.getInstance();
 		
 		//수량 선택 -> 장바구니 클릭 -> 상품담김 -> itemId, itemStock 값을 받음
-		
 		Member member = (Member)session.getAttribute("loginMember");
 		String memberId = member.getMemberId();
 		String itemId = request.getParameter("id");
@@ -55,7 +54,6 @@ public class InShopingBasketServlet extends HttpServlet {
 		
 		//리다이렉트방식을 사용하기 위해서
 		session.setAttribute("listOrder", listOrder);
-		//request.getRequestDispatcher("/order/ShopingBasketView.jsp").forward(request, response);
 		
 		/*DB에서 내용을 바꾸거나 server에서 내용을 바꿀때 새로고침을 되면 값이 증가하게 된다.
 		리다이렉트 방식 사용*/

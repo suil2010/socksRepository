@@ -34,9 +34,7 @@ public class OrderServiceImpl implements OrderService{
 		SqlSession session = null;
 		try {
 			session = factory.openSession();
-			
 			dao.insertOrder(session, order);
-			
 			session.commit();
 		}finally {
 			session.close();

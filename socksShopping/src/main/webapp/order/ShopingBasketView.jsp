@@ -30,8 +30,12 @@
             alert("상품을 체크하거나 장바구니에 상품을 넣으세요");
             return false; //원래 창으로 돌아간다.
          } else{
-            document.basketForm.action = "/socksShopping/InOrder";
-            document.basketForm.submit();
+        	if(confirm("상품을 주문하시겠습니까?")){
+	            document.basketForm.action = "/socksShopping/InOrder";
+	            document.basketForm.submit();
+        	} else{
+        		return false;
+        	}
          }
       }
    }
@@ -63,7 +67,7 @@
          <c:otherwise>
             <c:forEach items= "${sessionScope.listOrder }" var="order">
                <tr>
-                  <td><input type="checkbox" name="check" value ="${order.orderId }" ></td>
+                  <td><input type="checkbox" name="check" value ="${order.orderId }" onclick="itemSum(this.form)"></td>
                   <td><div class="basket_img"><img alt="main_img" src="/socksShopping/mainImage/${order.item.mainCut }"></div></td>
                   <td>${order.item.itemName }</td>
                   <td><fmt:formatNumber value = "${order.item.itemPrice }" type ="currency"/></td> <!-- 제품가격 -->
@@ -81,7 +85,8 @@
          <table>
             <tr>
                <td>SUB TOTAL</td>
-               <td>  <c:forEach items="${sessionScope.listOrder }" var="order">
+               <td>  
+                    <c:forEach items="${sessionScope.listOrder }" var="order">
                          <c:set var = "sum" value = "${sum+order.item.itemPrice * order.orderQuantity}"/>    
                     </c:forEach>
                     <%-- type : number(기본)-단위구분자, currency :통화기호, percent : %기호 --%>
@@ -93,20 +98,21 @@
                <td>DELIVERY FEE</td>
                <td>
                   <c:choose>
-                     <c:when test="${sum >= 30000 or sum == null  }">
+                     <c:when test="${sum >= 50000 or sum == null  }">
                         <fmt:formatNumber value = "0" type ="currency"/>
                      </c:when>
                      <c:otherwise>
                         <fmt:formatNumber value = "2500" type ="currency"/>
                      </c:otherwise>
                   </c:choose>
-               </td><!-- 배송비? -->
+               </td><!-- 배송비 -->
             </tr>
             <tr>
                <td style="color: red;">TOTAL</td>
                <td style="color: red;">
                   <c:choose>
                      <c:when test="${sum >= 50000 or sum == null }">
+                     
                         <fmt:formatNumber value = "${sum }" type ="currency"/>
                      </c:when>
                      <c:otherwise>
