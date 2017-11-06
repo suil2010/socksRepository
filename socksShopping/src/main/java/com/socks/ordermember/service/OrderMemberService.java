@@ -1,4 +1,4 @@
-package com.socks.ordermember;
+package com.socks.ordermember.service;
 
 import java.util.List;
 
