@@ -81,7 +81,7 @@ insert into member values('userId-3','강감찬','5676','경기도 용인','b@s.
 
 delete from MEMBER where member_id = '222' cascade 
 delete from item where item_id = 'itemId-13'
-delete from item where item_id = 'itemId-7'
+delete from item where item_id = 'itemId-3'
 delete from ORDER_LISt
 select * from order_list
 
