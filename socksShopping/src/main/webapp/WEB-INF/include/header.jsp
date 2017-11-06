@@ -21,6 +21,10 @@
 			<% } else { %><!-- 로그인이 되면 -->
 			<a href="${initParam.rootPath }/logoutMember">로그아웃</a> &nbsp; | &nbsp; <!-- 로그아웃 페이지로 이동 -->
 			<a href="${initParam.rootPath }/member/MemberMyPage.jsp">마이 페이지</a>
+			<% if(session.getAttribute("loginMember").equals("socks")) { %>
+			&nbsp; | &nbsp;
+			<a onmouseover="this.style.color='blue'" onmouseout="this.style.color='red'" style="color: red;" href="${initParam.rootPath }/item/managerView.jsp">관리자 페이지</a>
+			<% } %>
 			<% } %>
 		</div>
 	</header>

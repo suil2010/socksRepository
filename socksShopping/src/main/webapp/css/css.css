@@ -50,7 +50,7 @@ header{
 /* 로그인/로그아웃 + 회원정보 */
 .top_box{
 	float: right;
-	width: 300px;
+	width: 350px;
 	height: 30px;
 	margin-top: -30px;
 }
@@ -61,6 +61,7 @@ header{
 .top_box > a:hover {
 	color: red;
 }
+
 /* 푸터  */
 footer{
 	width: 100%;
