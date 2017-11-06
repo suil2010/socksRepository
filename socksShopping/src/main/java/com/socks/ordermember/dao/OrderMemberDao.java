@@ -1,4 +1,4 @@
-package com.socks.ordermember;
+package com.socks.ordermember.dao;
 
 import org.apache.ibatis.session.SqlSession;
 

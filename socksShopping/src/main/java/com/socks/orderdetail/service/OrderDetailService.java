@@ -1,4 +1,4 @@
-package com.socks.orderdetail;
+package com.socks.orderdetail.service;
 
 import java.util.List;
 

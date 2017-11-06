@@ -1,4 +1,4 @@
-package com.socks.orderdetail;
+package com.socks.orderdetail.dao;
 
 import java.util.List;
 

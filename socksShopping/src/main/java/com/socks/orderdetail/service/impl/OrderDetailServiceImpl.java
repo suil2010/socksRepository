@@ -1,10 +1,13 @@
-package com.socks.orderdetail;
+package com.socks.orderdetail.service.impl;
 
 import java.io.IOException;
-
 import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
+
+import com.socks.orderdetail.dao.impl.OrderDetailDaoImpl;
+import com.socks.orderdetail.service.OrderDetailService;
 import com.socks.orderdetail.vo.OrderDetail;
 import com.socks.util.SqlSessionFactoryManager;
 

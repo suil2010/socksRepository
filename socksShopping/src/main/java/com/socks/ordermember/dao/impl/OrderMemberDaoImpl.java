@@ -1,7 +1,8 @@
-package com.socks.ordermember;
+package com.socks.ordermember.dao.impl;
 
 import org.apache.ibatis.session.SqlSession;
 
+import com.socks.ordermember.dao.OrderMemberDao;
 import com.socks.ordermember.vo.OrderMember;
 
 public class OrderMemberDaoImpl implements OrderMemberDao{

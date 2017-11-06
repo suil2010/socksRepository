@@ -5,7 +5,6 @@ import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
-import org.omg.CORBA.ServiceDetail;
 
 import com.socks.item.dao.impl.itemDaoImpl;
 import com.socks.item.exception.DuplicatedItemIdException;
@@ -14,10 +13,9 @@ import com.socks.item.service.itemService;
 import com.socks.item.vo.Item;
 import com.socks.order.service.impl.OrderServiceImpl;
 import com.socks.order.vo.Order;
-import com.socks.orderdetail.OrderDetailServiceImpl;
+import com.socks.orderdetail.service.impl.OrderDetailServiceImpl;
 import com.socks.orderdetail.vo.OrderDetail;
-import com.socks.ordermember.OrderMemberServiceImpl;
-import com.socks.ordermember.vo.OrderMember;
+import com.socks.ordermember.service.impl.OrderMemberServiceImpl;
 import com.socks.util.SqlSessionFactoryManager;
 
 public class itemServiceImpl implements itemService{

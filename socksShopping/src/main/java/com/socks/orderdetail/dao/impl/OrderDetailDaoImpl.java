@@ -1,9 +1,10 @@
-package com.socks.orderdetail;
+package com.socks.orderdetail.dao.impl;
 
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 
+import com.socks.orderdetail.dao.OrderDetailDao;
 import com.socks.orderdetail.vo.OrderDetail;
 
 public class OrderDetailDaoImpl implements OrderDetailDao{
